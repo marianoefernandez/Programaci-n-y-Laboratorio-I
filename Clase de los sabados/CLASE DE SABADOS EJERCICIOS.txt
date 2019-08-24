@@ -1,0 +1,6 @@
+Clase uno
+
+int dinero
+char tipo (B,L,D,P)
+
+pedir 10 veces con for y saber el mayor monto en dolares
