@@ -1,0 +1,44 @@
+Clase dos:
+
+1) Realizar un programa que solicite cinco números e imprima por pantalla el promedio, el máximo y el mínimo.
+
+2)Adivina el número:
+Al comenzar el juego generamos un número secreto del 1 al 100.
+Si el número ingresado es el mismo que el número secreto se dará por terminado el juego con un mensaje similar a este: 
+“Usted es un ganador!!! y en solo X intentos”. de no ser igual se debe informar si “falta…” 
+para llegar al número secreto o si “se pasó…” del número secreto. 
+En esta oportunidad el juego evaluará tus aptitudes a partir de la cantidad de intentos.
+por lo cual se informará lo siguiente: 
+1° intento: “usted es un Psíquico”. 
+2° intento: “excelente percepción”. 
+3° intento: “Esto es suerte”. 
+4° intento: “Excelente técnica”. 
+5° intento: “usted está en la media”. 
+Desde 6 Intentos hasta 10:”falta técnica” 
+Más de 10 intentos: “afortunado en el amor!!”. 
+
+3)
+Realizar el algoritmo que permita el ingreso de las notas (validar entre 0 y 10) 
+y el sexo (validar el sexo “f” o “m”) de 5 alumnos, informar por alert: 
+a) El promedio de las notas totales. 
+b) La nota más baja y el sexo de esa persona. 
+c) La cantidad de varones que su nota haya sido mayor o igual a 6.
+
+4)
+Realizar el algoritmo que permita iterar el ingreso de dos datos, una letra y un número entre -100 y 100 (validar) 
+hasta que el usuario quiera e informar
+a) La cantidad de números pares. 
+b) La cantidad de números impares. 
+c) La cantidad de ceros. 
+d) El promedio de todos los números positivos ingresados. 
+e) La suma de todos los números negativos. 
+f) El número y la letra del máximo y el mínimo. 
+
+5)
+Realizar el algoritmo que permita ingresar la marca del producto, el peso el cual debe ser entre 1 y 100 (validar), 
+la temperatura de almacenamiento(entre -30 y 30) hasta que el usuario quiera e informar
+a) La cantidad de temperaturas pares. 
+b) La marca del producto más pesado 
+c) La cantidad de productos que se conservan a menos de 0 grados. 
+d) El promedio del peso de todos los productos. 
+f) El peso máximo y el mínimo. 

@@ -1,0 +1,6 @@
+Clase uno:
+Intro a la materia, como realizar ejercicios del curso de ingreso en C.
+
+Clase dos:
+Aprendimos diferencias entre javascript y C, linkeador, formas más sencillas de programar ejercicios del curso de ingreso
+secuesncias de escape, includes, secuencias de escape

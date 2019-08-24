@@ -1,0 +1,36 @@
+Clase uno:
+
+1)Para el departamento de Pinturas: 
+A. Al ingresar una temperatura en Fahrenheit debemos mostrar la temperatura en Centígrados con un mensaje concatenado 
+(ej.: " 32 Fahrenheit son 0 centígrados"). 
+B. Al ingresar una temperatura en Centígrados debemos mostrar la temperatura en Fahrenheit 
+(ej.: "0 centígrados son 32 Fahrenheit "). 
+
+2)Pedir el precio y el porcentaje de descuento, mostrar el precio final con descuento.
+
+3)Se ingresa una hora. 
+Si está entre las 6 y las 11 mostrar:"es de mañana", 
+si es desde las 12 a las 19: "es de tarde", 
+de lo contrario informar que es de noche. 
+Informar si la hora no es válida. 
+Si es de noche y la hora es menor a 24 mostrar se debe agregar el mensaje : "a dormir". 
+
+4) Escribir un programa que realice las siguientes acciones:
+
+Solicite al usuario 10 números
+Calcule cuántos son negativos y cuantos son positivos
+Muestre por pantalla la cantidad de negativos y la cantidad de positivos
+
+5)Ejercicio que dio el profesor
+-Pedir edad (1-105 años)
+-Pedir altura (1.00 a 2.00 cm)
+-Sexo (m o f)
+
+Calcular
+
+a)altura de la mujer más vieja
+b)altura de la persona más joven
+c)sexo de la persona más alta
+d)edad del hombre más bajo
+e)promedio de edades
+f)altura promedio de hombres
