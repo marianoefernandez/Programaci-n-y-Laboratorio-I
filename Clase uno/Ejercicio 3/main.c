@@ -12,10 +12,10 @@ Si es de noche y la hora es menor a 24 mostrar se debe agregar el mensaje : "a d
 
 int main()
 {
-    float hora;
+    int hora;
 
     printf("Ingrese hora: ");
-    scanf("%d");
+    scanf("%d", &hora);
 
     switch (hora)
     {
@@ -25,7 +25,7 @@ int main()
         case 9:
         case 10:
         case 11:
-            printf("Es de maniana");
+            printf("\nEs de maniana");
             break;
 
         case 12:
@@ -36,7 +36,29 @@ int main()
         case 17:
         case 18:
         case 19:
-            printf("Es de tarde");
+            printf("\nEs de tarde");
+            break;
 
+        case 20:
+        case 21:
+        case 22:
+        case 23:
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            printf("\nEs de noche");
+            break;
+
+        default:
+            printf("\nNo se ha ingresado una hora valida");
+            break;
+    }
+
+    if (hora > 19 && hora<=23)
+    {
+        printf("\nA dormir");
     }
 }
