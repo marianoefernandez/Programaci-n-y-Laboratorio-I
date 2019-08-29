@@ -62,7 +62,8 @@ int main()
             {
                 printf("\nERROR, por favor solo ingrese una edad de 1 a 105 anios");
             }
-        }while (1>edad||edad>105);
+        }
+        while (1>edad||edad>105);
 
         do
         {
@@ -72,7 +73,8 @@ int main()
             {
                 printf("\nERROR, por favor solo ingrese una altura entre 1.00 y 2.00 cm");
             }
-        }while (1>altura||altura>2);
+        }
+        while (1>altura||altura>2);
 
         do
         {
@@ -85,7 +87,8 @@ int main()
             {
                 printf("\nERROR, por favor solo ingrese f o m");
             }
-        }while (sexo != 'f' && sexo != 'm');
+        }
+        while (sexo != 'f' && sexo != 'm');
 
         do
         {
@@ -97,7 +100,8 @@ int main()
                 printf("\nERROR, por favor solo ingrese s o n");
             }
 
-        }while (seguir != 's' && seguir != 'n');
+        }
+        while (seguir != 's' && seguir != 'n');
 
 
         //a) Altura de la mujer más vieja
@@ -118,7 +122,8 @@ int main()
         {
             alturaJoven = altura;
             menorEdad = edad;
-        }else if (menorEdad>edad)
+        }
+        else if (menorEdad>edad)
         {
             alturaJoven = altura;
             menorEdad = edad;
@@ -130,7 +135,8 @@ int main()
         {
             personaAlta = altura;
             sexoPersonaAlta = sexo;
-        }else if (personaAlta<altura)
+        }
+        else if (personaAlta<altura)
         {
             personaAlta = altura;
             sexoPersonaAlta = sexo;
@@ -175,34 +181,37 @@ int main()
     }
     else
     {
-        printf("\n\nLa altura de la mujer mas vieja es de: %.2f cm",alturaMVieja);
+        printf("\n\na)La altura de la mujer mas vieja es de: %.2f cm",alturaMVieja);
     }
 
     //b) Altura de la persona más joven
-    printf("\n\nLa altura de la persona mas joven es de: %.2f cm",alturaJoven);
+    printf("\n\nb)La altura de la persona mas joven es de: %.2f cm",alturaJoven);
 
     //c) Sexo de la persona más alta
     if (sexoPersonaAlta == 'm')
     {
-        printf("\n\nEl sexo de la persona mas alta es el sexo: masculino");
+        printf("\n\nc)El sexo de la persona mas alta es el sexo: masculino");
     }
     else
     {
-        printf("\n\nEl sexo de la persona mas alta es el sexo: femenino");
+        printf("\n\nc)El sexo de la persona mas alta es el sexo: femenino");
     }
 
     //d) Edad del hombre más bajo
     if (flagHombreBajo==0)
     {
-       printf("\n\nNo se ingreso ningun masculino por ende no existen datos de la edad del hombre mas bajo");
+        printf("\n\nd)No se ingreso ningun masculino por ende no existen datos de la edad del hombre mas bajo");
     }
-    printf("\n\nLa edad del hombre mas bajo es de: %d anios", edadHombreBajo);
+    else
+    {
+        printf("\n\nd)La edad del hombre mas bajo es de: %d anios", edadHombreBajo);
+    }
 
     //e) Promedio de edades
-    printf("\n\nEl promedio de edades total es de: %.2f anios", promedioEdades);
+    printf("\n\ne)El promedio de edades total es de: %.2f anios", promedioEdades);
 
     //f) Promedio de altura de los hombres
-    printf("\n\nEl promedio de la altura de los hombres total es de: %.2f cm", promedioAlturaH);
+    printf("\n\nf)El promedio de la altura de los hombres total es de: %.2f cm", promedioAlturaH);
 
     return 0;
 }
