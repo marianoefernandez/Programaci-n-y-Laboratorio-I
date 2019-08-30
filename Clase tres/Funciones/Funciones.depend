@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1567085877 source:d:\fernandez\funcionesenc\funciones\main.c
+	<stdio.h>
+	<stdlib.h>
+
