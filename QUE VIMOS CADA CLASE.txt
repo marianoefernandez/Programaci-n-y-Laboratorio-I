@@ -4,3 +4,9 @@ Intro a la materia, como realizar ejercicios del curso de ingreso en C.
 Clase dos:
 Aprendimos diferencias entre javascript y C, linkeador, formas más sencillas de programar ejercicios del curso de ingreso
 secuesncias de escape, includes, secuencias de escape
+
+Clase tres:
+Realizamos muchas funciones de varias cosas
+
+Clase cuatro:
+Vimos que es una funcion y sus partes, recursividad y consejos.
