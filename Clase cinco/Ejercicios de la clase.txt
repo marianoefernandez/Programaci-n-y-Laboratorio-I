@@ -1,3 +1,5 @@
+Clase cinco:
+
 1)Solicitar al usuario 5 números, permitir listarlos por pantalla indicando el máximo, el mínimo y el promedio.
  Permitir Modificar el valor de cualquiera de los números cargados indicando el índice del mismo y su nuevo valor.
 

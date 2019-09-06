@@ -10,3 +10,6 @@ Realizamos muchas funciones de varias cosas
 
 Clase cuatro:
 Vimos que es una funcion y sus partes, recursividad y consejos.
+
+Clase cinco:
+Vimos Burbujeo, hicimos funciones en el array, max, min, mostrar, promedio, etc.
