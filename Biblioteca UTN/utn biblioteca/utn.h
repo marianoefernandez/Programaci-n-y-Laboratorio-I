@@ -1,4 +1,4 @@
-int getInt (int x,char mensaje[]);
+int getInt (char[]);
 
 /** \brief Función que pide dato al usuario y retorna lo que el usuario puso (int)
  *
@@ -8,7 +8,7 @@ int getInt (int x,char mensaje[]);
  *
  */
 
-char getChar (char x,char mensaje[]);
+char getChar (char[]);
 
 /** \brief Función que pide dato al usuario y retorna lo que el usuario puso (char)
  *
@@ -18,7 +18,7 @@ char getChar (char x,char mensaje[]);
  *
  */
 
-float getFloat (float x,char mensaje[]);
+float getFloat (char[]);
 /** \brief Función que pide dato al usuario y retorna lo que el usuario puso (float)
  *
  * \param 1 es el flotante que guarda el valor que el usuario pondra y sera el que retorne
