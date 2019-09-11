@@ -23,31 +23,13 @@ char getChar (char mensaje[])
     return x;
 }
 
-char continuar (char mensaje[])
-{
-    int x;
-    printf("¿Desea continuar? s/n %s: ",mensaje);
-    getchar(x);
-    //validarchar
-    return x;
-}
 
-char getLetras (char mensaje[])
-{
-    int x;
-    printf("%s",mensaje);
-    gets (x);
-    //VALIDAMOS
-    return x;
-}
 
-//CALCULOS
 
-//ORDENAMIENTO
 
 void burbujeo(int miArray[],int cantidad)
 {
-    //DESARROLLO
+    int i;
 }
 
 void burbujeoEficiente(int miArray[],int cantidad)
