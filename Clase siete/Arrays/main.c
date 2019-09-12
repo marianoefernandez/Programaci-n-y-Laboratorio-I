@@ -13,8 +13,8 @@ int maxArray (int [],int);
 int minArray (int [],int);
 int indiceMax (int [],int);
 int indiceMin (int [],int);
-void nombreMax (char [][],int iMax,char[])
-void nombreMax (char [][],int iMax,char[])
+void nombreMax (char [][],int iMax,char[]);
+void nombreMax (char [][],int iMax,char[]);
 
 //CARGAR SOLO LETRAS
 
@@ -45,7 +45,9 @@ int main()
 
     cargarConDatosEnteros(notas,TAMALUMNOS);
     cargarNombres(nombres,TAMALUMNOS);
-    iMax=indiceMax(notas[i],TAMALUMNOS);
+    iMax=indiceMax(notas,TAMALUMNOS);
+    nombreMax(nombres,iMax,"La nota mas alta es de: ")
+
 
     /*max=notas[0];
 
