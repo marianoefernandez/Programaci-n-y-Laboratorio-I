@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1568293442 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\clase siete\arrays\main.c
+1568295092 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\clase siete\arrays\main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 
