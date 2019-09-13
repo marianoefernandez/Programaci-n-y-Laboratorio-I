@@ -7,6 +7,10 @@ typedef struct
     int nota;
 }eAlumno;
 
-void mostrarAlumno (eAlumno miAlumno);
+void mostrarAlumno (eAlumno);
 eAlumno pedirAlumno();
-int compararAlumnoPorLegajo(eAlumno unAlumno, eAlumno otroAlumno);
+int compararAlumnoPorLegajo(eAlumno , eAlumno );
+void cargarAlumnos(eAlumno[],int);
+void mostrarListadoAlumnos (eAlumno[],int);
+void ordenarAlumnosPorNombres(eAlumno[],int);
+void hardcodearAlumnos(eAlumno[],int);
