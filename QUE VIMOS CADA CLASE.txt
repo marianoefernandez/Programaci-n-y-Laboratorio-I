@@ -19,3 +19,6 @@ Repaso de los arrays, y vimos cadenas de caracteres con las funciones para dicha
 
 Clase siete:
 Matrices, hardcodeo, etc
+
+Clase ocho:
+Estructuras
