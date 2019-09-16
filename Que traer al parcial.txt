@@ -1,0 +1,4 @@
+El parcial de la cursada anterior terminando y funcionando con bajas y altas, banderas, estructuras, 
+bibliotecas y todo en orden.
+Bibliotecas de hardcodeo, promedio, max, min, validar chars, num, numericos, getString, 
+otros get, funciones que muestran datos, funcion que saque random, etc.

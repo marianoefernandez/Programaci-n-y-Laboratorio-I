@@ -1,3 +1,6 @@
+//#include
+//#define
+
 int getInt (char[]);
 
 /** \brief Función que pide dato al usuario y retorna lo que el usuario puso (int)
@@ -26,4 +29,6 @@ float getFloat (char[]);
  * \return retorna el numero que el usuario ingreso
  *
  */
+
+
 
