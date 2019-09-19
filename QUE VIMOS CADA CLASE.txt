@@ -22,3 +22,7 @@ Matrices, hardcodeo, etc
 
 Clase ocho:
 Estructuras
+
+Clase nueve:
+Vectores de estructuras, si j es mayor a i se ordena de menor a mayor 
+Si j es menor a i se ordena de mayor a menor
