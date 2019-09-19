@@ -347,7 +347,7 @@ void mostrarListadoAlumnos (eAlumno [],int);
 
 void ordenarAlumnosPorNombres(eAlumno [],int);
 /** \brief
- *
+ *las
  * \param
  * \param
  * \return
