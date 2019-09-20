@@ -1,0 +1,19 @@
+HACER TODO CON FUNCIONES
+
+1) Escribir un programa que realice las siguientes acciones:
+
+Solicite al usuario 10 números
+Calcule cuántos son negativos y cuantos son positivos
+Muestre por pantalla la cantidad de negativos y la cantidad de positivos
+
+2) Realizar un programa que solicite cinco números e imprima por pantalla el promedio, el máximo y el mínimo.
+
+3) Crear una función que permita ingresar un numero al usuario y lo retorne. 
+Crear una función que reciba el radio de un círculo y retorne su área. 
+Utilizar las funciones de los puntos 1 y 2 para hacer un programa que calcule el área
+ de un círculo cuyo radio es ingresado por el usuario. Documentar las funciones al estilo Doxygen.
+
+ 
+
+
+

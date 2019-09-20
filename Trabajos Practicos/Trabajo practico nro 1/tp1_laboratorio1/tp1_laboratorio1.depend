@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1554327107 source:c:\users\marification75\desktop\materiales-master\tp1_laboratorio1 planteo\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1567167216 source:c:\users\alumno\desktop\tp_laboratorio_1\tp1_laboratorio1\funciones.c
+
+1567167941 source:c:\users\alumno\desktop\tp_laboratorio_1\tp1_laboratorio1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1567167216 c:\users\alumno\desktop\tp_laboratorio_1\tp1_laboratorio1\funciones.h
+
+1567223653 source:c:\users\mezeq\onedrive\escritorio\tp_laboratorio_1\tp1_laboratorio1\funciones.c
+	"funciones.h"
+
+1567223349 c:\users\mezeq\onedrive\escritorio\tp_laboratorio_1\tp1_laboratorio1\funciones.h
+
+1567223142 source:c:\users\mezeq\onedrive\escritorio\tp_laboratorio_1\tp1_laboratorio1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
