@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "alumno.h"
-#define TAM 2
+#define TAM 3
 
 int main()
 {
@@ -9,6 +9,7 @@ int main()
     int i;
     int opcion;
     int index;
+    int retorno;
 
     if(inicializarAlumnos(listaAlumnos,TAM)==0)
     {
@@ -18,7 +19,7 @@ int main()
             printf("2-Mostrar alumnos\n");
             printf("3-Ordenar alumnos por nombres\n");
             printf("4-Buscar por legajo\n");
-            printf("5-Dar de baja a alumno\n")
+            printf("5-Dar de baja a alumno\n");
             printf("6-Salir\n");
             printf("Su opcion: ");
             scanf("%d",&opcion);
@@ -26,7 +27,7 @@ int main()
             switch(opcion)
             {
             case 1:
-                if (cargarAlumnos(listaAlumnos,TAM)== 1)
+                /*if (cargarAlumnos(listaAlumnos,TAM)== 1)
                 {
                     printf("\nSe cargo el alumno\n");
                 }
@@ -34,6 +35,8 @@ int main()
                 {
                     printf("\nNO HAY ESPACIO\n");
                 }
+                */
+                hardcodearAlumnos(listaAlumnos,TAM);
                 break;
 
             case 2:
@@ -49,6 +52,20 @@ int main()
                 break;
 
             case 5:
+                retorno = bajaAlumno(listaAlumnos,TAM);
+                switch(retorno)
+                {
+                case 0:
+                    printf("\nSe elimino\n");
+                    break;
+                case 1:
+                    printf("\nAccion cancelada por el usuario\n");
+                    break;
+                case -1:
+                    printf("\nNo se encontro el dato\n");
+                    break;
+                }
+                break;
             }
             system("pause");
             system("cls");

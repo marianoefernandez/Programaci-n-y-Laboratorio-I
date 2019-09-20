@@ -20,7 +20,7 @@ int inicializarAlumnos(eAlumno* lista,int cantidad)
 
 void mostrarAlumno (eAlumno miAlumno)
 {
-    printf("\n%d--%s--%d",miAlumno.legajo,miAlumno.nombre,miAlumno.nota);
+    printf("\n%d--%s--%d\n",miAlumno.legajo,miAlumno.nombre,miAlumno.nota);
 }
 
 eAlumno pedirAlumno()
@@ -62,6 +62,43 @@ int buscarAlumnoPorLegajo(eAlumno* lista,int cantidad,int legajo)
             }
         }
     }
+    return retorno;
+}
+
+int bajaAlumno(eAlumno* lista,int cantidad)
+{
+    //Hacer baja Lógica
+    int retorno =-1;
+    int legajo;
+    int index;
+    char respuesta;
+    if (lista!=NULL && cantidad>0)
+    {
+        mostrarListadoAlumnos(lista,cantidad);
+
+        legajo=pedirLegajo();
+
+        index = buscarAlumnoPorLegajo(lista,cantidad,legajo);
+        if(index!=-1) //CAMBIAMOS EL ESTADO DEL ALUMNO A LIBRE
+        {
+            mostrarAlumno(lista[index]);
+            printf("Esta seguro de eliminar el dato s/n: ");
+            respuesta = getche ();
+            if (respuesta=='s')
+            {
+                lista[index].estado = LIBRE;
+                retorno=0;//ACEPTO ACCION
+            }
+            else
+            {
+                retorno =1;//CANCELO ACCION
+            }
+
+        }
+
+
+    }
+
     return retorno;
 }
 
@@ -129,7 +166,7 @@ void ordenarAlumnosPorNombres(eAlumno* lista ,int cantidad)
     {
         for(j=i+1;j<cantidad;j++)
         {
-            if (strcmp (lista[i].nombre,lista[j].nombre)<0) //Comparo cadenas ordenar por nombre
+            if (strcmp (lista[i].nombre,lista[j].nombre)>0) //Comparo cadenas ordenar por nombre > (MENOR A MAYOR) < (MAYOR A MENOR)
             {
                 auxAlumno = lista[i];
                 lista[i] = lista[j];

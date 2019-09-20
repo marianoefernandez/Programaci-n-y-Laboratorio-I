@@ -18,6 +18,8 @@ int buscarAlumnoPorLegajo(eAlumno*,int,int);
 
 int buscarLibre(eAlumno*,int);
 
+int bajaAlumno(eAlumno*,int);
+
 int inicializarAlumnos(eAlumno*,int);
 
 void mostrarAlumno (eAlumno);
