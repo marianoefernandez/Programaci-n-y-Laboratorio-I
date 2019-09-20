@@ -12,6 +12,8 @@ typedef struct
     int estado;
 }eAlumno;
 
+int autoincrementar (int*);
+
 int pedirLegajo();
 
 int buscarAlumnoPorLegajo(eAlumno*,int,int);

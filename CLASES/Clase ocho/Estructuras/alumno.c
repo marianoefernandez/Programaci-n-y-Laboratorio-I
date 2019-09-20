@@ -1,5 +1,10 @@
 #include "alumno.h"
 
+int autoincrementar (int* n)
+{
+    *n=*n+1;
+    return 1;
+}
 
 int inicializarAlumnos(eAlumno* lista,int cantidad)
 {
