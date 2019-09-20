@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1568980033 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\clase ocho\estructuras\main.c
+1568988572 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\clases\clase ocho\estructuras\alumno.c
+	"alumno.h"
+
+1568986343 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\clases\clase ocho\estructuras\alumno.h
+	<stdio.h>
+	<string.h>
+
+1568989004 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\clases\clase ocho\estructuras\main.c
 	<stdio.h>
 	<stdlib.h>
 	"alumno.h"
-
-1568385006 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\clase ocho\estructuras\alumno.c
-	"alumno.h"
-
-1568980033 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\clase ocho\estructuras\alumno.h
-	<stdio.h>
 

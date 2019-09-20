@@ -31,10 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="alumno.c">
+		<Unit filename="Alumno.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="alumno.h" />
+		<Unit filename="Alumno.h" />
+		<Unit filename="Untitled1.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

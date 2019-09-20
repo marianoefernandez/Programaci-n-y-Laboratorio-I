@@ -17,21 +17,22 @@ int main()
             printf("1-Cargar alumnos\n");
             printf("2-Mostrar alumnos\n");
             printf("3-Ordenar alumnos por nombres\n");
-            printf("4-Buscar por legajo");
-            printf("5-Salir");
+            printf("4-Buscar por legajo\n");
+            printf("5-Dar de baja a alumno\n")
+            printf("6-Salir\n");
             printf("Su opcion: ");
             scanf("%d",&opcion);
 
             switch(opcion)
             {
             case 1:
-                if (cargarAlumnos(listaAlumnos,TAM)== 0)
+                if (cargarAlumnos(listaAlumnos,TAM)== 1)
                 {
-                    printf("\nSe cargo el alumno");
+                    printf("\nSe cargo el alumno\n");
                 }
                 else
                 {
-                    printf("\nNO HAY ESPACIO");
+                    printf("\nNO HAY ESPACIO\n");
                 }
                 break;
 
@@ -44,13 +45,14 @@ int main()
                 break;
 
             case 4:
-                pedirLegajo();
                 index = buscarAlumnoPorLegajo(listaAlumnos,TAM,pedirLegajo());
                 break;
+
+            case 5:
             }
             system("pause");
             system("cls");
-        }while(opcion!=5);
+        }while(opcion!=6);
 
     }else
     {

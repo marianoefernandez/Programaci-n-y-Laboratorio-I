@@ -8,7 +8,7 @@ int inicializarAlumnos(eAlumno* lista,int cantidad)
 
     if(lista!=NULL && cantidad>0)
     {
-        for (i=; i<cantidad; i++)
+        for (i=0; i<cantidad; i++)
         {
             lista[i].estado = LIBRE;
         }
@@ -34,7 +34,7 @@ eAlumno pedirAlumno()
     printf("\nIngrese nota: ",&miAlumno.nota);
     scanf("%d",&miAlumno.nota);
 
-    miAlumno.estado = LIBRE
+    miAlumno.estado = LIBRE;
 
     return miAlumno;
 }
@@ -72,7 +72,7 @@ int compararAlumnoPorLegajo(eAlumno unAlumno, eAlumno otroAlumno)
     {
         comp = 1;
     }
-    return 0;
+    return comp;
 }
 
 int buscarLibre(eAlumno* lista,int cantidad)
