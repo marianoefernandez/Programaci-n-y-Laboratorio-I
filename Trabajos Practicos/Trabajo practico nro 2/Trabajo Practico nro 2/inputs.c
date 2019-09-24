@@ -3,104 +3,124 @@
 #include <string.h>
 #include "imputs.h"
 
-int getInt (char mensaje[])
+int getInt (char* mensaje)
 {
-    int auxiliarInt;
+    int aux;//PASAMOS EL DATO AL AUX
     printf("%s", mensaje);
-    scanf("%d", &auxiliarInt);
-    return auxiliarInt;
-}//end
+    scanf("%d", &aux);
+    return aux;
+}
 
-
-char getChar (char mensaje[])
+float getFloat(char* mensaje)
 {
-    char auxiliarChar;
+    float aux;
+    printf("%s", mensaje);
+    scanf("%f", &aux);
+    return aux;
+}
+
+char getChar (char* mensaje)
+{
+    char aux;//PASAMOS EL DATO AL AUX
     printf("%s", mensaje);
     fflush(stdin);
-    scanf("%s", &auxiliarChar);
-    return auxiliarChar;
-}//end
+    scanf("%s", &aux);
+    return aux;
+}
 
-
-float getFloat(char mensaje[])
+char getString (char* mensaje,int cantidad)
 {
-    float auxiliarFloat;
+    char aux[cantidad];//PASAMOS EL DATO AL AUX
     printf("%s", mensaje);
-    scanf("%f", &auxiliarFloat);
-    return auxiliarFloat;
-}//end
+    fflush(stdin);
+    gets(aux);
+    return aux;
+}
 
 
-void stringToUpper(char caracter[])
+
+void stringToUpper(char* caracter)
 {
     int i;
-    int largo;
+    int large;
     caracter[0]=toupper(caracter[0]);
     largo=strlen(caracter);
-    for(i=0; i<largo; i++)
+    for(i=0; i<large; i++)
     {
         if(caracter[i]==' ')
         {
             i=i+1;
             caracter[i]=toupper(caracter[i]);
-        }//end if
-    }//end for
+        }
+    }
     return caracter;
-}//end
+}
 
-
-int isNumeric(char str[])
+int isCellphone(char* celular)
 {
     int i=0;
-    while(str[i] != '\0')
+    int contadorDeGuion = 0;
+    while (celular[i] != '\0')
     {
-        if(str[i] < '0' || str[i] > '9')
-            return 0;
+        if ((celular[i] < '0' || celular[i] > '9') && (celular[i] != ' ') && (celular[i] != '-'))
+            return 0;//RETORNA 0 SI TODO MAL
+        if (celular[i] == '-')
+            contadorDeGuion++;
         i++;
-    }//end while
-    return 1;
-}//end
+    }
+    if (contadordeGuion==2)
+        return 1;//RETORNA 1 SI TODO BIEN
+}
 
-
-int isPhone(char str[])
+int isPhone(char* telefono)
 {
     int i=0;
-    int contadorGuiones = 0;
-    while (str[i] != '\0')
+    int contadorDeGuion = 0;
+    while (telefono[i] != '\0')
     {
-        if ((str[i] != ' ') && (str[i] != '-') && (str[i] < '0' || str[i] > '9'))
-            return 0;
-        if (str[i] == '-')
-            contadorGuiones++;
+        if ((telefono[i] < '0' || telefono[i] > '9') && (telefono[i] != ' ') && (telefono[i] != '-'))
+            return 0;//RETORNA 0 SI TODO MAL
+        if (telefono[i] == '-')
+            contadorDeGuion++;
         i++;
-    }//end while
-    if (contadorGuiones==1)
-        return 1;
-    return 0;
-}//end
+    }
+    if (contadordeGuion==1)
+        return 1;//RETORNA 1 SI TODO BIEN
+}
 
 
-int isOnlyLetters(char str[])
+int isOnlyLetters(char* cadena)
 {
     int i=0;
-    while (str[i] != '\0')
+    while (cadena[i] != '\0')
     {
-        if((str[i] != ' ') && (str[i] <  'a' || str [i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
-            return 0;
+        if((cadena[i] <  'a' || str [i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (cadena[i] != ' '))
+            return 0;//RETORNA 0 SI TODO MAL
         i++;
-    }//end while
-    return 1;
-}//end
+    }
+    return 1;//RETORNA 1 SI TODO OK
+}
 
-
-int isAlphaNumeric(char str[])
+int isNumeric(char* numero)
 {
     int i=0;
-    while (str[i] != '\0')
+    while(numero[i] != '\0')
     {
-        if((str[i] != ' ') && (str[i] <  'a' || str [i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
-            return 0;
+        if(numero[i] < '0' || numero[i] > '9')
+            return 0;//RETORNA 0 SI TODO MAL
         i++;
-    }//end while
-    return 1;
-}//end
+    }
+    return 1;//RETORNA 1 SI TODO BIEN
+}
+
+int isAlphaNumeric(char* alfanumero)
+{
+    int i=0;
+    while (alfanumero[i] != '\0')
+    {
+        if((alfanumero[i] != ' ') && (alfanumero[i] <  'a' || alfanumero [i] > 'z') && (alfanumero[i] < 'A' || alfanumero[i] > 'Z') && (alfanumero[i] < '0' || alfanumero[i] > '9'))
+            return 0;//RETORNA 0 SI TODO MAL
+        i++;
+    }
+    return 1;//RETORNA 1 SI TODO BIEN
+}

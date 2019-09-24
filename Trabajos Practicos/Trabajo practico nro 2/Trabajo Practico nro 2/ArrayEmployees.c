@@ -4,7 +4,9 @@
 
 #include "ArrayEmployees.h"
 
-//MENUES (1 de 4)
+int* n=0;//ID AUTOINCRMENTAL GLOBAL PARA QUE NUNCA SE PISE EN NINGUNA FUNCION, POR ESO ES PUNTERO
+
+//MENUES (2 de 4)
 void menuPrincipal()
 {
     printf("-----BIENVENIDO POR FAVOR INGRESE UNA OPCION-----\n");
@@ -14,7 +16,11 @@ void menuPrincipal()
     printf("\n4-Informar: ");
 }
 
-//SEGUNDO MENU (FALTA)
+void menuSecundario()
+{
+    printf("\n1-Ordenar empleados por apellido y sector: ");
+    printf("\n2-Calcular total de salarios, el salario promedio y cuantos empleados superan el salario promedio: ");
+}
 
 //SWITCH DEL PRIMER MENU (FALTA)
 
@@ -26,6 +32,8 @@ int inicializarEmpleados(eEmpleado* empleados, int cantidad)
 {
     int i;
     int retorno=-1;
+    //GENERAR ID
+
 
     if(empleados!=NULL && cantidad>0)
     {
@@ -39,25 +47,28 @@ int inicializarEmpleados(eEmpleado* empleados, int cantidad)
     return retorno;
 }
 
+
+int autoincrementar (int* n) //NO SE SI SIRVE
+{
+    *n=*n+1;
+    return &n;
+}
+
 //int generarID (HACER)
 
 
 //FUNCIONES PARA AÑADIR (2 de 4)
 
-eEmpleado pedirEmpleado() //FALTA TERMINAR
+eEmpleado pedirEmpleado() //FALTA PROBAR BIEN
 {
     eEmpleado empleados;
-    //HAY QUE USAR INPUTS
-    printf("\nIngrese nombre: ");
-    fflush(stdin);
-    gets(empleado.nombre);
-    printf("\nIngrese apellido: ");
-    fflush(stdin);
-    gets(empleado.apellido);
-    printf("\nIngrese salario: ");
-    scanf("%f",&empleado.salario);
-    printf("\nIngrese num de sector: ");
-    scanf("%d",&empleado.sector);
+
+    //LLAMAMOS A GENERAR ID EN ID
+    empleados.id = autoincrementar(*n);//NO SE SI SIRVE
+    strcpy(empleados.nombre,getString("Ingrese el nombre: ", 51))
+    strcpy(empleados.apellido,getString("Ingrese el apellido: ", 51))
+    empleados.salario = getFloat("Ingrese el salario: ");
+    empleados.sector = getInt("Ingrese el nro de sector: ")
 
     empleado.estado = LIBRE;
 

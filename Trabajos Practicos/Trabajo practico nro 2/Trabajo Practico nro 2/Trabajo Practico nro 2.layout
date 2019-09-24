@@ -7,24 +7,24 @@
 			<Cursor1 position="143" topLine="8" />
 		</Cursor>
 	</File>
-	<File name="ArrayEmployees.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="inputs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2162" topLine="92" />
+			<Cursor1 position="1519" topLine="45" />
 		</Cursor>
 	</File>
 	<File name="inputs.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="81" topLine="0" />
+			<Cursor1 position="2652" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ArrayEmployees.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1153" topLine="42" />
 		</Cursor>
 	</File>
 	<File name="ArrayEmployees.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2049" topLine="71" />
-		</Cursor>
-	</File>
-	<File name="inputs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="335" topLine="0" />
+			<Cursor1 position="944" topLine="36" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

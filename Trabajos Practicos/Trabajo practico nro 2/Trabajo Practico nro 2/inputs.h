@@ -1,70 +1,82 @@
-/** \brief Solicita un numero - devuelve el resultado
- *
- * \param mensaje - EL mensaje que será mostrado al usuario
+/** \brief Pide un numero y lo devuelve.
+ * \param  Es el mensaje que escribe el usuario y muestra la función.
  * \return Es el numero ingresado.
  */
-int getInt (char mensaje[]);
+int getInt (char*);
 
 
 
-/** \brief Solicita un numero - devuelve el resultado
+/** \brief Pide un numero y lo devuelve.
  *
- * \param mensaje - El mensaje que será mostrado al usuario
+ * \param Es el mensaje que escribe el usuario y muestra la función.
  * \return Es el numero ingresado.
  */
-float getFloat (char mensaje[]);
+float getFloat (char*);
 
 
 
-/** \brief Solicita un caracter - devuelve el resultado
+/** \brief Pide un caracter y lo devuelve.
  *
- * \param mensaje - El mensaje que será mostrado al usuario
+ * \param Es el mensaje que escribe el usuario y muestra la función.
  * \return Es el caracter ingresado.
  */
-char getChar(char mensaje[]);
+char getChar(char*);
 
 
 
-/** \brief Hace mayusculas la primer letra del dato ingresado.
+/** \brief Pide una cadena y la devuelve
  *
- * \param caracter[] char string que sera modificado.
- * \return void
- */
-void stringToUpper(char caracter[]);
-
-
-
-/** \brief Verifica si el valor ingresado es numerico.
+ * \param 1 Es el mensaje que escribe el usuario y lo muestra la función.
+ * \param 2 Es la longitud del array a ingresar
+ * \return Retorna la cadena
  *
- * \param str Array con la cadena que sera analizada.
- * \return 1 si es numero - 0 si no lo es .
  */
-int isNumeric (char str[]);
+char getString (char*,int);
 
 
 
-/** \brief Verifica si el valor ingresado contiene solamente numeros.
+/** \brief Hace mayuscula la primer letra del dato ingresado.
  *
- * \param str Array con la cadena que sera analizada.
- * \return 1 si es numero, con espacios y guion - 0 si no lo es.
+ * \param char string que sera modificado.
  */
-int isPhone (char str[]);
+void stringToUpper(char*);
 
 
-
-/** \brief Verifica si el valor ingresado contiene solamente letras.
+/** \brief Verifica si el valor ingresado es un celular.
  *
- * \param str Array con la cadena que sera analizada.
- * \return 1 si contiene solo espacios y letras - 0 si contiene numero, etc.
+ * \param Array con la cadena que sera analizada.
+ * \return 1 si es un telefono y 0 si no lo es.
  */
-int isOnlyLetters (char str[]);
+int isCellphone(char*);
 
-
-
-/** \brief Verifica si el valor ingresado contiene solo letras y numeros.
+/** \brief Verifica si el valor ingresado es un telefono.
  *
- * \param str Array con la cadena que sera analizada.
- * \return 1 si contiene solo espacio o letras y numeros - 0 si no.
+ * \param Array con la cadena que sera analizada.
+ * \return 1 si es un telefono y 0 si no lo es.
  */
-int isAlphaNumeric (char str[]);
+int isPhone (char*);
+
+
+
+/** \brief Verifica si el valor ingresado contiene solo letras.
+ *
+ * \param Array con la cadena que sera analizada.
+ * \return 1 si contiene solo espacios y letras y 0 si contiene numero, etc.
+ */
+int isOnlyLetters (char*);
+
+/** \brief Verifica si el valor ingresado es numerico o no.
+ *
+ * \param Array con la cadena que sera analizada.
+ * \return 1 si es num y 0 si no lo es .
+ */
+int isNumeric (char*);
+
+
+/** \brief Verifica si el valor ingresado contiene sólo letras y numeros.
+ *
+ * \param Array con la cadena que sera analizada.
+ * \return 1 si contiene solo espacio o letras y numeros y 0 si no.
+ */
+int isAlphaNumeric (char*);
 

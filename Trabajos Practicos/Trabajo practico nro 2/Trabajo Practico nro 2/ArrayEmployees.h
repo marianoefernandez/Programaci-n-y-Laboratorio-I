@@ -43,6 +43,14 @@ int inicializarEmpleados (eEmpleado*, int);
 
 //int generarID (HACER)
 
+int autoincrementar (int*);
+/** \brief Funcion que va sumando de a uno el id
+ *
+ * \param se le pasa el puntero con el dato anterior
+ * \return retorna el nuevo id
+ *
+ */
+
 //FUNCIONES PARA AÑADIR (2 de 4)
 
  eEmpleado pedirEmpleado(); //FALTA TERMINAR
