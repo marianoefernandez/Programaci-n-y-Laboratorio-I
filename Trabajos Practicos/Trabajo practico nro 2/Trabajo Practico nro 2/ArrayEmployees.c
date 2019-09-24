@@ -62,20 +62,47 @@ int autoincrementar (int* n) //NO SE SI SIRVE
 eEmpleado pedirEmpleado() //FALTA PROBAR BIEN
 {
     eEmpleado empleados;
+    int sector;
+    int salario;
+    char auxsector [30];
+    char auxsalario [30];
 
     //LLAMAMOS A GENERAR ID EN ID
+
     empleados.id = autoincrementar(*n);//NO SE SI SIRVE
-    strcpy(empleados.nombre,getString("Ingrese el nombre: ", 51))
-    strcpy(empleados.apellido,getString("Ingrese el apellido: ", 51))
-    empleados.salario = getFloat("Ingrese el salario: ");
-    empleados.sector = getInt("Ingrese el nro de sector: ")
+
+    strcpy(empleados.nombre,getString("Ingrese el nombre: ", 51));//NOMBRE
+    while(isOnlyLetters(empleados.nombre) == 0)
+    {
+        strcpy(empleados.nombre,getString("POR FAVOR SOLO INGRESE LETRAS\n\n Ingrese el nombre nuevamente: ", 51));//VALIDACION
+    }
+    stringToUpper(empleados.nombre);
+
+    strcpy(empleados.apellido,getString("Ingrese el apellido: ", 51));//APELLIDO
+    while(isOnlyLetters(empleados.apellido) == 0)
+    {
+        strcpy(empleados.apellido,getString("POR FAVOR SOLO INGRESE LETRAS\n\n Ingrese el apellido nuevamente: ", 51));//VALIDACION
+    }
+    stringToUpper(empleados.apellido);
+
+    strcpy(auxsalario,getString("Ingrese el salario: ", 30));//SALARIO
+    while(isNumeric(auxsalario) == 0)
+    {
+        strcpy(auxsalario,getString("POR FAVOR SOLO INGRESE NUMEROS\n\n Ingrese el salario nuevamente: ", 30));//VALIDACION
+    }
+    empleados.salario=atoi(auxsalario);
+
+    strcpy(auxsector,getString("Ingrese el sector: ", 30));//SECTOR
+    while(isNumeric(auxsector) == 0)
+    {
+        strcpy(auxsector,getString("POR FAVOR SOLO INGRESE NUMEROS\n\n Ingrese el sector nuevamente: ", 30));//VALIDACION
+    }
+    empleados.sector=atoi(auxsector);
 
     empleado.estado = LIBRE;
 
     return empleado;
 }
-
-//int validarEmpleado (HACER)
 
 int buscarLibre(eEmpleado* empleado,int cantidad) //TERMINADA
 {

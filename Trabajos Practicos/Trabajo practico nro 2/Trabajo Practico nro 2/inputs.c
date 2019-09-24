@@ -31,7 +31,7 @@ char getChar (char* mensaje)
 char getString (char* mensaje,int cantidad)
 {
     char aux[cantidad];//PASAMOS EL DATO AL AUX
-    printf("%s", mensaje);
+    printf("\n%s", mensaje);
     fflush(stdin);
     gets(aux);
     return aux;
