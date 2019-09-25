@@ -6,7 +6,7 @@
 
 int* n=0;//ID AUTOINCRMENTAL GLOBAL PARA QUE NUNCA SE PISE EN NINGUNA FUNCION, POR ESO ES PUNTERO
 
-//MENUES (2 de 4)
+//0-MENUES (2 de 6)
 void menuPrincipal()
 {
     printf("-----BIENVENIDO POR FAVOR INGRESE UNA OPCION-----\n");
@@ -22,12 +22,15 @@ void menuSecundario()
     printf("\n2-Calcular total de salarios, el salario promedio y cuantos empleados superan el salario promedio: ");
 }
 
+//MENU DE MODIFICACION (FALTA)
+
 //SWITCH DEL PRIMER MENU (FALTA)
 
 //SWITCH DEL SEGUNDO MENU (FALTA)
 
+//SWITCH DEL MENU DE MODIFICACION (FALTA)
 
-//FUNCIONES PARA INICIALIZAR (1 de 2)
+//1-FUNCIONES PARA INICIALIZAR (1 de 2)
 int inicializarEmpleados(eEmpleado* empleados, int cantidad)
 {
     int i;
@@ -57,7 +60,7 @@ int autoincrementar (int* n) //NO SE SI SIRVE
 //int generarID (HACER)
 
 
-//FUNCIONES PARA AÑADIR (2 de 4)
+2-//FUNCIONES PARA AÑADIR (2 de 3)
 
 eEmpleado pedirEmpleado() //FALTA PROBAR BIEN
 {
@@ -132,17 +135,115 @@ int agregarEmpleados (eEmpleado* empleados,int cantidad) //TERMINADA
     }
 }
 
-//3-BUSCAR EMPLEADO POR ID
+//3-BUSCAR EMPLEADO POR ID (2 de 2)
+int buscarEmpleadoPorId(eEmpleado* empleados, int cantidad, int id)
+{
+    int i;
+    int retorno = -1;
+    if(empleados!=NULL && cantidad>0)
+    {
+        for(i=0; i<cantidad; i++)
+        {
+            if(empleados[i].id==id)
+            {
+                retorno = i;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
 
-//4-BAJA LÓGICA
+int pedirId()
+{
+    int id;
+    printf("Ingrese el id: ");
+    scanf("%d", &id);
+    return id;
+}
 
-//5-FUNCIONES DE ORDENAMIENTO
+//4-MODIFICACION (0/1) NO ENTIENDO TANTO EL CODIGO, Y NO QUIERO COPIAR CÓDIGO
 
-//6-FUNCIONES PARA MOSTRAR
+//5-BAJA LÓGICA (0.5/1) NO SE SI ESTA BIEN
 
-//7-FUNCIONES DE HARDCODEO (1 de 1) LISTO
+int bajaEmpleado(eEmpleado* empleados,int cantidad)
+{
+    //Hacer baja Lógica
+    int retorno =-1;
+    int id;
+    int index;
+    char respuesta;
+    if (lista!=NULL && cantidad>0)
+    {
+        //mostrarlistadoEmpleados (LOS MOSTRAMOS PARA QUE EL USER SEPA QUE VA A BORRAR)
 
-void hardcodeoEmpleados(Employee* empleado, int cantidad) //TERMINADA
+        id=pedirId();
+
+        index = buscarEmpleadoPorId(empleados,cantidad,id);
+        if(index!=-1) //CAMBIAMOS EL ESTADO DEL ALUMNO A LIBRE
+        {
+            //mostrarEmpleado(lista[index]);
+            printf("Esta seguro de eliminar el dato s/n: ");
+            respuesta = getche ();
+            if (respuesta=='s')
+            {
+                lista[index].estado = LIBRE;
+                retorno=0;//ACEPTO ACCION
+            }
+            else
+            {
+                retorno =1;//CANCELO ACCION
+            }
+        }
+    }
+    return retorno;//SI RETORNA -1 NO FUNCIONO
+}
+
+//6-FUNCIONES DE ORDENAMIENTO (1 de 1) LISTO
+
+int ordenarEmpleados(eEmpleado* empleados, int cantidad, int orden,char* queOrdenar)
+{
+    Employee auxEmpleados;
+    int i;
+    int j;
+    int retorno =-1;
+
+    for(i=0; i<cantidad-1; i++)
+    {
+        for(j=i+1; j<len; j++)
+        {
+            if(strcmp(empleados[i].queOrdenar,empleados[j].queOrdenar) > orden)//1 ASC y 0-DESC
+            {
+                auxEmpleados=empleados[i];
+                empleados[i]=empleados[j];
+                empleados[j]=auxEmpleados;
+            }
+        }
+    }
+    return retorno;
+}
+
+//7-FUNCIONES PARA MOSTRAR (2 de 2) LISTO
+void mostrarEmpleados(eEmpleado empleados)
+{
+    printf("%d -- %10s %15s %20f %10d\n\n", empleados.id, empleados.nombre, empleados.apellido, empleados.salario, empleados.sector);
+}
+
+void mostrarListadoDeEmpleados(eEmpleado* empleados, int cantidad)
+{
+    int i;
+    for(i=0; i<cantidad; i++)
+    {
+        if(empleados[i].estado==OCUPADO)
+        {
+            mostrarEmpleado(empleados[i]);
+        }
+    }
+}
+
+//8-FUNCIONES DE HARDCODEO (1 de 1) LISTO
+
+void hardcodeoEmpleados(eEmpleado* empleados, int cantidad) //TERMINADA
 {
     int id[5] = {1,2,3,4,5};
     char nombre[5][51] = {"Jorge","Mauro","Diego","Daniela","Juliana"};
@@ -151,7 +252,7 @@ void hardcodeoEmpleados(Employee* empleado, int cantidad) //TERMINADA
     int sector[5] = {8,33,11,11,8};
 
     int i;
-    for (i=0; i<5; i++)
+    for (i=0; i<cantidad; i++)
     {
         empleado[i].id = id[i];
         strcpy(empleado[i].nombre, nombre[i]);

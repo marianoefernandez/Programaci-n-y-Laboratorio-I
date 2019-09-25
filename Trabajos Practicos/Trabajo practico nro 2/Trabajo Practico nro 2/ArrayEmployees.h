@@ -2,6 +2,7 @@
 #include <string.h>
 #define OCUPADO 1
 #define LIBRE 0
+#define HARDCODEO 5
 #include "imputs.h"
 
 typedef struct
