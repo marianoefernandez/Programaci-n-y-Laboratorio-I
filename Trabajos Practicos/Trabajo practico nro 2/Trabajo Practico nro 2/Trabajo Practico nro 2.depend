@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1569434023 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+
+1569433959 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\arrayemployees.h
+	<stdio.h>
+	<string.h>
+	"inputs.h"
+
+1569299954 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\inputs.h
+
+1569434111 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1569434749 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+

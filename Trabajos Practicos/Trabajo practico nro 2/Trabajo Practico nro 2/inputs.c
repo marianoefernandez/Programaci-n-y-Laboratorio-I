@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "imputs.h"
+#include "inputs.h"
 
 int getInt (char* mensaje)
 {
@@ -44,7 +44,7 @@ void stringToUpper(char* caracter)
     int i;
     int large;
     caracter[0]=toupper(caracter[0]);
-    largo=strlen(caracter);
+    large=strlen(caracter);
     for(i=0; i<large; i++)
     {
         if(caracter[i]==' ')
@@ -68,7 +68,7 @@ int isCellphone(char* celular)
             contadorDeGuion++;
         i++;
     }
-    if (contadordeGuion==2)
+    if (contadorDeGuion==2)
         return 1;//RETORNA 1 SI TODO BIEN
 }
 
@@ -84,7 +84,7 @@ int isPhone(char* telefono)
             contadorDeGuion++;
         i++;
     }
-    if (contadordeGuion==1)
+    if (contadorDeGuion==1)
         return 1;//RETORNA 1 SI TODO BIEN
 }
 
@@ -94,7 +94,7 @@ int isOnlyLetters(char* cadena)
     int i=0;
     while (cadena[i] != '\0')
     {
-        if((cadena[i] <  'a' || str [i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (cadena[i] != ' '))
+        if((cadena[i] <  'a' || cadena [i] > 'z') && (cadena[i] < 'A' || cadena[i] > 'Z') && (cadena[i] != ' '))
             return 0;//RETORNA 0 SI TODO MAL
         i++;
     }

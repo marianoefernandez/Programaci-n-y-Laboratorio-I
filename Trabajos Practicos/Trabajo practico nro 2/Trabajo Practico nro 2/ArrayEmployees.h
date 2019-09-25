@@ -3,7 +3,7 @@
 #define OCUPADO 1
 #define LIBRE 0
 #define HARDCODEO 5
-#include "imputs.h"
+#include "inputs.h"
 
 typedef struct
 {
@@ -91,7 +91,7 @@ int autoincrementar (int*);
 
 //7-FUNCIONES DE HARDCODEO (1 de 1) LISTO
 
-  void hardcodeoEmpleados(Employee*, int); //TERMINADA
+  void hardcodeoEmpleados(eEmpleado*, int); //TERMINADA
  /** \brief Función que hardcodea los datos de 5 personas y las pasa a la estructura por referencia
  *
  * \param 1 Recibe un puntero de la estructura eEmpleados

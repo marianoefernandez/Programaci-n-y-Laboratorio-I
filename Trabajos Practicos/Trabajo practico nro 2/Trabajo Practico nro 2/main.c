@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include "ArrayEmployees.h"
-#include TAM 1000
-#include LIBRE 0
-#include OCUPADO 1
+#define TAM 1000
+#define OCUPADO 1
+#define LIBRE 0
 
 
 /*Una empresa requiere un sistema para administrar su nómina de empleados.
@@ -22,7 +22,7 @@ int main()
 {
     int opcion;
     int idAutoincremental;
-    menu();
+    menuPrincipal();
     eEmpleado empleados[1000];
     return 0;
 }

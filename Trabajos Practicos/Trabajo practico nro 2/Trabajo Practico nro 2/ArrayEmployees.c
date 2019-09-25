@@ -60,7 +60,7 @@ int autoincrementar (int* n) //NO SE SI SIRVE
 //int generarID (HACER)
 
 
-2-//FUNCIONES PARA AÑADIR (2 de 3)
+//2-FUNCIONES PARA AÑADIR (2 de 3)
 
 eEmpleado pedirEmpleado() //FALTA PROBAR BIEN
 {
@@ -102,9 +102,9 @@ eEmpleado pedirEmpleado() //FALTA PROBAR BIEN
     }
     empleados.sector=atoi(auxsector);
 
-    empleado.estado = LIBRE;
+    empleados.estado = LIBRE;
 
-    return empleado;
+    return empleados;
 }
 
 int buscarLibre(eEmpleado* empleado,int cantidad) //TERMINADA
@@ -173,7 +173,7 @@ int bajaEmpleado(eEmpleado* empleados,int cantidad)
     int id;
     int index;
     char respuesta;
-    if (lista!=NULL && cantidad>0)
+    if (empleados!=NULL && cantidad>0)
     {
         mostrarListadoDeEmpleados(empleados);
 
@@ -187,7 +187,7 @@ int bajaEmpleado(eEmpleado* empleados,int cantidad)
             respuesta = getche ();
             if (respuesta=='s')
             {
-                lista[index].estado = LIBRE;
+                empleados[index].estado = LIBRE;
                 retorno=0;//ACEPTO ACCION
             }
             else
@@ -199,20 +199,42 @@ int bajaEmpleado(eEmpleado* empleados,int cantidad)
     return retorno;//SI RETORNA -1 NO FUNCIONO
 }
 
-//6-FUNCIONES DE ORDENAMIENTO (1 de 1) LISTO
+//6-FUNCIONES DE ORDENAMIENTO (2 de 2) LISTO
 
-int ordenarEmpleados(eEmpleado* empleados, int cantidad, int orden,char* queOrdenar)
+int ordenarEmpleadosApellido(eEmpleado* empleados, int cantidad, int orden)
 {
-    Employee auxEmpleados;
+    eEmpleado auxEmpleados;
     int i;
     int j;
     int retorno =-1;
 
     for(i=0; i<cantidad-1; i++)
     {
-        for(j=i+1; j<len; j++)
+        for(j=i+1; j<cantidad; j++)
         {
-            if(strcmp(empleados[i].queOrdenar,empleados[j].queOrdenar) > orden)//1 ASC y 0-DESC
+            if(strcmp(empleados[i].apellido,empleados[j].apellido) > orden)//1 ASC y 0-DESC
+            {
+                auxEmpleados=empleados[i];
+                empleados[i]=empleados[j];
+                empleados[j]=auxEmpleados;
+            }
+        }
+    }
+    return retorno;
+}
+
+int ordenarEmpleadosSector(eEmpleado* empleados, int cantidad)
+{
+    eEmpleado auxEmpleados;
+    int i;
+    int j;
+    int retorno =-1;
+
+    for(i=0; i<cantidad-1; i++)
+    {
+        for(j=i+1; j<cantidad; j++)
+        {
+            if(empleados[i].sector>empleados[j].sector)
             {
                 auxEmpleados=empleados[i];
                 empleados[i]=empleados[j];
@@ -254,11 +276,11 @@ void hardcodeoEmpleados(eEmpleado* empleados, int cantidad) //TERMINADA
     int i;
     for (i=0; i<cantidad; i++)
     {
-        empleado[i].id = id[i];
-        strcpy(empleado[i].nombre, nombre[i]);
-        strcpy(empleado[i].apellido, apellido[i]);
-        empleado[i].salary = salario[i];
-        empleado[i].sector = sector[i];
-        empleado[i].estado = OCUPADO;
+        empleados[i].id = id[i];
+        strcpy(empleados[i].nombre, nombre[i]);
+        strcpy(empleados[i].apellido, apellido[i]);
+        empleados[i].salario = salario[i];
+        empleados[i].sector = sector[i];
+        empleados[i].estado = OCUPADO;
     }
 }
