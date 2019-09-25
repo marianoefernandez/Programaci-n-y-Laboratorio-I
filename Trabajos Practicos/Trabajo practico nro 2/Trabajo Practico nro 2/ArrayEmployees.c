@@ -175,14 +175,14 @@ int bajaEmpleado(eEmpleado* empleados,int cantidad)
     char respuesta;
     if (lista!=NULL && cantidad>0)
     {
-        //mostrarlistadoEmpleados (LOS MOSTRAMOS PARA QUE EL USER SEPA QUE VA A BORRAR)
+        mostrarListadoDeEmpleados(empleados);
 
         id=pedirId();
 
         index = buscarEmpleadoPorId(empleados,cantidad,id);
         if(index!=-1) //CAMBIAMOS EL ESTADO DEL ALUMNO A LIBRE
         {
-            //mostrarEmpleado(lista[index]);
+            mostrarEmpleado(empleados[index]);
             printf("Esta seguro de eliminar el dato s/n: ");
             respuesta = getche ();
             if (respuesta=='s')
@@ -224,7 +224,7 @@ int ordenarEmpleados(eEmpleado* empleados, int cantidad, int orden,char* queOrde
 }
 
 //7-FUNCIONES PARA MOSTRAR (2 de 2) LISTO
-void mostrarEmpleados(eEmpleado empleados)
+void mostrarEmpleado(eEmpleado empleados)
 {
     printf("%d -- %10s %15s %20f %10d\n\n", empleados.id, empleados.nombre, empleados.apellido, empleados.salario, empleados.sector);
 }
