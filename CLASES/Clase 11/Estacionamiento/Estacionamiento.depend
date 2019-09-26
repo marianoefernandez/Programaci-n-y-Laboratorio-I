@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1569501420 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\clases\clase 11\estacionamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+

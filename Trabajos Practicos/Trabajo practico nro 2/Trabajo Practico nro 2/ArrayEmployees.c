@@ -4,8 +4,6 @@
 
 #include "ArrayEmployees.h"
 
-int* n=0;//ID AUTOINCRMENTAL GLOBAL PARA QUE NUNCA SE PISE EN NINGUNA FUNCION, POR ESO ES PUNTERO
-
 //0-MENUES (2 de 6)
 void menuPrincipal()
 {
@@ -24,7 +22,7 @@ void menuSecundario()
 
 //MENU DE MODIFICACION (FALTA)
 
-//SWITCH DEL PRIMER MENU (FALTA)
+//SWITCH DEL PRIMER MENU (FALTA) QUE MUESTRE MENU Y LUEGO SWITCH CON DO/WHILE (FUNCION PRINCIPAL POR ESTA PASA TODO)
 
 //SWITCH DEL SEGUNDO MENU (FALTA)
 
@@ -74,31 +72,31 @@ eEmpleado pedirEmpleado() //FALTA PROBAR BIEN
 
     empleados.id = autoincrementar(*n);//NO SE SI SIRVE
 
-    strcpy(empleados.nombre,getString("Ingrese el nombre: ", 51));//NOMBRE
+    strcpy(empleados.nombre,getString("\nIngrese el nombre: ", 51));//NOMBRE
     while(isOnlyLetters(empleados.nombre) == 0)
     {
-        strcpy(empleados.nombre,getString("POR FAVOR SOLO INGRESE LETRAS\n\n Ingrese el nombre nuevamente: ", 51));//VALIDACION
+        strcpy(empleados.nombre,getString("\nPOR FAVOR SOLO INGRESE LETRAS\n\n Ingrese el nombre nuevamente: ", 51));//VALIDACION
     }
     stringToUpper(empleados.nombre);
 
-    strcpy(empleados.apellido,getString("Ingrese el apellido: ", 51));//APELLIDO
+    strcpy(empleados.apellido,getString("\nIngrese el apellido: ", 51));//APELLIDO
     while(isOnlyLetters(empleados.apellido) == 0)
     {
-        strcpy(empleados.apellido,getString("POR FAVOR SOLO INGRESE LETRAS\n\n Ingrese el apellido nuevamente: ", 51));//VALIDACION
+        strcpy(empleados.apellido,getString("\nPOR FAVOR SOLO INGRESE LETRAS\n\n Ingrese el apellido nuevamente: ", 51));//VALIDACION
     }
     stringToUpper(empleados.apellido);
 
-    strcpy(auxsalario,getString("Ingrese el salario: ", 30));//SALARIO
+    strcpy(auxsalario,getString("\nIngrese el salario: ", 30));//SALARIO
     while(isNumeric(auxsalario) == 0)
     {
-        strcpy(auxsalario,getString("POR FAVOR SOLO INGRESE NUMEROS\n\n Ingrese el salario nuevamente: ", 30));//VALIDACION
+        strcpy(auxsalario,getString("\nPOR FAVOR SOLO INGRESE NUMEROS\n\n Ingrese el salario nuevamente: ", 30));//VALIDACION
     }
     empleados.salario=atoi(auxsalario);
 
-    strcpy(auxsector,getString("Ingrese el sector: ", 30));//SECTOR
+    strcpy(auxsector,getString("\nIngrese el sector: ", 30));//SECTOR
     while(isNumeric(auxsector) == 0)
     {
-        strcpy(auxsector,getString("POR FAVOR SOLO INGRESE NUMEROS\n\n Ingrese el sector nuevamente: ", 30));//VALIDACION
+        strcpy(auxsector,getString("\nPOR FAVOR SOLO INGRESE NUMEROS\n\n Ingrese el sector nuevamente: ", 30));//VALIDACION
     }
     empleados.sector=atoi(auxsector);
 

@@ -20,9 +20,17 @@ El resto de los campos se le pedirá al usuario.
 */
 int main()
 {
-    int opcion;
-    int idAutoincremental;
-    menuPrincipal();
-    eEmpleado empleados[1000];
+    eEmpleado empleados[TAM];
+    int* n=0;//ID AUTOINCRMENTAL PARA QUE NUNCA SE PISE EN NINGUNA FUNCION, POR ESO ES PUNTERO
+
+    if(inicializarEmpleados(empleados,TAM)==0)
+    {
+        //SWITCH DEL MENU
+    }
+    else
+    {
+        printf("\nHubo un error al crear la lista, No hay espacio en memoria");
+    }
+
     return 0;
 }

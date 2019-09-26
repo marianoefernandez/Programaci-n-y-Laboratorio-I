@@ -24,3 +24,28 @@
 	<string.h>
 	"ArrayEmployees.h"
 
+1569509737 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+
+1569509737 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\arrayemployees.h
+	<stdio.h>
+	<string.h>
+	"inputs.h"
+
+1569509737 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\inputs.h
+
+1569509737 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1569509737 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+
