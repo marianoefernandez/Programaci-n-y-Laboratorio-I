@@ -23,14 +23,17 @@ typedef struct
     int id;
     char nombre[31];
     eFecha fechaNac;
+    eVehiculo vehiculo;
 }ePersona;
 
 void hardcodeoPersonas(ePersona*,int);
 void mostrarPersona(ePersona);
 void mostrarListadoDePersonas(ePersona*,int);
 void hardcodeoVehiculos(eVehiculo*,int);
-void buscarIndicePersona (ePersona*,int,int);//HACER
+int buscarIndicePersona (ePersona*,int,int);//HACER
 void mostrarListadoDeVehiculos(ePersona*,eVehiculo*,int);
+int buscarPatente(eVehiculo*,int,char*);
+void mostrarPatente(ePersona*, int);
 ePersona cargarPersonas (int);
 
 
@@ -44,7 +47,32 @@ int main()
     mostrarListadoDePersonas(persona,TAM);
     hardcodeoVehiculos(vehiculo,TAM);
     mostrarListadoDeVehiculos(persona,vehiculo,TAM);
+    mostrarPatente(persona,buscarPatente(vehiculo,TAM,getString("Ingrese una patente: ",50)));
+
     return 0;
+}
+
+int buscarPatente(eVehiculo* vehiculo,int cantidad,char* patente)
+{
+    int i;
+    int retorno = -1;
+    if(vehiculo!=NULL && cantidad>0)
+    {
+        for(i=0;i<cantidad;i++)
+        {
+            if(strcpy(vehiculo[i].patente,patente))
+            {
+                retorno = i;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
+void mostrarPatente(ePersona* persona , int indice)
+{
+    printf("La patente pertenece a: ", persona[indice].nombre);
 }
 
 ePersona cargarPersonas(int cantidad)
@@ -111,7 +139,7 @@ void mostrarPersona(ePersona persona)
     printf("%d -- %10s %15d %20d %10d\n\n", persona.id, persona.nombre, persona.fechaNac.anio, persona.fechaNac.mes, persona.fechaNac.dia);
 }
 
-void buscarIndicePersona (ePersona* persona, int cantidad, int id)//HACER
+int buscarIndicePersona (ePersona* persona, int cantidad, int id)//HACER
 {
     int i;
     for(i=0;i<cantidad;i++)
@@ -143,9 +171,9 @@ void mostrarListadoDeVehiculos(ePersona* persona , eVehiculo* vehiculo,int canti
             printf("\nDia: %d",vehiculo[i].fechaIngreso.dia);
             printf("\nMes: %d",vehiculo[i].fechaIngreso.mes);
             printf("\nAnio: %d",vehiculo[i].fechaIngreso.anio);
-            printf("\nHora de ingreso: %d",vehiculo[i].fechaIngreso.dia);
-            printf("\nHora de salida: %d",vehiculo[i].horaIngreso);
-            printf("\nPatente: %s",vehiculo[i].patente);
+            printf("\nHora de ingreso: %d",vehiculo[i].horaIngreso);
+            printf("\nHora de salida: %d",vehiculo[i].horaSalida);
+            printf("\nPatente: %s\n",vehiculo[i].patente);
         }
 }
 
