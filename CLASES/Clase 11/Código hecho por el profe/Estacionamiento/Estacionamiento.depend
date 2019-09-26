@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1569501676 source:c:\users\alumno\desktop\estacionamiento\estacionamiento\libreria.c
+	"libreria.h"
+
+1569502200 source:c:\users\alumno\desktop\estacionamiento\estacionamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"libreria.h"
+
+1569508783 c:\users\alumno\desktop\estacionamiento\estacionamiento\libreria.h
+
+1569500815 c:\users\alumno\desktop\estacionamiento\estacionamiento\libreria.c
+
