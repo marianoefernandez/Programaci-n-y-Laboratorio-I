@@ -3,12 +3,11 @@
 #include <string.h>
 #include "ArrayEmployees.h"
 #include "inputs.h"
-#define TAM 1000
-#define HARDCODEO 10
 
 
-//0-MENUES (4 de 6)
-void menuPrincipal()
+
+//0-MUESTRO MENUES (3 de 3)
+void printFirstMenu()
 {
     printf("-----BIENVENIDO POR FAVOR INGRESE UNA OPCION-----\n");
     printf("\n1-Dar de alta a un empleado: ");
@@ -17,13 +16,21 @@ void menuPrincipal()
     printf("\n4-Informar: ");
 }
 
-void menuSecundario()
+void printSecondMenu()
 {
     printf("\n\n1-Ordenar empleados por apellido y sector: ");
     printf("\n\n2-Calcular total de salarios, el salario promedio y cuantos empleados superan el salario promedio: ");
 }
 
-//MENU DE MODIFICACION (FALTA)
+//MENU DE MODIFICACION
+void printModificationMenu()
+{
+    printf("¿Qué desea modificar?\n");
+    printf("1.Nombre\n");
+    printf("2.Apellido\n");
+    printf("3.Salario\n");
+    printf("4.Sector\n");
+}
 
 //SWITCH DEL PRIMER MENU (FALTA) QUE MUESTRE MENU Y LUEGO SWITCH CON DO/WHILE (FUNCION PRINCIPAL POR ESTA PASA TODO)
 void opcionesMenuPrincipal(eEmpleado* empleados ,int seCargo)
@@ -142,17 +149,17 @@ void opcionesMenuSecundario(eEmpleado* empleados)
 
 //SWITCH DEL MENU DE MODIFICACION (FALTA)
 
-//1-FUNCIONES PARA INICIALIZAR (1 de 2)
-int inicializarEmpleados(eEmpleado* empleados, int cantidad)
+//1-FUNCIONES PARA INICIALIZAR (1.5 de 2) //LA DEL ID NO SE SI FUNCIONA
+int initEmployees(Employee* list, int len)
 {
     int i;
     int retorno=-1;
 
-    if(empleados!=NULL && cantidad>0)
+    if(list!=NULL && len>0)
     {
-        for (i=0; i<cantidad; i++)
+        for (i=0; i<len; i++)
         {
-            empleados[i].estado = LIBRE;
+            list[i].isEmpty = FREE;
         }
         retorno=0;
     }
@@ -160,27 +167,27 @@ int inicializarEmpleados(eEmpleado* empleados, int cantidad)
     return retorno;
 }
 
-
-/*int autoincrementar (int* n) //NO SE SI SIRVE
+/*
+int getId (int* n)
 {
     *n=*n+1;
     return &n;
 }
 */
 
-int generarId(eEmpleado* empleado, int cantidad)
+int getId(Employee* list, int len)
 {
     int retorno=0;
     int i;
-    if(cantidad > 0 && empleado != NULL)
+    if(len > 0 && list != NULL)
     {
-        for(i=0; i<cantidad; i++)
+        for(i=0; i<len; i++)
         {
-            if(empleado[i].estado == OCUPADO)
+            if(list[i].isEmpty == NOTFREE)
             {
-                if(empleado[i].id > retorno)
+                if(list[i].id > retorno)
                 {
-                    retorno = empleado[i].id;
+                    retorno = list[i].id;
                 }
             }
         }

@@ -3,8 +3,8 @@
 #include <string.h>
 #include "ArrayEmployees.h"
 #define TAM 1000
-#define OCUPADO 1
-#define LIBRE 0
+#define NOTFREE 1
+#define FREE 0
 
 
 /*Una empresa requiere un sistema para administrar su nómina de empleados.
@@ -20,7 +20,10 @@ El resto de los campos se le pedirá al usuario.
 */
 int main()
 {
-    eEmpleado empleados[TAM];
+    //2.init=0
+    //3.menumostrar
+    //
+    Employee empleados[TAM];
 
     if(inicializarEmpleados(empleados,TAM)==0)
     {

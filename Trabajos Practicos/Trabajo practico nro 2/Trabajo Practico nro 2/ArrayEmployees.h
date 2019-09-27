@@ -1,67 +1,52 @@
 #include <stdio.h>
 #include <string.h>
-#define OCUPADO 1
-#define LIBRE 0
-#define HARDCODEO 5
-#include "inputs.h"
+#define NOTFREE 1
+#define FREE 0
+#define HARDCODING 10
+
 
 
 typedef struct
 {
     int id;
-    char nombre [51];
-    char apellido [51];
-    float salario;
+    char name [51];
+    char lastName [51];
+    float salary;
     int sector;
-    int estado;
-}eEmpleado;
+    int isEmpty;
+}Employee;
 
+//0-MUESTRO MENUES (3 de 3)
 
-//0-MENUES (2 de 6)
-
-void menuPrincipal();
-/** \brief Muestra menu de opciones.
+void printFirstMenu();
+/** \brief show main menu options
  *
  *
  */
 
-void menuSecundario();
-/** \brief Muestra el menu de ordenamientos y promedios.
+void printSecondMenu();
+/** \brief show case 4 of switch in main.c
  *
  *
  */
 
- //MENU DE MODIFICACION (FALTA)
-
-//SWITCH DEL PRIMER MENU (FALTA) QUE MUESTRE MENU Y LUEGO SWITCH CON DO/WHILE (FUNCION PRINCIPAL POR ESTA PASA TODO)
-void opcionesMenuPrincipal(eEmpleado*,int);
-/** \brief Hace un switch de todas las opciones del menu principal!
+void printModificationMenu();
+/** \brief show case 2 of switch in main.c modification menu
  *
- * \param Se le pasa la estrucutra eEmpleado.
- * \param Se le pasa un valor para verificar que si no se hace la alta por primera vez no se puedan acceder a las otras opciones
  *
  */
-
-//SWITCH DEL SEGUNDO MENU (FALTA)
-void opcionesMenuSecundario(eEmpleado*);
-/** \brief Hace un switch de todas las opciones del menu de promedios y ordenamiento.
- *
- * \param Se le pasa la estructura eEmpleado.
- *
- */
-
-
 
 //FUNCIONES PARA INICIALIZAR (1 de 2)
 
-int inicializarEmpleados (eEmpleado*, int);
-/** \brief Verifica si todas las posiciones del array estan vacias, pone una flag si esta en true para verificarlo.
- *
- * \param 1 Recibe un puntero de la estructura eEmpleados
- * \param 2 Recibe la cantidad de elementos del array
- * \return Retorna (-1) si hay error y 0 si todo está bien
- *
- */
+int initEmployees() (eEmpleado*, int);
+/** \brief To indicate that all position in the array are empty,
+* this function put the flag (isEmpty) in TRUE in all
+* position of the array
+* \param list Employee* Pointer to array of employees
+* \param len int Array length
+* \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+*
+*/
 
 //int generarID (HACER)
 
