@@ -1,10 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "ArrayEmployees.h"
+#include "inputs.h"
+#define TAM 1000
+#define HARDCODEO 10
 
-//0-MENUES (2 de 6)
+
+
+//0-MENUES (4 de 6)
 void menuPrincipal()
 {
     printf("-----BIENVENIDO POR FAVOR INGRESE UNA OPCION-----\n");
@@ -16,15 +20,126 @@ void menuPrincipal()
 
 void menuSecundario()
 {
-    printf("\n1-Ordenar empleados por apellido y sector: ");
-    printf("\n2-Calcular total de salarios, el salario promedio y cuantos empleados superan el salario promedio: ");
+    printf("\n\n1-Ordenar empleados por apellido y sector: ");
+    printf("\n\n2-Calcular total de salarios, el salario promedio y cuantos empleados superan el salario promedio: ");
 }
 
 //MENU DE MODIFICACION (FALTA)
 
 //SWITCH DEL PRIMER MENU (FALTA) QUE MUESTRE MENU Y LUEGO SWITCH CON DO/WHILE (FUNCION PRINCIPAL POR ESTA PASA TODO)
+void opcionesMenuPrincipal(eEmpleado* empleados ,int seCargo)
+{
+    int opcion;
+    int retorno;
+
+    do
+        {
+            menuPrincipal();
+            opcion=getInt("\nSu opcion: ");
+
+            switch(opcion)
+            {
+            case 1:
+                if (agregarEmpleados(empleados,TAM)== 0)
+                {
+                    printf("\nSe cargo el empleado\n");
+                }
+                else
+                {
+                    printf("\nNO HAY ESPACIO\n");
+                }
+                /*hardcodeoEmpleados(empleados,1);
+                printf("\nSe hardcodearon empleados");
+                */
+                seCargo=1;
+
+                break;
+
+            case 2:
+                if (seCargo==1)
+                {
+                    //MODIFICAREMPLEADO
+                }else
+                {
+                    printf("\nSe elimino el empleado\n");
+                }
+                break;
+
+            case 3:
+                if (seCargo==1)
+                {
+                    retorno = bajaEmpleado(empleados,TAM);
+                    switch(retorno)
+                    {
+                    case 0:
+                        printf("\nSe elimino el empleado\n");
+                        break;
+                    case 1:
+                        printf("\nAccion cancelada por el usuario\n");
+                        break;
+                    case -1:
+                        printf("\nNo se encontro el dato\n");
+                        break;
+                    }
+                }
+                else
+                {
+                    printf("Por favor primero realice una carga");
+                }
+                    break;
+
+            case 4:
+                if (seCargo==1)
+                {
+                    opcionesMenuSecundario(empleados);
+                }
+                else
+                {
+                    printf("Por favor primero realice una carga");
+                }
+                break;
+            default:
+                printf("Seleccione una opcion valida ");
+
+            }
+            system("pause");
+            system("cls");
+        }while(opcion!=0);
+}
 
 //SWITCH DEL SEGUNDO MENU (FALTA)
+void opcionesMenuSecundario(eEmpleado* empleados)
+{
+    int opcion;
+    int retorno;
+
+    do
+        {
+            menuSecundario();
+            opcion=getInt("\nSu opcion: ");
+
+            switch(opcion)
+            {
+            case 1:
+                ordenarEmpleadosApellido(empleados,TAM,1);
+                ordenarEmpleadosSector(empleados,TAM);
+                mostrarListadoDeEmpleados(empleados,TAM);
+                system("pause");
+                opcionesMenuPrincipal(empleados,1);
+                break;
+
+            case 2:
+                //SACAR PROMEDIO Y LO OTRO (FALTA)
+                break;
+
+            default:
+                printf("Seleccione una opcion valida ");
+
+            }
+            system("pause");
+            system("cls");
+        }while(opcion!=0);
+}
 
 //SWITCH DEL MENU DE MODIFICACION (FALTA)
 
@@ -33,8 +148,6 @@ int inicializarEmpleados(eEmpleado* empleados, int cantidad)
 {
     int i;
     int retorno=-1;
-    //GENERAR ID
-
 
     if(empleados!=NULL && cantidad>0)
     {
@@ -49,18 +162,36 @@ int inicializarEmpleados(eEmpleado* empleados, int cantidad)
 }
 
 
-int autoincrementar (int* n) //NO SE SI SIRVE
+/*int autoincrementar (int* n) //NO SE SI SIRVE
 {
     *n=*n+1;
     return &n;
 }
+*/
 
-//int generarID (HACER)
-
+int generarId(eEmpleado* empleado, int cantidad)
+{
+    int retorno=0;
+    int i;
+    if(cantidad > 0 && empleado != NULL)
+    {
+        for(i=0; i<cantidad; i++)
+        {
+            if(empleado[i].estado == OCUPADO)
+            {
+                if(empleado[i].id > retorno)
+                {
+                    retorno = empleado[i].id;
+                }
+            }
+        }
+    }
+    return retorno+1;
+}
 
 //2-FUNCIONES PARA AÑADIR (2 de 3)
 
-eEmpleado pedirEmpleado() //FALTA PROBAR BIEN
+eEmpleado pedirEmpleado(int id) //FALTA PROBAR BIEN
 {
     eEmpleado empleados;
     int sector;
@@ -68,35 +199,39 @@ eEmpleado pedirEmpleado() //FALTA PROBAR BIEN
     char auxsector [30];
     char auxsalario [30];
 
+    //int* n=0;//ID AUTOINCRMENTAL PARA QUE NUNCA SE PISE EN NINGUNA FUNCION, POR ESO ES PUNTERO
+
     //LLAMAMOS A GENERAR ID EN ID
 
-    empleados.id = autoincrementar(*n);//NO SE SI SIRVE
+    empleados.id=id;//NO SE SI SIRVE
 
-    strcpy(empleados.nombre,getString("\nIngrese el nombre: ", 51));//NOMBRE
+    getString("Ingrese nombre: ",empleados.nombre);//NOMBRE
     while(isOnlyLetters(empleados.nombre) == 0)
     {
-        strcpy(empleados.nombre,getString("\nPOR FAVOR SOLO INGRESE LETRAS\n\n Ingrese el nombre nuevamente: ", 51));//VALIDACION
+        getString("\nPOR FAVOR SOLO INGRESE LETRAS\n\n Ingrese el nombre nuevamente: ",empleados.nombre);//VALIDACION
     }
     stringToUpper(empleados.nombre);
 
-    strcpy(empleados.apellido,getString("\nIngrese el apellido: ", 51));//APELLIDO
+    getString("Ingrese apellido: ",empleados.apellido);//APELLIDO
     while(isOnlyLetters(empleados.apellido) == 0)
     {
-        strcpy(empleados.apellido,getString("\nPOR FAVOR SOLO INGRESE LETRAS\n\n Ingrese el apellido nuevamente: ", 51));//VALIDACION
+        getString("\nPOR FAVOR SOLO INGRESE LETRAS\n\n Ingrese el nombre nuevamente: ",empleados.apellido);//VALIDACION
     }
     stringToUpper(empleados.apellido);
 
-    strcpy(auxsalario,getString("\nIngrese el salario: ", 30));//SALARIO
+    getString("Ingrese salario: ",auxsalario);//SALARIO
     while(isNumeric(auxsalario) == 0)
     {
-        strcpy(auxsalario,getString("\nPOR FAVOR SOLO INGRESE NUMEROS\n\n Ingrese el salario nuevamente: ", 30));//VALIDACION
+        getString("\nPOR FAVOR SOLO INGRESE NUMEROS\n\n Ingrese el salario nuevamente: ",auxsalario);//SALARIO
+
     }
     empleados.salario=atoi(auxsalario);
 
-    strcpy(auxsector,getString("\nIngrese el sector: ", 30));//SECTOR
+    getString("Ingrese sector: ",auxsector);//SECTOR
     while(isNumeric(auxsector) == 0)
     {
-        strcpy(auxsector,getString("\nPOR FAVOR SOLO INGRESE NUMEROS\n\n Ingrese el sector nuevamente: ", 30));//VALIDACION
+        getString("\nPOR FAVOR SOLO INGRESE NUMEROS\n\n Ingrese el sector nuevamente: ",auxsector);//SECTOR
+
     }
     empleados.sector=atoi(auxsector);
 
@@ -123,17 +258,19 @@ int buscarLibre(eEmpleado* empleado,int cantidad) //TERMINADA
 int agregarEmpleados (eEmpleado* empleados,int cantidad) //TERMINADA
 {
     int i;
+    int id;
     int retorno=-1;
-    i = buscarLibre(empleados,cantidad);
+    id=generarId(empleados,TAM);
+    i = buscarLibre(empleados,1000);
     if (i != -1)
     {
-        empleados[i] = pedirEmpleado();
+        empleados[i] = pedirEmpleado(id);
         empleados[i].estado==OCUPADO;
         retorno = 0;
     }
 }
 
-//3-BUSCAR EMPLEADO POR ID (2 de 2)
+//3-BUSCAR EMPLEADO POR ID (1 de 1)
 int buscarEmpleadoPorId(eEmpleado* empleados, int cantidad, int id)
 {
     int i;
@@ -152,14 +289,6 @@ int buscarEmpleadoPorId(eEmpleado* empleados, int cantidad, int id)
     return retorno;
 }
 
-int pedirId()
-{
-    int id;
-    printf("Ingrese el id: ");
-    scanf("%d", &id);
-    return id;
-}
-
 //4-MODIFICACION (0/1) NO ENTIENDO TANTO EL CODIGO, Y NO QUIERO COPIAR CÓDIGO
 
 //5-BAJA LÓGICA (0.5/1) NO SE SI ESTA BIEN
@@ -173,9 +302,9 @@ int bajaEmpleado(eEmpleado* empleados,int cantidad)
     char respuesta;
     if (empleados!=NULL && cantidad>0)
     {
-        mostrarListadoDeEmpleados(empleados);
+        mostrarListadoDeEmpleados(empleados,cantidad);
 
-        id=pedirId();
+        id=getInt("Ingrese el id: ");
 
         index = buscarEmpleadoPorId(empleados,cantidad,id);
         if(index!=-1) //CAMBIAMOS EL ESTADO DEL ALUMNO A LIBRE
@@ -215,6 +344,7 @@ int ordenarEmpleadosApellido(eEmpleado* empleados, int cantidad, int orden)
                 auxEmpleados=empleados[i];
                 empleados[i]=empleados[j];
                 empleados[j]=auxEmpleados;
+                retorno=0;
             }
         }
     }
@@ -246,12 +376,13 @@ int ordenarEmpleadosSector(eEmpleado* empleados, int cantidad)
 //7-FUNCIONES PARA MOSTRAR (2 de 2) LISTO
 void mostrarEmpleado(eEmpleado empleados)
 {
-    printf("%d -- %10s %15s %20f %10d\n\n", empleados.id, empleados.nombre, empleados.apellido, empleados.salario, empleados.sector);
+    printf("\n%d -- %10s %15s %20f %10d\n\n", empleados.id, empleados.nombre, empleados.apellido, empleados.salario, empleados.sector);
 }
 
 void mostrarListadoDeEmpleados(eEmpleado* empleados, int cantidad)
 {
     int i;
+    printf("ID        Nombre        Apellido          Salario            Sector\n");
     for(i=0; i<cantidad; i++)
     {
         if(empleados[i].estado==OCUPADO)
@@ -265,20 +396,23 @@ void mostrarListadoDeEmpleados(eEmpleado* empleados, int cantidad)
 
 void hardcodeoEmpleados(eEmpleado* empleados, int cantidad) //TERMINADA
 {
-    int id[5] = {1,2,3,4,5};
-    char nombre[5][51] = {"Jorge","Mauro","Diego","Daniela","Juliana"};
-    char apellido[5][51] = {"Rios","Zarate","Perez","Gonzalez","Lopez"};
-    float salario[5] = {2850,4425,3250,5785,6900};
-    int sector[5] = {8,33,11,11,8};
-
+    int id[1] = {1,2,3,4,5,6,7,8,9,10};
+   /* char nombre[10][51] = {"Jorge","Mauro","Diego","Daniela","Juliana","Victoria","Carmen","Tomas","Damaris","Julian"};
+    char apellido[10][51] = {"Rios","Zarate","Perez","Gonzalez","Lopez","Rodriguez","Fernandez","Fidalgo","Tevez","Riquelme"};
+    float salario[10] = {2850,4425,3250,5785,6900,3450,777,2320,1400,11450};
+    int sector[10] = {8,33,11,11,8,8,7,7,33,13};
+*/
     int i;
     for (i=0; i<cantidad; i++)
     {
         empleados[i].id = id[i];
-        strcpy(empleados[i].nombre, nombre[i]);
+       /* strcpy(empleados[i].nombre, nombre[i]);
         strcpy(empleados[i].apellido, apellido[i]);
         empleados[i].salario = salario[i];
         empleados[i].sector = sector[i];
-        empleados[i].estado = OCUPADO;
+        */empleados[i].estado = OCUPADO;
     }
+
 }
+
+ //9-CALCULAR PROMEDIOS Y OTROS DATOS

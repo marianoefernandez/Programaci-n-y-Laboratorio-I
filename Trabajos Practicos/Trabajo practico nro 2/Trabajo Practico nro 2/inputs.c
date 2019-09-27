@@ -28,13 +28,11 @@ char getChar (char* mensaje)
     return aux;
 }
 
-char getString (char* mensaje,int cantidad)
+void getString (char* mensaje,char* cadena)
 {
-    char aux[cantidad];//PASAMOS EL DATO AL AUX
     printf("\n%s", mensaje);
     fflush(stdin);
-    gets(aux);
-    return aux;
+    gets(cadena);
 }
 
 

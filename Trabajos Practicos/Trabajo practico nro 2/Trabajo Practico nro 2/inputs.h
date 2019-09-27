@@ -27,11 +27,10 @@ char getChar(char*);
 /** \brief Pide una cadena y la devuelve
  *
  * \param 1 Es el mensaje que escribe el usuario y lo muestra la función.
- * \param 2 Es la longitud del array a ingresar
- * \return Retorna la cadena
+ * \param 2 Es la cadena a usar
  *
  */
-char getString (char*,int);
+void getString (char*,char*);
 
 
 
