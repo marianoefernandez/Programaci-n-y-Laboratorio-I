@@ -66,6 +66,8 @@ int inicializarEmpleados (eEmpleado*, int);
 //int generarID (HACER)
 
 int generarId(eEmpleado*, int);
+
+int autoincrementar (int* n);
 /** \brief Funcion que va sumando de a uno el id
  *
  * \param 1 Se le pasa la estructura eEmpleado
@@ -76,7 +78,7 @@ int generarId(eEmpleado*, int);
 
 //FUNCIONES PARA AÑADIR (2 de 4)
 
- eEmpleado pedirEmpleado(int); //FALTA TERMINAR
+ eEmpleado pedirEmpleado(); //FALTA TERMINAR
 /** \brief Función que pide los datos de los empleados para luego ser usada por la función que da de alta al empleado.
  *
  *

@@ -7,7 +7,6 @@
 #define HARDCODEO 10
 
 
-
 //0-MENUES (4 de 6)
 void menuPrincipal()
 {
@@ -191,11 +190,11 @@ int generarId(eEmpleado* empleado, int cantidad)
 
 //2-FUNCIONES PARA AÑADIR (2 de 3)
 
-eEmpleado pedirEmpleado(int id) //FALTA PROBAR BIEN
+eEmpleado pedirEmpleado(void) //FALTA PROBAR BIEN
 {
     eEmpleado empleados;
     int sector;
-    int salario;
+    float salario;
     char auxsector [30];
     char auxsalario [30];
 
@@ -203,7 +202,9 @@ eEmpleado pedirEmpleado(int id) //FALTA PROBAR BIEN
 
     //LLAMAMOS A GENERAR ID EN ID
 
-    empleados.id=id;//NO SE SI SIRVE
+    //empleados.id=id;//NO SE SI SIRVE
+
+    empleados.id = getInt("Ingrese id: ");
 
     getString("Ingrese nombre: ",empleados.nombre);//NOMBRE
     while(isOnlyLetters(empleados.nombre) == 0)
@@ -225,7 +226,8 @@ eEmpleado pedirEmpleado(int id) //FALTA PROBAR BIEN
         getString("\nPOR FAVOR SOLO INGRESE NUMEROS\n\n Ingrese el salario nuevamente: ",auxsalario);//SALARIO
 
     }
-    empleados.salario=atoi(auxsalario);
+    salario=atoi(auxsalario);//ARREGLAR
+    empleados.salario = salario;//ARREGLAR
 
     getString("Ingrese sector: ",auxsector);//SECTOR
     while(isNumeric(auxsector) == 0)
@@ -233,10 +235,10 @@ eEmpleado pedirEmpleado(int id) //FALTA PROBAR BIEN
         getString("\nPOR FAVOR SOLO INGRESE NUMEROS\n\n Ingrese el sector nuevamente: ",auxsector);//SECTOR
 
     }
-    empleados.sector=atoi(auxsector);
+    sector=atoi(auxsector);//ARREGLAR
+    empleados.sector = sector;//ARREGLAR
 
     empleados.estado = LIBRE;
-
     return empleados;
 }
 
@@ -258,16 +260,20 @@ int buscarLibre(eEmpleado* empleado,int cantidad) //TERMINADA
 int agregarEmpleados (eEmpleado* empleados,int cantidad) //TERMINADA
 {
     int i;
-    int id;
+    //int id;
     int retorno=-1;
-    id=generarId(empleados,TAM);
-    i = buscarLibre(empleados,1000);
-    if (i != -1)
+    //id=generarId(empleados,TAM);
+    i = buscarLibre(empleados,cantidad);
+    printf("%d",i);
+    if (i!=-1)//Hay lugar
     {
-        empleados[i] = pedirEmpleado(id);
+        empleados[i] = pedirEmpleado();
+        //empleados[i].id = id;
         empleados[i].estado==OCUPADO;
+        printf("%d\n%s\n%s\n%.1f\n%d\n",empleados[i].id,empleados[i].nombre,empleados[i].apellido,empleados[i].salario,empleados[i].sector);
         retorno = 0;
     }
+    return retorno;
 }
 
 //3-BUSCAR EMPLEADO POR ID (1 de 1)
@@ -396,21 +402,21 @@ void mostrarListadoDeEmpleados(eEmpleado* empleados, int cantidad)
 
 void hardcodeoEmpleados(eEmpleado* empleados, int cantidad) //TERMINADA
 {
-    int id[1] = {1,2,3,4,5,6,7,8,9,10};
-   /* char nombre[10][51] = {"Jorge","Mauro","Diego","Daniela","Juliana","Victoria","Carmen","Tomas","Damaris","Julian"};
+    int id[10] = {1,2,3,4,5,6,7,8,9,10};
+    char nombre[10][51] = {"Jorge","Mauro","Diego","Daniela","Juliana","Victoria","Carmen","Tomas","Damaris","Julian"};
     char apellido[10][51] = {"Rios","Zarate","Perez","Gonzalez","Lopez","Rodriguez","Fernandez","Fidalgo","Tevez","Riquelme"};
     float salario[10] = {2850,4425,3250,5785,6900,3450,777,2320,1400,11450};
     int sector[10] = {8,33,11,11,8,8,7,7,33,13};
-*/
+
     int i;
     for (i=0; i<cantidad; i++)
     {
         empleados[i].id = id[i];
-       /* strcpy(empleados[i].nombre, nombre[i]);
+        strcpy(empleados[i].nombre, nombre[i]);
         strcpy(empleados[i].apellido, apellido[i]);
         empleados[i].salario = salario[i];
         empleados[i].sector = sector[i];
-        */empleados[i].estado = OCUPADO;
+        empleados[i].estado = OCUPADO;
     }
 
 }

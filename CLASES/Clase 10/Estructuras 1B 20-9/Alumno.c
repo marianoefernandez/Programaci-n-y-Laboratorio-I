@@ -91,10 +91,13 @@ int cargarAlumnos(eAlumno lista[], int cant)
     int i;
     int retorno = 0;
     i = buscarAlumnoLibre(lista,cant);
+    printf("Legajo: %d\nNombre: %s\nNota: %d",lista[i].legajo,lista[i].nombre,lista[i].nota);
+    printf("\n%d\n",i);
     if(i!=-1)//Hay lugar
     {
         lista[i] = pedirAlumno();
         lista[i].estado = OCUPADO;
+        printf("Legajo: %d\nNombre: %s\nNota: %d",lista[i].legajo,lista[i].nombre,lista[i].nota);
         retorno = 1;
     }
 

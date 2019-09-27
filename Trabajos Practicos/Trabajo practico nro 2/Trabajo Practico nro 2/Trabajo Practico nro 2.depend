@@ -1,24 +1,18 @@
 # depslib dependency file v1.0
-1569551426 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\inputs.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"inputs.h"
-
-1569551827 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\inputs.h
-
-1569546309 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\main.c
+1569591411 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"ArrayEmployees.h"
 
-1569545524 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\arrayemployees.h
+1569589016 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\arrayemployees.h
 	<stdio.h>
 	<string.h>
 	"inputs.h"
 
-1569552658 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\arrayemployees.c
+1569595600 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\inputs.h
+
+1569591768 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 2\trabajo practico nro 2\arrayemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
