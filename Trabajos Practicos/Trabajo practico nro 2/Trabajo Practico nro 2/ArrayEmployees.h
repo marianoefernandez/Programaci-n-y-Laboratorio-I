@@ -50,16 +50,9 @@ int initEmployees() (eEmpleado*, int);
 
 //int generarID (HACER)
 
-int generarId(eEmpleado*, int);
+int getId(Employee*, int);
 
-int autoincrementar (int* n);
-/** \brief Funcion que va sumando de a uno el id
- *
- * \param 1 Se le pasa la estructura eEmpleado
- * \param 2 Se le pasa el tamaño del array
- * \return retorna el id nuevo
- *
- */
+
 
 //FUNCIONES PARA AÑADIR (2 de 4)
 

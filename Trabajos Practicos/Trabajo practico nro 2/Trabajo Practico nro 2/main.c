@@ -23,7 +23,7 @@ int main()
     //2.init=0
     //3.menumostrar
     //
-    Employee empleados[TAM];
+    Employee list[TAM];
 
     if(inicializarEmpleados(empleados,TAM)==0)
     {
