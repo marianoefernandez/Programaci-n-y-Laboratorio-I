@@ -92,7 +92,7 @@ int isOnlyLetters(char* cadena)
     int i=0;
     while (cadena[i] != '\0')
     {
-        if((cadena[i] <  'a' || cadena [i] > 'z') && (cadena[i] < 'A' || cadena[i] > 'Z') && (cadena[i] != ' '))
+        if((cadena[i] <  'a' || cadena [i] > 'z') && (cadena[i] < 'A' || cadena[i] > 'Z') && (cadena[i] == ' '))
             return 0;//RETORNA 0 SI TODO MAL
         i++;
     }

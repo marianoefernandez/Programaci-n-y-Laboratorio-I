@@ -6,7 +6,7 @@
 
 
 
-//0-MUESTRO MENUES (3 de 3)
+//0-MUESTRO MENUES (4 de 4)
 void printFirstMenu()
 {
     printf("-----BIENVENIDO POR FAVOR INGRESE UNA OPCION-----\n");
@@ -22,132 +22,21 @@ void printSecondMenu()
     printf("\n\n2-Calcular total de salarios, el salario promedio y cuantos empleados superan el salario promedio: ");
 }
 
-//MENU DE MODIFICACION
+void printSortMenu()
+{
+    printf("-----¿Como desea ordenar?----\n\n");
+    printf("\n1-Ordenar por apellido");
+    printf("\n2-Ordenar por sector");
+
+}
 void printModificationMenu()
 {
-    printf("¿Qué desea modificar?\n");
-    printf("1.Nombre\n");
-    printf("2.Apellido\n");
-    printf("3.Salario\n");
-    printf("4.Sector\n");
+    printf("-----¿Qué desea modificar?-----\n\n");
+    printf("1-Nombre\n");
+    printf("2-Apellido\n");
+    printf("3-Salario\n");
+    printf("4-Sector\n");
 }
-
-//SWITCH DEL PRIMER MENU (FALTA) QUE MUESTRE MENU Y LUEGO SWITCH CON DO/WHILE (FUNCION PRINCIPAL POR ESTA PASA TODO)
-void opcionesMenuPrincipal(eEmpleado* empleados ,int seCargo)
-{
-    int opcion;
-    int retorno;
-
-    do
-        {
-            menuPrincipal();
-            opcion=getInt("\nSu opcion: ");
-
-            switch(opcion)
-            {
-            case 1:
-                if (agregarEmpleados(empleados,TAM)== 0)
-                {
-                    printf("\nSe cargo el empleado\n");
-                }
-                else
-                {
-                    printf("\nNO HAY ESPACIO\n");
-                }
-                /*hardcodeoEmpleados(empleados,1);
-                printf("\nSe hardcodearon empleados");
-                */
-                seCargo=1;
-
-                break;
-
-            case 2:
-                if (seCargo==1)
-                {
-                    //MODIFICAREMPLEADO
-                }else
-                {
-                    printf("\nSe elimino el empleado\n");
-                }
-                break;
-
-            case 3:
-                if (seCargo==1)
-                {
-                    retorno = bajaEmpleado(empleados,TAM);
-                    switch(retorno)
-                    {
-                    case 0:
-                        printf("\nSe elimino el empleado\n");
-                        break;
-                    case 1:
-                        printf("\nAccion cancelada por el usuario\n");
-                        break;
-                    case -1:
-                        printf("\nNo se encontro el dato\n");
-                        break;
-                    }
-                }
-                else
-                {
-                    printf("Por favor primero realice una carga");
-                }
-                    break;
-
-            case 4:
-                if (seCargo==1)
-                {
-                    opcionesMenuSecundario(empleados);
-                }
-                else
-                {
-                    printf("Por favor primero realice una carga");
-                }
-                break;
-            default:
-                printf("Seleccione una opcion valida ");
-
-            }
-            system("pause");
-            system("cls");
-        }while(opcion!=0);
-}
-
-//SWITCH DEL SEGUNDO MENU (FALTA)
-void opcionesMenuSecundario(eEmpleado* empleados)
-{
-    int opcion;
-    int retorno;
-
-    do
-        {
-            menuSecundario();
-            opcion=getInt("\nSu opcion: ");
-
-            switch(opcion)
-            {
-            case 1:
-                ordenarEmpleadosApellido(empleados,TAM,1);
-                ordenarEmpleadosSector(empleados,TAM);
-                mostrarListadoDeEmpleados(empleados,TAM);
-                system("pause");
-                opcionesMenuPrincipal(empleados,1);
-                break;
-
-            case 2:
-                //SACAR PROMEDIO Y LO OTRO (FALTA)
-                break;
-
-            default:
-                printf("Seleccione una opcion valida ");
-
-            }
-            system("pause");
-            system("cls");
-        }while(opcion!=0);
-}
-
-//SWITCH DEL MENU DE MODIFICACION (FALTA)
 
 //1-FUNCIONES PARA INICIALIZAR (1.5 de 2) //LA DEL ID NO SE SI FUNCIONA
 int initEmployees(Employee* list, int len)
@@ -167,40 +56,11 @@ int initEmployees(Employee* list, int len)
     return retorno;
 }
 
-/*
-int getId (int* n)
-{
-    *n=*n+1;
-    return &n;
-}
-*/
-
-int getId(Employee* list, int len)
-{
-    int retorno=0;
-    int i;
-    if(len > 0 && list != NULL)
-    {
-        for(i=0; i<len; i++)
-        {
-            if(list[i].isEmpty == NOTFREE)
-            {
-                if(list[i].id > retorno)
-                {
-                    retorno = list[i].id;
-                }
-            }
-        }
-    }
-    return retorno+1;
-}
-
 //2-FUNCIONES PARA AÑADIR (2 de 2)
 
-int addEmployees(Employee* list,int len)
+int addEmployees(Employee* list,int len,int id)
 {
     int i;
-    int id;
     int sector;
     int retorno= -1;
     float salary;
@@ -208,24 +68,23 @@ int addEmployees(Employee* list,int len)
     char auxSector[50];
 
     i= getFree(list, len);
-    id= getId(list, len);
 
     if(i>=0)
     {
-        getString("\nIngrese el nombre: ",list.name);//Pido
+        getString("\nIngrese el nombre: ",list[i].name);//Pido
         //VALIDACION
         while(isOnlyLetters(list[i].name) == 0)
         {
-            getString("\nPOR FAVOR SOLO INGRESE LETRAS\nIngrese el nombre nuevamente: ",list.name);//Valido
+            getString("\nPOR FAVOR SOLO INGRESE LETRAS\nIngrese el nombre nuevamente: ",list[i].name);//Valido
         }
         stringToUpper(list[i].name);//Paso primer caracter a Mayuscula
 
 
-        getString("\nIngrese el apellido: ",list.lastName);//Pido
+        getString("\nIngrese el apellido: ",list[i].lastName);//Pido
         //VALIDACION
         while(isOnlyLetters(list[i].lastName) == 0)
         {
-            getString("\nPOR FAVOR SOLO INGRESE LETRAS\nIngrese el apellido nuevamente: ",list.lastName);//Valido
+            getString("\nPOR FAVOR SOLO INGRESE LETRAS\nIngrese el apellido nuevamente: ",list[i].lastName);//Valido
         }
         stringToUpper(list[i].lastName);//Paso primer caracter a Mayuscula
 
@@ -235,7 +94,7 @@ int addEmployees(Employee* list,int len)
         while(isNumeric(auxSalary) == 0)
         {
             getString("\nPOR FAVOR SOLO INGRESE NUMEROS\nIngrese el salario nuevamente: ",auxSalary);//Valido
-        }//end while
+        }
         salary=atoi(auxSalary);//Paso cadena a numero
         list[i].salary=salary;
 
@@ -263,13 +122,13 @@ int addEmployees(Employee* list,int len)
     return retorno;
 }
 
-int getFree(eEmpleado* list,int len) //TERMINADA
+int getFree(Employee* list,int len) //TERMINADA
 {
     int i;
     int index = -1;//DEFINIMOS VALOR
-    for (i=0;i<cantidad;i++)
+    for (i=0;i<len;i++)
     {
-        if (list[i].estado == FREE)
+        if (list[i].isEmpty == FREE)
         {
             index = i;
             break;//SI DEVUELVE -1 NO HAY ESPACIO
@@ -278,25 +137,6 @@ int getFree(eEmpleado* list,int len) //TERMINADA
     return index;
 }
 
-/*int agregarEmpleados (eEmpleado* empleados,int cantidad) //TERMINADA
-{
-    int i;
-    //int id;
-    int retorno=-1;
-    //id=generarId(empleados,TAM);
-    i = buscarLibre(empleados,cantidad);
-    printf("%d",i);
-    if (i!=-1)//Hay lugar
-    {
-        empleados[i] = pedirEmpleado();
-        //empleados[i].id = id;
-        empleados[i].estado==OCUPADO;
-        printf("%d\n%s\n%s\n%.1f\n%d\n",empleados[i].id,empleados[i].nombre,empleados[i].apellido,empleados[i].salario,empleados[i].sector);
-        retorno = 0;
-    }
-    return retorno;
-}
-*/
 //3-BUSCAR EMPLEADO POR ID (1 de 1)
 int findEmployeeById(Employee* list, int len, int id)
 {
@@ -306,7 +146,7 @@ int findEmployeeById(Employee* list, int len, int id)
     {
         for(i=0; i<len; i++)
         {
-            if(list[i].id==id)
+            if(list[i].id==id && list[i].isEmpty==NOTFREE)
             {
                 retorno = i;
                 break;
@@ -316,8 +156,7 @@ int findEmployeeById(Employee* list, int len, int id)
     return retorno;
 }
 
-//4-MODIFICACION (0.5/1) NO ENTIENDO TANTO EL CODIGO, Y NO QUIERO COPIAR CÓDIGO
-
+//4-MODIFICACION (1 de 1)
 int modificationEmployee(Employee* list, int len)
 {
     int id;
@@ -332,7 +171,7 @@ int modificationEmployee(Employee* list, int len)
     char auxId[20];
     int retorno;
 
-    if(len >0 && paramEmployee!= NULL)
+    if(len >0 && list!= NULL)
     {
         retorno=0;
 
@@ -351,7 +190,7 @@ int modificationEmployee(Employee* list, int len)
         if(index>=0)
         {
 
-    void printModificationMenu ();
+    printModificationMenu();
 
     opcion=getInt("Su opcion: ");
 
@@ -365,7 +204,6 @@ int modificationEmployee(Employee* list, int len)
             }
             stringToUpper(auxName);
             strcpy(list[index].name, auxName);
-            printf("\n\nSe ha realizado la modificacion correctamente.\n\n");
             break;
 
         case 2:
@@ -376,7 +214,6 @@ int modificationEmployee(Employee* list, int len)
             }
             stringToUpper(auxLastName);
             strcpy(list[index].lastName, auxLastName);
-            printf("\n\nSe ha realizado la modificacion correctamente.\n\n");
             break;
 
         case 3:
@@ -387,18 +224,16 @@ int modificationEmployee(Employee* list, int len)
             }
             salary = atoi(auxSalary);
             list[index].salary = salary;
-            printf("\n\nSe ha realizado la modificacion correctamente.\n\n");
             break;
 
         case 4:
 	    getString("\nIngrese un nuevo sector: ",auxSector);
             while(isNumeric(auxSector)==0)
             {
-		getString("\nPOR FAVOR SOLO INGRESE SOLO NUMEROS\nIngrese nuevamente un nuevo sector: ",auxSector);
+                getString("\nPOR FAVOR SOLO INGRESE SOLO NUMEROS\nIngrese nuevamente un nuevo sector: ",auxSector);
             }
             sector = atoi(auxSector);
             list[index].sector = sector;
-            printf("\n\nSe ha realizado la modificacion correctamente.\n\n");
             break;
 
         default:
@@ -411,9 +246,11 @@ int modificationEmployee(Employee* list, int len)
             retorno=-1;
         }
     return retorno;
+    }
 }
 
-//5-BAJA LÓGICA (0.5/1) NO SE SI ESTA BIEN
+
+//5-BAJA LÓGICA (1 de 1) NO SE SI ESTA BIEN
 
 int removeEmployee(Employee* list, int len, int id)
 {
@@ -423,22 +260,39 @@ int removeEmployee(Employee* list, int len, int id)
     char respuesta;
     if (list!=NULL && len>0)
     {
-        mostrarListadoDeEmpleados(list,len);
+        printEmployees(list,len);
 
         index = findEmployeeById(list,len,id);
         if(index!=-1) //CAMBIAMOS EL ESTADO DEL ALUMNO A LIBRE
         {
-            printEmployee(list[index]);
-            printf("Esta seguro de eliminar el dato s/n: ");
-            respuesta = getche ();
+
+            if (list[index].isEmpty==FREE)
+                {
+
+                }
+            else
+            {
+                printf("\n\n\nDar de baja a:");
+                printEmployee(list[index]);
+                printf("\n\nEsta seguro de eliminar el dato s/n: ");
+                respuesta = getche();
+            }
+
             if (respuesta=='s')
             {
-                list[index].estado = FREE;
+                list[index].isEmpty = FREE;
                 retorno=0;//ACEPTO ACCION
             }
             else
             {
-                retorno =1;//CANCELO ACCION
+                if (list[index].isEmpty==FREE)
+                {
+                    retorno=2;
+                }
+                else
+                    {
+                        retorno =1;//CANCELO ACCION
+                    }
             }
         }
     }
@@ -495,20 +349,21 @@ int sortEmployeesBySector(Employee* list, int len)
 //7-FUNCIONES PARA MOSTRAR (2 de 2) LISTO
 void printEmployee(Employee list)
 {
-    printf("\n%d -- %10s %15s %20f %10d\n\n", list.id, list.nombre, list.apellido, list.salario, list.sector);
+    printf("\n%d -- %10s %15s %20.2f $ %10d\n\n", list.id, list.name, list.lastName, list.salary, list.sector);
 }
 
-void printEmployees(Employee* list, int len)
+int printEmployees(Employee* list, int len)
 {
     int i;
     printf("ID        Nombre        Apellido          Salario            Sector\n");
     for(i=0; i<len; i++)
     {
-        if(list[i].estado==NOTFREE)
+        if(list[i].isEmpty==NOTFREE)
         {
             printEmployee(list[i]);
         }
     }
+    return 0;
 }
 
 //8-FUNCIONES DE HARDCODEO (1 de 1) LISTO
@@ -528,10 +383,79 @@ void hardcoded(Employee* list, int len) //TERMINADA
         strcpy(list[i].name, name[i]);
         strcpy(list[i].lastName, lastName[i]);
         list[i].salary = salary[i];
-        empleados[i].sector = sector[i];
-        empleados[i].estado = NOTFREE;
+        list[i].sector = sector[i];
+        list[i].isEmpty = NOTFREE;
     }
-
 }
 
- //9-CALCULAR PROMEDIOS Y OTROS DATOS
+ //9-CALCULAR PROMEDIOS Y OTROS DATOS (4 de 4)
+
+ float totalSalary(Employee* list,int len)
+ {
+     float sumaSalarios=0;
+     int i;
+
+     for(i=0;i<len;i++)
+     {
+         if(list[i].isEmpty==NOTFREE)
+         {
+             sumaSalarios = sumaSalarios + list[i].salary;
+         }
+     }
+     return sumaSalarios;
+ }
+
+ float salaryAverage(Employee* list,int len,float allSalary)
+ {
+     int cantidadCargados=0;
+     float average;
+     int i;
+
+     for(i=0;i<len;i++)
+     {
+         if(list[i].isEmpty==NOTFREE)
+         {
+             cantidadCargados++;
+         }
+     }
+     average=allSalary/cantidadCargados;
+     return average;
+ }
+
+ int betterThanAverage(Employee* list,int len,float averageSalary)
+ {
+     int betterSalaryAverage=0;
+     float auxSalary;
+     int i;
+
+     for (i=0;i<len;i++)
+     {
+         if(list[i].isEmpty==NOTFREE)
+         {
+            auxSalary=list[i].salary;
+            if(auxSalary>averageSalary)
+            {
+               betterSalaryAverage++;
+            }
+         }
+     }
+
+     return betterSalaryAverage;
+ }
+
+ int employeesNotFree(Employee* list,int len)
+ {
+     int i;
+     int employeesNotFreeLen=0;
+
+     for(i=0;i<len;i++)
+     {
+         if(list[i].isEmpty==NOTFREE)
+         {
+             employeesNotFreeLen++;
+         }
+     }
+
+     return employeesNotFreeLen;
+ }
+

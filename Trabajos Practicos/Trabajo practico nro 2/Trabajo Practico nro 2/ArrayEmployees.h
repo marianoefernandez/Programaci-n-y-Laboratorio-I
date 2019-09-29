@@ -16,7 +16,7 @@ typedef struct
     int isEmpty;
 }Employee;
 
-//0-MUESTRO MENUES (3 de 3)
+//0-MUESTRO MENUES (4 de 4)
 
 void printFirstMenu();
 /** \brief show main menu options
@@ -25,20 +25,28 @@ void printFirstMenu();
  */
 
 void printSecondMenu();
-/** \brief show case 4 of switch in main.c
+/** \brief show main menu
  *
  *
  */
 
 void printModificationMenu();
-/** \brief show case 2 of switch in main.c modification menu
+/** \brief show modification submenu
  *
  *
  */
 
-//FUNCIONES PARA INICIALIZAR (1 de 2)
+ void printSortMenu();
+/** \brief show sort submenu
+ *
+ *
+ */
 
-int initEmployees() (eEmpleado*, int);
+
+
+//FUNCIONES PARA INICIALIZAR (1 de 1)
+
+int initEmployees(Employee*, int);
 /** \brief To indicate that all position in the array are empty,
 * this function put the flag (isEmpty) in TRUE in all
 * position of the array
@@ -48,101 +56,98 @@ int initEmployees() (eEmpleado*, int);
 *
 */
 
-//int generarID (HACER)
 
-int getId(Employee*, int);
+//FUNCIONES PARA AÑADIR (2 de 2)
 
-
-
-//FUNCIONES PARA AÑADIR (2 de 4)
-
- eEmpleado pedirEmpleado(); //FALTA TERMINAR
-/** \brief Función que pide los datos de los empleados para luego ser usada por la función que da de alta al empleado.
- *
- *
-* \return Retorna una estructura de empleado con los nombres cargados
- */
-
-//int validarEmpleado (HACER)
-
- int buscarLibre(eEmpleado*,int);//TERMINADA
-/** \brief Busca si hay espacio libre en el array.
- *
- * \param 1 Recibe un puntero de la estructura eEmpleados
- * \param 2 Recibe la cantidad de elementos del array
- * \return Devuelve (-1) si hay error, devuelve la pos del array si todo está bien
+int addEmployees(Employee*,int,int);
+/** \brief add in a existing list of employees the values received as parameters in the first empty position
+ * \param list employee* Pointer to array of employees
+ * \param len int Array length
+ * \param id int auto-incremental id variable
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or without free space] - (0) if Ok
  *
  */
 
- int agregarEmpleados (eEmpleado*,int);//TERMINADA
- /** \brief Agrega los empleados al array verificando si hay o no espacio y validando.
-  *
-  * \param 1 Recibe un puntero de la estructura eEmpleados
-  * \param 2 Recibe la cantidad de elementos del array
-  * \return Devuelve (-1) si hay error, devuelve 0 si todo está bien
-  *
-  */
+
+int getFree(Employee*,int);
+/** \brief get free space in the content of employees array
+ *
+ * \param Employee* Pointer to array of employees
+ * \param len int Array length
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - array index if Ok
+ *
+ */
 
 //3-BUSCAR EMPLEADO POR ID (1 de 1)
-int buscarEmpleadoPorId(eEmpleado*, int, int);
-/** \brief Funcion que busca en todo el array al indice que tenga el id que hayamos puesto
+int findEmployeeById(Employee*,int,int);
+/** \brief find an Employee by Id en returns the index position in array.
  *
- * \param Se le pasa la estructura eEmpleado
- * \param Se le pasa el maximo largo del array
- * \param Se le pasa el id previamente pedido en la funcion getInt
- * \return retorna el indice del id ingresado, o -1 si da error.
+ * \param Employee* Pointer of array of employees
+ * \param len int Array length
+ * \param id int
+ * \return Return employee index position or (-1) if [Invalid length or NULL pointer received or employee not found]
+ */
+
+//4-MODIFICACION (1 de 1)
+int modificationEmployee(Employee*, int);
+/** \brief
+ *
+ * \param Employee* Pointer of array of employees
+ * \param len int Array length
+ * \return Return (0) if it´s ok or (-1) if [Invalid length or NULL pointer received or employee not found]
  *
  */
 
-//4-MODIFICACION (0/1) NO ENTIENDO TANTO EL CODIGO, Y NO QUIERO COPIAR CÓDIGO
+//5-BAJA LÓGICA (1 de 1)
 
-//5-BAJA LÓGICA (0.5/1) NO SE SI ESTA BIEN
-
-int bajaEmpleado(eEmpleado*,int);
-/** \brief Función para dar de baja a un empleado, mediante la baja lógica poniendo al vector en OCUPADO
+int removeEmployee(Employee*,int,int);
+/** \brief Remove a Employee by Id (put isEmpty Flag in 1)
  *
- * \param 1 Se le pasa la estructura eEmpleado
- * \param 2 Se le pasa el maximo largo del array
- * \return Retorna -1 si sale algo mal, retorna 0 si todo esta bien
+ * \param Employee* Pointer of array of employees
+ * \param len int Array length
+ * \param id int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't find a employee] - (0) if Ok,
+ *         (1) if user say n in respuesta and (2) if the data has delated
  *
  */
 
-//6-FUNCIONES DE ORDENAMIENTO
-int ordenarEmpleadosApellido(eEmpleado*, int, int);
-/** \brief Función para ordenar los empleados por apellido
+//6-FUNCIONES DE ORDENAMIENTO (2 de 2)
+int sortEmployeesByLastName(Employee* list, int len, int order);
+ /** \brief Sort the elements in the array of employees, the argument order indicate UP or DOWN order
  *
- * \param 1 Se le pasa la estructura eEmpleado
- * \param 2 Se le pasa el maximo largo del array
- * \param 3 Se le pasa 1 si se quiere ordenar ascendentemente y 0 si se quiere ordenar descendentemente
- * \return Retorna -1 si da error y 0 si esta bien
- *
- */
-
-int ordenarEmpleadosSector(eEmpleado*, int);
-/** \brief Función para ordenar a los empleados por sector
- *
- * \param 1 Se le pasa la estructura eEmpleado
- * \param 2 Se le pasa el maximo largo del array
- * \return Retorna -1 si da error y 0 si esta bien
+ * \param Employee* Pointer of array of employees
+ * \param len int Array length
+ * \param order int  [1] indicate UP - [0] indicate DOWN
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
 
-
-//7-FUNCIONES PARA MOSTRAR
-void mostrarEmpleado(eEmpleado);
-/** \brief Funcion para mostrar un sólo empleado
+int sortEmployeesBySector(Employee*, int);
+ /** \brief Sort the elements in the array of sector
  *
- * \param Se le pasa la estructura eEmpleado
+ * \param Employee* Pointer of array of employees
+ * \param len int Array length
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
 
- void mostrarListadoDeEmpleados(eEmpleado*, int);
- /** \brief Recorre en un for y muestra todos los empleados cargados
-  *
-  * \param 1 Se le pasa la estructura eEmpleado
-  * \param 2 Se le pasa el maximo largo del array
-  *
-  */
+
+//7-FUNCIONES PARA MOSTRAR (2 de 2)
+void printEmployee(Employee list);
+/** \brief print only employee
+ *
+ * \param Employee* Pointer of array of employees
+ *
+ */
+
+int printEmployees(Employee* list, int len);
+/**\brief print the content of employees array
+*
+* \param Employee* Pointer of array of employees
+* \param len int Array length
+* \return int (0)
+*
+*/
 
 
 
@@ -150,12 +155,55 @@ void mostrarEmpleado(eEmpleado);
 
 //8-FUNCIONES DE HARDCODEO (1 de 1) LISTO
 
-  void hardcodeoEmpleados(eEmpleado*, int); //TERMINADA
- /** \brief Función que hardcodea los datos de 5 personas y las pasa a la estructura por referencia
+void hardcoded(Employee*, int); //TERMINADA
+ /** \brief initialize employees with data
  *
- * \param 1 Recibe un puntero de la estructura eEmpleados
- * \param 2 Recibe la cantidad de elementos del array
+ * \param Employee* Pointer to array of employees
+ * \param len int Array length
+ * \return void
  *
  */
 
- //9-CALCULAR PROMEDIOS Y OTROS DATOS
+//9-CALCULAR PROMEDIOS Y OTROS DATOS (3 de 3)
+
+ float totalSalary(Employee*,int);
+/** \brief Count employes not free and amount the salary
+ *
+ * \param Employee* Pointer of array of employees
+ * \param len int Array length
+ * \return return total salary amount
+ *
+ */
+
+ float salaryAverage(Employee*,int,float);
+/** \brief Count employees not free and calculate the average salary
+ *
+ * \param Employee* Pointer of array of employees
+ * \param len int Array length
+ * \param allSalay float total salary amount
+ * \return return salary average
+ *
+ */
+
+ int betterThanAverage(Employee*,int,float);
+/** \brief counts the employees whose salary exceeds the average salary
+ *
+ * \param Employee* Pointer of array of employees
+ * \param len int Array length
+ * \param averageSalary float average salary
+ * \return returns the number of employees whose salary is higher than average
+ *
+ */
+
+ int employeesNotFree(Employee*,int);
+/** \brief counts the employees not free
+ *
+ * \param Employee* Pointer of array of employees
+ * \param len int Array length
+ * \return returns len of employees not free
+ *
+ */
+
+
+
+
