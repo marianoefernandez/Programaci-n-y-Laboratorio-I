@@ -29,3 +29,6 @@ Si j es menor a i se ordena de mayor a menor
 
 Clase diez:
 BAJAS LÓGICAS
+
+Clase once , doce y trece:
+Practicamos para el parcial, necesito aprender igualar id de una estructura a otra.
