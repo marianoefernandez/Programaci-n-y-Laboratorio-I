@@ -16,7 +16,6 @@ int main()
 
     int opcion;
     int opcion2;
-    int opcion3;
     int idAutoincremental=0;
     int retorno;
     int cantidadPropietariosOcupados;
@@ -94,7 +93,7 @@ int main()
                 cantidadPropietariosOcupados= propietariosOcupados(listaP,TAM);
                 if (cantidadPropietariosOcupados>0)
                 {
-                    if (agregarVehiculo(listaV,TAM,idAutoincremental)== 0)
+                    if (agregarVehiculo(listaV,TAM)== 0)
                     {
                         printf("\nSe cargo el vehiculo\n");
                     }
@@ -105,7 +104,28 @@ int main()
                 }
                 break;
 
-                case 5:
+            case 5:
+                cantidadPropietariosOcupados= propietariosOcupados(listaP,TAM);
+                if (cantidadPropietariosOcupados>0)
+                {
+                   if (egresarVehiculo(listaV,TAM)== 0)
+                    {
+                        printf("\nSe egreso el vehiculo\n");
+                    }
+                    else
+                    {
+                        printf("\nNO HAY ESPACIO\n");
+                    }
+                }
+                break;
+            case 6:
+                printSecondMenu();
+                do
+                {
+                    opcion2=getInt("\nSu opcion: ");
+
+                }
+
             default:
                 printf("\nSeleccione una opcion valida \n");
 

@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1570113088 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\simulacro de parcial\simulacro de parcial\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"inputs.h"
+
+1570113067 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\simulacro de parcial\simulacro de parcial\arrayemployees.h
+	<stdio.h>
+	<string.h>
+
+1570104337 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\simulacro de parcial\simulacro de parcial\inputs.h
+
+1570104337 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\simulacro de parcial\simulacro de parcial\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1570112431 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\simulacro de parcial\simulacro de parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+

@@ -12,7 +12,7 @@ typedef struct
     int dia;
     int mes;
     int anio;
-}eFecha
+}eFecha;
 
 typedef struct
 {
@@ -20,7 +20,7 @@ typedef struct
     char nombre[51];
     eFecha fechaNac;
     int isEmpty;
-}ePropietario
+}ePropietario;
 
 typedef struct {
     char patente[51];
@@ -75,7 +75,7 @@ int agregarPropietario(ePropietario*,int,int);
  */
 
 
-int getFree(Employee*,int);
+int getFree(ePropietario*,int);
 /** \brief get free space in the content of employees array
  *
  * \param Employee* Pointer to array of employees
@@ -84,8 +84,12 @@ int getFree(Employee*,int);
  *
  */
 
+ int agregarVehiculo(eVehiculo*,int);
+
+ int egresarVehiculo(eVehiculo*,int);
+
 //3-BUSCAR EMPLEADO POR ID (1 de 1)
-int findEmployeeById(Employee*,int,int);
+int buscarPropietarioPorId(ePropietario*,int,int);
 /** \brief find an Employee by Id en returns the index position in array.
  *
  * \param Employee* Pointer of array of employees
@@ -95,7 +99,7 @@ int findEmployeeById(Employee*,int,int);
  */
 
 //4-MODIFICACION (1 de 1)
-int modificationEmployee(Employee*, int);
+int modificarPropietario(ePropietario*, int);
 /** \brief
  *
  * \param Employee* Pointer of array of employees
@@ -106,10 +110,10 @@ int modificationEmployee(Employee*, int);
 
 //5-BAJA LÓGICA (1 de 1)
 
-int removeEmployee(Employee*,int,int);
-/** \brief Remove a Employee by Id (put isEmpty Flag in 1)
+int eliminarPropietario(ePropietario*,int,int);
+/** \brief Remove a ePropietario by Id (put isEmpty Flag in 1)
  *
- * \param Employee* Pointer of array of employees
+ * \param ePropietario* Pointer of array of employees
  * \param len int Array length
  * \param id int
  * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't find a employee] - (0) if Ok,
@@ -118,20 +122,20 @@ int removeEmployee(Employee*,int,int);
  */
 
 //6-FUNCIONES DE ORDENAMIENTO (2 de 2)
-int sortEmployeesByLastName(Employee* list, int len, int order);
- /** \brief Sort the elements in the array of employees, the argument order indicate UP or DOWN order
+int ordenarPropietariosNombre(ePropietario*,int,int);
+ /** \brief Sort the elements in the array of propietarios, the argument order indicate UP or DOWN order
  *
- * \param Employee* Pointer of array of employees
+ * \param ePropietario* Pointer of array of propietarios
  * \param len int Array length
  * \param order int  [1] indicate UP - [0] indicate DOWN
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
 
-int sortEmployeesBySector(Employee*, int);
+int ordenarPropietariosAnio(ePropietario*,int);
  /** \brief Sort the elements in the array of sector
  *
- * \param Employee* Pointer of array of employees
+ * \param ePropietario* Pointer of array of employees
  * \param len int Array length
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
@@ -139,14 +143,14 @@ int sortEmployeesBySector(Employee*, int);
 
 
 //7-FUNCIONES PARA MOSTRAR (2 de 2)
-void printEmployee(Employee list);
+void printPropietario(ePropietario);
 /** \brief print only employee
  *
  * \param Employee* Pointer of array of employees
  *
  */
 
-int printEmployees(Employee* list, int len);
+int printEmployees(ePropietario*,int);
 /**\brief print the content of employees array
 *
 * \param Employee* Pointer of array of employees
@@ -161,7 +165,7 @@ int printEmployees(Employee* list, int len);
 
 //8-FUNCIONES DE HARDCODEO (1 de 1) LISTO
 
-void hardcoded(Employee*, int); //TERMINADA
+//void hardcoded(Employee*, int); //TERMINADA
  /** \brief initialize employees with data
  *
  * \param Employee* Pointer to array of employees
@@ -172,7 +176,7 @@ void hardcoded(Employee*, int); //TERMINADA
 
 //9-CALCULAR PROMEDIOS Y OTROS DATOS (3 de 3)
 
- float totalSalary(Employee*,int);
+ //float totalSalary(Employee*,int);
 /** \brief Count employes not free and amount the salary
  *
  * \param Employee* Pointer of array of employees
@@ -181,7 +185,7 @@ void hardcoded(Employee*, int); //TERMINADA
  *
  */
 
- float salaryAverage(Employee*,int,float);
+ //float salaryAverage(Employee*,int,float);
 /** \brief Count employees not free and calculate the average salary
  *
  * \param Employee* Pointer of array of employees
@@ -191,7 +195,7 @@ void hardcoded(Employee*, int); //TERMINADA
  *
  */
 
- int betterThanAverage(Employee*,int,float);
+ //int betterThanAverage(Employee*,int,float);
 /** \brief counts the employees whose salary exceeds the average salary
  *
  * \param Employee* Pointer of array of employees
@@ -201,12 +205,12 @@ void hardcoded(Employee*, int); //TERMINADA
  *
  */
 
- int employeesNotFree(Employee*,int);
-/** \brief counts the employees not free
+ int propietariosOcupados(ePropietario*,int);
+/** \brief counts the propietarios not free
  *
- * \param Employee* Pointer of array of employees
+ * \param Employee* Pointer of array of propietarios
  * \param len int Array length
- * \return returns len of employees not free
+ * \return returns len of propietarios not free
  *
  */
 

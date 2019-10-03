@@ -42,7 +42,7 @@ int inicializarPropietarios(ePropietario* listaP, int len)
     int i;
     int retorno=-1;
 
-    if(list!=NULL && len>0)
+    if(listaP!=NULL && len>0)
     {
         for (i=0; i<len; i++)
         {
@@ -65,7 +65,6 @@ int agregarPropietario(ePropietario* listaP,int len,int id)
     int dia;
     int mes;
     int anio;
-    int sector;
     int retorno= -1;
 
     i= getFree(listaP, len);
@@ -146,13 +145,13 @@ int agregarVehiculo(eVehiculo* listaV,int len)
             getString("\nPOR FAVOR SOLO INGRESE NUMEROS\nIngrese el id nuevamente: ",idAux);//Valido
         }
         id=atoi(idAux);//Paso cadena a numero
-        listaV[i].idPropietario=mes;
+        listaV[i].idPropietario=id;
 
         getString("\nIngrese la patente: ",listaV[i].patente);//Pido
         //VALIDACION
-        while(isAlphaNumeric(listaP[i].patente) == 0)
+        while(isAlphaNumeric(listaV[i].patente) == 0)
         {
-            getString("\nPOR FAVOR SOLO INGRESE LETRAS Y NUMEROS\nIngrese el nombre nuevamente: ",patente[i].patente);//Valido
+            getString("\nPOR FAVOR SOLO INGRESE LETRAS Y NUMEROS\nIngrese el nombre nuevamente: ",listaV[i].patente);//Valido
         }
         stringToUpper(listaV[i].patente);//Paso primer caracter a Mayuscula
 
@@ -211,6 +210,7 @@ int egresarVehiculo(eVehiculo* listaV,int len)
     int i=0;
     char auxHora[11];
     int horaSalida;
+    int retorno=-1;
 
 
     if(i>=0)
@@ -252,11 +252,11 @@ int getFree(ePropietario* listaP,int len) //TERMINADA
 
 
 //3-BUSCAR EMPLEADO POR ID (1 de 1)
-int buscarPropietarioPorId(propietario* listaP, int len, int id)
+int buscarPropietarioPorId(ePropietario* listaP, int len, int id)
 {
     int i;
     int retorno = -1;
-    if(list!=NULL && len>0)
+    if(listaP!=NULL && len>0)
     {
         for(i=0; i<len; i++)
         {
@@ -276,7 +276,6 @@ int modificarPropietario(ePropietario* listaP, int len)
     int id;
     int index;
     int opcion;
-    int sector;
     char auxName[30];
     char diaAux[10];
     char mesAux[10];
@@ -330,7 +329,7 @@ int modificarPropietario(ePropietario* listaP, int len)
             getString("\nPOR FAVOR SOLO INGRESE NUMEROS\nIngrese el anio nuevamente: ",anioAux);//Valido
         }
         anio=atoi(anioAux);//Paso cadena a numero
-        listaP[i].fechaNac.anio=anio;
+        listaP[index].fechaNac.anio=anio;
 
 
         getString("\nIngrese un nuevo mes de nacimiento: ",mesAux);//Pido
@@ -340,7 +339,7 @@ int modificarPropietario(ePropietario* listaP, int len)
             getString("\nPOR FAVOR SOLO INGRESE NUMEROS\nIngrese el mes nuevamente: ",mesAux);//Valido
         }
         mes=atoi(mesAux);//Paso cadena a numero
-        listaP[i].fechaNac.mes=mes;
+        listaP[index].fechaNac.mes=mes;
 
         getString("\nIngrese un nuevo dia de nacimiento: ",diaAux);//Pido
         //VALIDACION
@@ -349,7 +348,7 @@ int modificarPropietario(ePropietario* listaP, int len)
             getString("\nPOR FAVOR SOLO INGRESE NUMEROS\nIngrese el dia nuevamente: ",diaAux);//Valido
         }
         dia=atoi(diaAux);//Paso cadena a numero
-        listaP[i].fechaNac.dia=dia;
+        listaP[index].fechaNac.dia=dia;
 
         default:
             printf("\nError. No se ha ingresado una opcion valida.\n");
@@ -373,7 +372,7 @@ int eliminarPropietario(ePropietario* listaP, int len, int id)
     int retorno =-1;
     int index;
     char respuesta;
-    if (list!=NULL && len>0)
+    if (listaP!=NULL && len>0)
     {
         printPropietarios(listaP,len);
 
@@ -416,9 +415,9 @@ int eliminarPropietario(ePropietario* listaP, int len, int id)
 
 //6-FUNCIONES DE ORDENAMIENTO (2 de 2) LISTO
 
-int sortEmployeesByLastName(Employee* list, int len, int order)
+int ordenarPropietariosNombre (ePropietario* listaP, int len, int order)
 {
-    Employee auxList;
+    ePropietario auxList;
     int i;
     int j;
     int retorno =-1;
@@ -427,11 +426,11 @@ int sortEmployeesByLastName(Employee* list, int len, int order)
     {
         for(j=i+1; j<len; j++)
         {
-            if(strcmp(list[i].lastName,list[j].lastName) > order)//1 ASC y 0-DESC
+            if(strcmp(listaP[i].nombre,listaP[j].nombre) > order)//1 ASC y 0-DESC
             {
-                auxList=list[i];
-                list[i]=list[j];
-                list[j]=auxList;
+                auxList=listaP[i];
+                listaP[i]=listaP[j];
+                listaP[j]=auxList;
                 retorno=0;
             }
         }
@@ -439,9 +438,9 @@ int sortEmployeesByLastName(Employee* list, int len, int order)
     return retorno;
 }
 
-int sortEmployeesBySector(Employee* list, int len)
+int ordenarPropietariosAnio(ePropietario* listaP, int len)
 {
-    Employee auxList;
+    ePropietario auxList;
     int i;
     int j;
     int retorno =-1;
@@ -450,11 +449,11 @@ int sortEmployeesBySector(Employee* list, int len)
     {
         for(j=i+1; j<len; j++)
         {
-            if(list[i].sector>list[j].sector)
+            if(listaP[i].fechaNac.anio>listaP[j].fechaNac.anio)
             {
-                auxList=list[i];
-                list[i]=list[j];
-                list[j]=auxList;
+                auxList=listaP[i];
+                listaP[i]=listaP[j];
+                listaP[j]=auxList;
             }
         }
     }
@@ -462,27 +461,27 @@ int sortEmployeesBySector(Employee* list, int len)
 }
 
 //7-FUNCIONES PARA MOSTRAR (2 de 2) LISTO
-void printPropietario(ePropietarios listaP)
+void printPropietario(ePropietario listaP)
 {
-    printf("\n%d -- %10s %15d %20d $ %10d\n\n", listaP.idPropietario, listaP.nombre, listaP.fechaNac.dia, listaP.fechaNac.mes, listaP.fechaNac.anio);
+    printf("\n%d -- %10s %15d %10d %15d\n\n", listaP.idPropietario, listaP.nombre, listaP.fechaNac.dia, listaP.fechaNac.mes, listaP.fechaNac.anio);
 }
 
-int printPropietarios(ePropietarios* listaP, int len)
+int printPropietarios(ePropietario* listaP, int len)
 {
     int i;
-    printf("ID        Nombre        Dia          Mes            Anio\n");
+    printf("ID        Nombre          Dia            Mes          Anio\n");
     for(i=0; i<len; i++)
     {
-        if(list[i].isEmpty==NOTFREE)
+        if(listaP[i].isEmpty==NOTFREE)
         {
-            printEmployee(list[i]);
+            printPropietario(listaP[i]);
         }
     }
     return 0;
 }
 
 //8-FUNCIONES DE HARDCODEO (1 de 1) LISTO
-
+/*
 void hardcoded(Employee* list, int len) //TERMINADA
 {
     int id[10] = {1,2,3,4,5,6,7,8,9,10};
@@ -557,11 +556,12 @@ void hardcoded(Employee* list, int len) //TERMINADA
 
      return betterSalaryAverage;
  }
+ */
 
- int propietariosOcupados(propietarios* listaP,int len)
+ int propietariosOcupados(ePropietario* listaP,int len)
  {
      int i;
-     int propietariosOcupados()=0;
+     int propietariosOcupados=0;
 
      for(i=0;i<len;i++)
      {
