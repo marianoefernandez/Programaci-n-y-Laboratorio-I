@@ -102,6 +102,10 @@ int main()
                         printf("\nNO HAY ESPACIO\n");
                     }
                 }
+                else
+                {
+                    printf("\nNo hay ningun propietario dado de alta, por favor primero realice una carga\n");
+                }
                 break;
 
             case 5:
@@ -117,12 +121,21 @@ int main()
                         printf("\nNO HAY ESPACIO\n");
                     }
                 }
+                else
+                {
+                    printf("\nNo hay ningun propietario dado de alta, por favor primero realice una carga\n");
+                }
                 break;
             case 6:
-                printSecondMenu();
-                do
+                cantidadPropietariosOcupados= propietariosOcupados(listaP,TAM);
+                if (cantidadPropietariosOcupados>0)
                 {
-                    opcion2=getInt("\nSu opcion: ");
+                    printf("\n\n\nPROPIETARIOS ORDENADOS POR NOMBRE\n\n\n");
+                    ordenarPropietariosNombre(listaP,TAM,0);
+                    printPropietarios(listaP,TAM);
+                    printf("\n\n\nPROPIETARIOS ORDENADOS POR ANIO\n\n\n");
+                    ordenarPropietariosAnio(listaP,TAM);
+                    printPropietarios(listaP,TAM);
 
                 }
 
