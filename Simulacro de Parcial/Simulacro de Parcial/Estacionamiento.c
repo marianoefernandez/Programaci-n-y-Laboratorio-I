@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "ArrayEmployees.h"
+#include "Estacionamiento.h"
 #include "inputs.h"
 
 
@@ -211,7 +211,6 @@ int egresarVehiculo(eVehiculo* listaV,int len)
     char auxHora[11];
     int horaSalida;
     int retorno=-1;
-
 
     if(i>=0)
     {
@@ -480,8 +479,92 @@ int printPropietarios(ePropietario* listaP, int len)
     return 0;
 }
 
-//8-FUNCIONES DE HARDCODEO (1 de 1) LISTO
-/*
+//8-FUNCIONES DE HARDCODEO (2 de 2) LISTO
+
+void hardcodeoPropietarios(ePropietario* listaP, int cantidad) //TERMINADA
+{
+    int id[4] = {1,2,3,4};
+    char nombre[4][31] = {"Maria","Ezequiel","German","Yanina"};
+    int anio[4] = {1990,1980,2000,1995};
+    int mes[4] = {3,4,12,11};
+    int dia[4] = {33,22,25,11};
+    int i;
+
+    for (i=0; i<cantidad; i++)
+    {
+        listaP[i].idPropietario = id[i];
+        strcpy(listaP[i].nombre, nombre[i]);
+        listaP[i].fechaNac.anio = anio[i];
+        listaP[i].fechaNac.mes = mes[i];
+        listaP[i].fechaNac.dia = dia[i];
+        listaP[i].isEmpty = NOTFREE;
+    }
+}
+
+void hardcodeoVehiculos(eVehiculo* listaV, int cantidad) //TERMINADA
+{
+    int id[4] = {1,2,2,4};
+    char patente[4][31] = {"AAA111","BBB222","AA111BB","DJ222BB"};
+    int anio[4] = {2019,2019,2019,2019};
+    int mes[4] = {9,9,9,9};
+    int dia[4] = {26,26,26,26};
+    int horaIngreso[4] = {10,9,8,11};
+    int horaSalida[4] = {11,11,11,12};
+    int i;
+
+    for (i=0; i<cantidad; i++)
+    {
+        listaV[i].idPropietario = id[i];
+        strcpy(listaV[i].patente, patente[i]);
+        listaV[i].fechaIngreso.anio = anio[i];
+        listaV[i].fechaIngreso.mes = mes[i];
+        listaV[i].fechaIngreso.dia = dia[i];
+        listaV[i].horaEntrada = horaIngreso[i];
+        listaV[i].horaSalida = horaSalida[i];
+    }
+}
+
+/*void hardcodeoPersonas(ePersona* persona, int cantidad) //TERMINADA
+{
+    int id[4] = {1,2,3,4};
+    char nombre[4][31] = {"Maria","Ezequiel","German","Yanina"};
+    int anio[4] = {1990,1980,2000,1995};
+    int mes[4] = {3,4,12,11};
+    int dia[4] = {33,22,25,11};
+    int i;
+
+    for (i=0; i<cantidad; i++)
+    {
+        persona[i].id = id[i];
+        strcpy(persona[i].nombre, nombre[i]);
+        persona[i].fechaNac.anio = anio[i];
+        persona[i].fechaNac.mes = mes[i];
+        persona[i].fechaNac.dia = dia[i];
+    }
+}
+
+void hardcodeoVehiculos(eVehiculo* vehiculo, int cantidad) //TERMINADA
+{
+    int id[4] = {1,2,2,4};
+    char patente[4][31] = {"AAA111","BBB222","AA111BB","DJ222BB"};
+    int anio[4] = {2019,2019,2019,2019};
+    int mes[4] = {9,9,9,9};
+    int dia[4] = {26,26,26,26};
+    int horaIngreso[4] = {10,9,8,11};
+    int horaSalida[4] = {11,11,11,12};
+    int i;
+
+    for (i=0; i<cantidad; i++)
+    {
+        vehiculo[i].idDuenio = id[i];
+        strcpy(vehiculo[i].patente, patente[i]);
+        vehiculo[i].fechaIngreso.anio = anio[i];
+        vehiculo[i].fechaIngreso.mes = mes[i];
+        vehiculo[i].fechaIngreso.dia = dia[i];
+        vehiculo[i].horaIngreso = horaIngreso[i];
+        vehiculo[i].horaSalida = horaSalida[i];
+    }
+}
 void hardcoded(Employee* list, int len) //TERMINADA
 {
     int id[10] = {1,2,3,4,5,6,7,8,9,10};

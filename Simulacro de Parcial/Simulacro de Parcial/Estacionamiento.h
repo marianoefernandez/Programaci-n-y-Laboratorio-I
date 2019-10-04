@@ -163,7 +163,7 @@ int printEmployees(ePropietario*,int);
 
 
 
-//8-FUNCIONES DE HARDCODEO (1 de 1) LISTO
+//8-FUNCIONES DE HARDCODEO (2 de 2) LISTO
 
 //void hardcoded(Employee*, int); //TERMINADA
  /** \brief initialize employees with data
@@ -173,6 +173,10 @@ int printEmployees(ePropietario*,int);
  * \return void
  *
  */
+
+void hardcodeoPropietarios(ePropietario*,int);
+
+void hardcodeoVehiculos(eVehiculo*,int);
 
 //9-CALCULAR PROMEDIOS Y OTROS DATOS (3 de 3)
 

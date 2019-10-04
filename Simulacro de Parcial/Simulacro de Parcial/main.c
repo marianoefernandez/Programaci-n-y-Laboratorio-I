@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "ArrayEmployees.h"
+#include "Estacionamiento.h"
 #define TAM 1000
 #define NOTFREE 1
 #define FREE 0
+#define HARDCODING 4
 
 int main()
 {
@@ -28,7 +29,7 @@ int main()
             switch(opcion)
             {
             case 1:
-                idAutoincremental++;
+                /*idAutoincremental++;
                 if (agregarPropietario(listaP,TAM,idAutoincremental)== 0)
                 {
                     printf("\nSe cargo el propietario\n");
@@ -37,10 +38,11 @@ int main()
                 {
                     printf("\nNO HAY ESPACIO\n");
                 }
-
-                /*hardcoded(list,HARDCODING);
-                printf("\nSe hardcodearon empleados");
                 */
+
+                hardcodeoPropietarios(listaP,HARDCODING);
+                printf("\nSe hardcodearon propietarios");
+
                 break;
 
             case 2:
@@ -112,7 +114,7 @@ int main()
                 cantidadPropietariosOcupados= propietariosOcupados(listaP,TAM);
                 if (cantidadPropietariosOcupados>0)
                 {
-                   if (egresarVehiculo(listaV,TAM)== 0)
+                   if (egresarVehiculo(listaV,TAM)== 0)//ARREGLAR LA FUNCION EGRESAR VEHICULO
                     {
                         printf("\nSe egreso el vehiculo\n");
                     }
@@ -136,7 +138,6 @@ int main()
                     printf("\n\n\nPROPIETARIOS ORDENADOS POR ANIO\n\n\n");
                     ordenarPropietariosAnio(listaP,TAM);
                     printPropietarios(listaP,TAM);
-
                 }
 
             default:
