@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1570208946 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\practica antes del primer parcial\ejercicio 4\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1570208946 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\practica antes del primer parcial\ejercicio 4\inputs.h
+
+1570254048 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\practica antes del primer parcial\ejercicio 4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"agenda.h"
+
+1570254072 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\practica antes del primer parcial\ejercicio 4\agenda.h
+	<stdio.h>
+	<string.h>
+
+1570254092 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\practica antes del primer parcial\ejercicio 4\agenda.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"agenda.h"
+

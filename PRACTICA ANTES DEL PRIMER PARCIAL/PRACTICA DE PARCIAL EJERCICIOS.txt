@@ -11,42 +11,23 @@ getInt()
 getFloat()
 getChar()
 
-3)Diseñar un programa para jugar a adivinar un número entre 0 y 100. El juego tiene que dar pistas de si el número introducido por el jugador está por encima o por debajo. 
-El juego termina cuando se adivina el número o se decide terminar de jugar ingresando un número negativo.
-Permitir jugar tantas veces como lo desee el jugador y al salir mostrar su mejor puntuación.
-Utilizar la biblioteca del punto 1.
-
-4) Solicitar al usuario 5 números, permitir listarlos por pantalla indicando el máximo, el mínimo y el promedio. 
-Permitir Modificar el valor de cualquiera de los números cargados indicando el índice del mismo y su nuevo valor.
-
-5)Agregar a la biblioteca utn.h funciones para validar diferentes tipos de valores:
+3)Agregar a la biblioteca utn.h funciones para validar diferentes tipos de valores:
 
 Solo números, ej. 123436679
 Solo letras, ej. abBD
 Alfanumericos, ej. ab555gT6
 Teléfono, ej. 4XXX-XXXX
 
-6)Realizar un programa que pida al usuario el ingreso de un dato y determine con cuales de los tipos cumple.
-
-7)Realizar una agenda para guardar los datos de hasta 200 personas de las cuales se toman los siguientes datos:
+4)Realizar una agenda para guardar los datos de hasta 200 personas de las cuales se toman los siguientes datos:
 
 Nombre
 Apellido
-Legajo (NO SE PUEDE REPETIR)
+Legajo (NO SE PUEDE REPETIR) // FALTA IGUALAR PARA NO REPETIR LEGAJO
 a- Realizar un programa con un menú de opciones para hacer altas , bajas y modificaciones (ABM) de una agenda.
 
 b- Mostrar un listado ordenado por Apellido
 
-8)El juego de cartas del siete y medio. Consiste en ir pidiendo cartas intentando sumar 7.5 puntos sin pasarse. 
-Gana el jugador que más se acerca a 7.5. Se utiliza una baraja española. Sota, caballo y rey valen medio punto. 
-Las demás cartas puntúan según su valor numérico (de 1 a 7). Utilizar la biblioteca utn.h.
-
-9) And now it's time to play. 
-The Game of Fifteen is a puzzle played on a square, two-dimensional board with numbered tiles that slide. 
-The goal of this puzzle is to arrange the board's tiles from smallest to largest, left to right, top to bottom, 
-with an empty space in board's bottom-right corner, as in the below. (TRADUCIR)
-
-10)Desarrollar una aplicación para un comercio que le permita administrar sus productos.
+5)Desarrollar una aplicación para un comercio que le permita administrar sus productos.
 
 Datos de cada producto:
 
@@ -63,7 +44,7 @@ Cantidad
 3. BAJA: Se ingresa el Código de Producto y se limpiarán los datos asociados
 4. LISTAR: Realizar un solo listado de los datos ordenados por descripción (descendente)
 
-11)Al ejercicio anterior agregarle
+6)Al ejercicio anterior agregarle
 
 5. LISTAR: Realizar un solo listado de los datos ordenados por los siguientes criterios:
 
@@ -77,7 +58,7 @@ B. Los datos del/os producto/s que superan el valor de precio promedio
 7. MINIMIZAR:
 Realizar las funciones necesarias a fin de minimizar la función main()
 
-12) Se solicita realizar una aplicación que permita administrar los libros de una libreria.
+7) Se solicita realizar una aplicación que permita administrar los libros de una libreria.
 
 Datos Libro:
 
@@ -99,7 +80,7 @@ ORDENAR: Se ordenara el array por titulo y ante igualdad por código
 
 LISTAR LIBROS: Realizar un solo listado con todos los libros
 
-13) A partir del anterior ejercicio incorporar la entidad autor
+8) A partir del anterior ejercicio incorporar la entidad autor
 
 Datos del Autor:
 
