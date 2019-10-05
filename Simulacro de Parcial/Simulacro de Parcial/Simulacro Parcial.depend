@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1570208946 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\simulacro de parcial\simulacro de parcial\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1570208946 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\simulacro de parcial\simulacro de parcial\inputs.h
+
+1570266046 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\simulacro de parcial\simulacro de parcial\estacionamiento.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Estacionamiento.h"
+	"inputs.h"
+
+1570265950 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\simulacro de parcial\simulacro de parcial\estacionamiento.h
+	<stdio.h>
+	<string.h>
+
+1570265998 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\simulacro de parcial\simulacro de parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Estacionamiento.h"
+

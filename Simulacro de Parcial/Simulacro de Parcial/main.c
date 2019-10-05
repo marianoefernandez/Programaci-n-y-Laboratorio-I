@@ -29,7 +29,7 @@ int main()
             switch(opcion)
             {
             case 1:
-                /*idAutoincremental++;
+                idAutoincremental++;
                 if (agregarPropietario(listaP,TAM,idAutoincremental)== 0)
                 {
                     printf("\nSe cargo el propietario\n");
@@ -38,11 +38,11 @@ int main()
                 {
                     printf("\nNO HAY ESPACIO\n");
                 }
-                */
 
-                hardcodeoPropietarios(listaP,HARDCODING);
+
+                /*hardcodeoPropietarios(listaP,HARDCODING);
                 printf("\nSe hardcodearon propietarios");
-
+                */
                 break;
 
             case 2:
@@ -132,11 +132,7 @@ int main()
                 cantidadPropietariosOcupados= propietariosOcupados(listaP,TAM);
                 if (cantidadPropietariosOcupados>0)
                 {
-                    printf("\n\n\nPROPIETARIOS ORDENADOS POR NOMBRE\n\n\n");
-                    ordenarPropietariosNombre(listaP,TAM,0);
-                    printPropietarios(listaP,TAM);
-                    printf("\n\n\nPROPIETARIOS ORDENADOS POR ANIO\n\n\n");
-                    ordenarPropietariosAnio(listaP,TAM);
+                    ordenarPropietariosNombreAnio(listaP,TAM,0);
                     printPropietarios(listaP,TAM);
                 }
 

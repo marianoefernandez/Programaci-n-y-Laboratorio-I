@@ -122,7 +122,7 @@ int eliminarPropietario(ePropietario*,int,int);
  */
 
 //6-FUNCIONES DE ORDENAMIENTO (2 de 2)
-int ordenarPropietariosNombre(ePropietario*,int,int);
+int ordenarPropietariosNombreAnio(ePropietario*,int,int);
  /** \brief Sort the elements in the array of propietarios, the argument order indicate UP or DOWN order
  *
  * \param ePropietario* Pointer of array of propietarios
@@ -131,16 +131,6 @@ int ordenarPropietariosNombre(ePropietario*,int,int);
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
-
-int ordenarPropietariosAnio(ePropietario*,int);
- /** \brief Sort the elements in the array of sector
- *
- * \param ePropietario* Pointer of array of employees
- * \param len int Array length
- * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
- *
- */
-
 
 //7-FUNCIONES PARA MOSTRAR (2 de 2)
 void printPropietario(ePropietario);

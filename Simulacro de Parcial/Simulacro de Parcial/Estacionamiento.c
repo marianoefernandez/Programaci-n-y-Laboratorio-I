@@ -414,30 +414,7 @@ int eliminarPropietario(ePropietario* listaP, int len, int id)
 
 //6-FUNCIONES DE ORDENAMIENTO (2 de 2) LISTO
 
-int ordenarPropietariosNombre (ePropietario* listaP, int len, int order)
-{
-    ePropietario auxList;
-    int i;
-    int j;
-    int retorno =-1;
-
-    for(i=0; i<len-1; i++)
-    {
-        for(j=i+1; j<len; j++)
-        {
-            if(strcmp(listaP[i].nombre,listaP[j].nombre) > order)//1 ASC y 0-DESC
-            {
-                auxList=listaP[i];
-                listaP[i]=listaP[j];
-                listaP[j]=auxList;
-                retorno=0;
-            }
-        }
-    }
-    return retorno;
-}
-
-int ordenarPropietariosAnio(ePropietario* listaP, int len)
+int ordenarPropietariosNombreAnio(ePropietario* listaP, int len, int order)
 {
     ePropietario auxList;
     int i;
@@ -456,6 +433,21 @@ int ordenarPropietariosAnio(ePropietario* listaP, int len)
             }
         }
     }
+
+    for(i=0; i<len-1; i++)
+    {
+        for(j=i+1; j<len; j++)
+        {
+            if(strcmp(listaP[i].nombre,listaP[j].nombre) > order)//1 ASC y 0-DESC
+            {
+                auxList=listaP[i];
+                listaP[i]=listaP[j];
+                listaP[j]=auxList;
+                retorno=0;
+            }
+        }
+    }
+
     return retorno;
 }
 

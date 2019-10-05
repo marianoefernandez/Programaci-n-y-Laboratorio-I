@@ -48,6 +48,7 @@ int agregarAgenda(eAgenda* agenda,int len)
     if(i>=0)
     {
         getString("\nIngrese el legajo: ",auxLegajo);//Pido
+
         //VALIDACION
         while(isNumeric(auxLegajo) == 0)
         {
