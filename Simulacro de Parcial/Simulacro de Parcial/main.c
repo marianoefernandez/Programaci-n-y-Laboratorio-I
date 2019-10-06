@@ -5,7 +5,7 @@
 #define TAM 1000
 #define NOTFREE 1
 #define FREE 0
-#define HARDCODING 4
+#define HARDCODING 10
 
 int main()
 {
@@ -30,6 +30,7 @@ int main()
             {
             case 1:
                 idAutoincremental++;
+                /*
                 if (agregarPropietario(listaP,TAM,idAutoincremental)== 0)
                 {
                     printf("\nSe cargo el propietario\n");
@@ -38,11 +39,11 @@ int main()
                 {
                     printf("\nNO HAY ESPACIO\n");
                 }
-
-
-                /*hardcodeoPropietarios(listaP,HARDCODING);
-                printf("\nSe hardcodearon propietarios");
                 */
+
+                hardcodeoPropietarios(listaP,HARDCODING);
+                printf("\nSe hardcodearon propietarios");
+
                 break;
 
             case 2:
@@ -132,13 +133,17 @@ int main()
                 cantidadPropietariosOcupados= propietariosOcupados(listaP,TAM);
                 if (cantidadPropietariosOcupados>0)
                 {
-                    ordenarPropietariosNombreAnio(listaP,TAM,0);
+                    ordenarPropietariosNombreAnio(listaP,TAM,1);//DE A-Z
                     printPropietarios(listaP,TAM);
+                    printf("\n\n\n");
+                    ordenarPropietariosDuenioPatente(listaV,TAM,1);
+                    printVehiculos(listaP,listaV,TAM);
                 }
+                break;
 
             default:
                 printf("\nSeleccione una opcion valida \n");
-
+                break;
             }
             system("pause");
             system("cls");

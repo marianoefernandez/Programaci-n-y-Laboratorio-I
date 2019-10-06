@@ -74,6 +74,13 @@ int agregarPropietario(ePropietario*,int,int);
  *
  */
 
+ //int validarFecha (ePropietario*,eVehiculo*,int);//1-año,2-dia,3-mes(Propietario),4-5-6(Vehículo)
+ //BUSCA FECHA DE VEHICULO O PROPETARIO Y DEPENDIENDO DE QUE ORDEN ESTABLEZCAMOS HARA DICHA VALIDACION
+ //0 SI EL NUM SE PASA DEL LIMITE
+ //-1 SI EL NUM NO EXISTE EN CALENDARIO
+ //1 SI TODO ESTA BIEN
+
+
 
 int getFree(ePropietario*,int);
 /** \brief get free space in the content of employees array
@@ -132,6 +139,9 @@ int ordenarPropietariosNombreAnio(ePropietario*,int,int);
  *
  */
 
+ int ordenarPropietariosDuenioPatente(eVehiculo*,int,int);
+
+
 //7-FUNCIONES PARA MOSTRAR (2 de 2)
 void printPropietario(ePropietario);
 /** \brief print only employee
@@ -140,7 +150,7 @@ void printPropietario(ePropietario);
  *
  */
 
-int printEmployees(ePropietario*,int);
+int printPropietarios(ePropietario*,int);
 /**\brief print the content of employees array
 *
 * \param Employee* Pointer of array of employees
@@ -149,6 +159,7 @@ int printEmployees(ePropietario*,int);
 *
 */
 
+int printVehiculos(ePropietario*,eVehiculo*,int);
 
 
 
