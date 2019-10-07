@@ -66,6 +66,26 @@ int inicializarPropietarios(ePropietario* listaP, int len)
     return retorno;
 }
 
+int inicializarVehiculos(eVehiculo* listaV, int len)                                                                                             ///2.1 Función initEmployees:
+{
+    int i;
+    int retorno;
+    if(listaV!=NULL && len>0)
+    {
+        for (i=0; i<len; i++)
+        {
+            vehiculo[i].estaEstacionado=FREE;
+            vehiculo[i].horaSalida=-1;
+        }
+        retorno=0;
+    }
+    else
+    {
+        retorno=-1;
+    }
+    return retorno;
+}
+
 //2-FUNCIONES PARA AÑADIR (2 de 2)
 
 int agregarPropietario(ePropietario* listaP,int len,int id)
