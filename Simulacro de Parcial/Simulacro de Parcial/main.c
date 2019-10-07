@@ -12,7 +12,7 @@ int main()
     ePropietario listaP[TAM];
     eVehiculo listaV[TAM];
 
-    if(inicializarPropietarios(listaP,TAM)==0)
+    if(inicializarPropietarios(listaP,TAM)==0 && inicializarVehiculos(listaV,TAM)==0)
     {
 
     int opcion;
@@ -96,6 +96,7 @@ int main()
                 cantidadPropietariosOcupados= propietariosOcupados(listaP,TAM);
                 if (cantidadPropietariosOcupados>0)
                 {
+                    /*
                     if (agregarVehiculo(listaV,TAM)== 0)
                     {
                         printf("\nSe cargo el vehiculo\n");
@@ -104,6 +105,10 @@ int main()
                     {
                         printf("\nNO HAY ESPACIO\n");
                     }
+                    */
+                    hardcodeoVehiculos(listaV,HARDCODING);
+                    printf("\nSe hardcodearon vehiculos");
+
                 }
                 else
                 {
@@ -135,20 +140,29 @@ int main()
                 {
                     do
                     {
-                    printFirstMenu();
+                    printInformar();
                     opcion2=getInt("\nSu opcion: ");
                     switch (opcion2)
                     {
                         case 1:
                             ordenarPropietariosNombreAnio(listaP,TAM,1);
+                            printf("/nSe ordeno correctamente/n");
+                            system("pause");
                             printPropietarios(listaP,TAM);
+                            opcion2=0;
                             break;
 
                         case 2:
-
+                            ordenarPropietariosDuenioPatente(listaV,TAM,1);
+                            printf("/nSe ordeno correctamente/n");
+                            system("pause");
+                            printVehiculos(listaP,listaV,TAM);
+                            opcion2=0;
                             break;
 
                         case 3:
+                            printAutosConDuenios(listaP,listaV,TAM);
+                            opcion2=0;
                             break;
 
                         case 4:
@@ -170,9 +184,11 @@ int main()
                             if(opcion2!=0)
                             {
                                 printf("Seleccione una opcion valida ");
+                                system("pause");
                             }
                             break;
                     }
+                    system("pause");
                     system("cls");
                     }while (opcion2 !=0);
                     opcion2=0;

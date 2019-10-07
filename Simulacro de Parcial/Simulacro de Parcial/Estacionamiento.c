@@ -38,6 +38,7 @@ void printModificationMenu()
 
 void printInformar()
 {
+    printf("\n-----QUE DESEA INFORMAR-----\n\n");
     printf("1-Todos los propietarios ordenados por nombre y anio de nacimiento.\n");
     printf("2-Todos los vehiculos ordenados por duenio y patente.\n");
     printf("3-Cada auto con el nombre del duenio.\n");
@@ -74,8 +75,8 @@ int inicializarVehiculos(eVehiculo* listaV, int len)                            
     {
         for (i=0; i<len; i++)
         {
-            vehiculo[i].estaEstacionado=FREE;
-            vehiculo[i].horaSalida=-1;
+            listaV[i].estaEstacionado=FREE;
+            listaV[i].horaSalida=-1;
         }
         retorno=0;
     }
@@ -390,7 +391,7 @@ int getFree(ePropietario* listaP,int len) //TERMINADA
 }
 
 
-//3-BUSCAR EMPLEADO POR ID (1 de 1)
+//3-BUSCAR PROPIETARIO POR ID (1 de 1)
 int buscarPropietarioPorId(ePropietario* listaP, int len, int id)
 {
     int i;
@@ -407,6 +408,11 @@ int buscarPropietarioPorId(ePropietario* listaP, int len, int id)
         }
     }
     return retorno;
+}
+
+int buscarDuenios(ePropietario* listaP, eVehiculo* listaV, int len, int id)
+{
+    if
 }
 
 //4-MODIFICACION (1 de 1)
@@ -678,13 +684,37 @@ int printPropietarios(ePropietario* listaP, int len)
 int printVehiculos(ePropietario* listaP,eVehiculo* listaV ,int len)
 {
     int i;
+    int index;
+    int auxId;
     printf("ID        Nombre          Patente       Fecha de ingreso        Hora de entrada         Hora de salida\n");
     for(i=0; i<len; i++)
     {
-        if (listaP[i].idPropietario==listaV[i].idPropietario)
+        if (listaV[i].estaEstacionado==NOTFREE)
         {
+            auxId=listaV[i].idPropietario;
+            index=buscarPropietarioPorId(listaP,len,auxId);
 
-            printf("\n%d -- %10s %10s %10d/%d/%d %10d hs %10d hs\n\n", listaV[i].idPropietario, listaP[i].nombre, listaV[i].patente, listaV[i].fechaIngreso.dia, listaV[i].fechaIngreso.mes, listaV[i].fechaIngreso.anio, listaV[i].horaEntrada,listaV[i].horaSalida);
+            printf("\n%d -- %10s %15s %10d/%d/%d %16d hs %20d hs\n\n", listaV[i].idPropietario, listaP[index].nombre, listaV[i].patente, listaV[i].fechaIngreso.dia, listaV[i].fechaIngreso.mes, listaV[i].fechaIngreso.anio, listaV[i].horaEntrada,listaV[i].horaSalida);
+
+        }
+    }
+    return 0;
+}
+
+int printAutosConDuenios(ePropietario* listaP,eVehiculo* listaV ,int len)
+{
+    int i;
+    int index;
+    int auxId;
+    printf("\n---CADA AUTO CON SU DUENIO---\n\n");
+    for(i=0; i<len; i++)
+    {
+        if (listaV[i].estaEstacionado==NOTFREE)
+        {
+            auxId=listaV[i].idPropietario;
+            index=buscarPropietarioPorId(listaP,len,auxId);
+
+            printf("\n-El vehiculo con la patente %s pertenece a %s\n", listaV[i].patente, listaP[index].nombre);
 
         }
     }
@@ -736,6 +766,7 @@ void hardcodeoVehiculos(eVehiculo* listaV, int cantidad) //TERMINADA
         listaV[i].fechaIngreso.dia = dia[i];
         listaV[i].horaEntrada = horaIngreso[i];
         listaV[i].horaSalida = horaSalida[i];
+        listaV[i].estaEstacionado = NOTFREE;
     }
 }
 
