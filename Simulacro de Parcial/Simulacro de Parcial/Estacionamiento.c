@@ -36,6 +36,18 @@ void printModificationMenu()
     printf("2-Fecha de Nacimiento\n");
 }
 
+void printInformar()
+{
+    printf("1-Todos los propietarios ordenados por nombre y anio de nacimiento.\n");
+    printf("2-Todos los vehiculos ordenados por duenio y patente.\n");
+    printf("3-Cada auto con el nombre del duenio.\n");
+    printf("4-Por cada duenio, los autos que tiene estacionados.\n");
+    printf("5-Ingresar el duenio y mostrar todos sus autos.\n");
+    printf("6-Mostrar el total de la estadia de cada auto sabiendo que el valor por hora es $100.\n");
+    printf("7-Mostrar cuanto tiene que pagar cada duenio por todos sus autos estacionados.\n");
+    printf("8-Mostrar el o los duenios con los autos mas estacionados.\n");
+}
+
 //1-FUNCIONES PARA INICIALIZAR (1 de 1) //LA DEL ID NO SE SI FUNCIONA
 int inicializarPropietarios(ePropietario* listaP, int len)
 {

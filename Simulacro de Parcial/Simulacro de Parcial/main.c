@@ -133,6 +133,50 @@ int main()
                 cantidadPropietariosOcupados= propietariosOcupados(listaP,TAM);
                 if (cantidadPropietariosOcupados>0)
                 {
+                    do
+                    {
+                    printFirstMenu();
+                    opcion2=getInt("\nSu opcion: ");
+                    switch (opcion2)
+                    {
+                        case 1:
+                            ordenarPropietariosNombreAnio(listaP,TAM,1);
+                            printPropietarios(listaP,TAM);
+                            break;
+
+                        case 2:
+
+                            break;
+
+                        case 3:
+                            break;
+
+                        case 4:
+                            break;
+
+                        case 5:
+                            break;
+
+                        case 6:
+                            break;
+
+                        case 7:
+                            break;
+
+                        case 8:
+                            break;
+
+                        default:
+                            if(opcion2!=0)
+                            {
+                                printf("Seleccione una opcion valida ");
+                            }
+                            break;
+                    }
+                    system("cls");
+                    }while (opcion2 !=0);
+                    opcion2=0;
+                    break;
                     ordenarPropietariosNombreAnio(listaP,TAM,1);//DE A-Z
                     printPropietarios(listaP,TAM);
                     printf("\n\n\n");

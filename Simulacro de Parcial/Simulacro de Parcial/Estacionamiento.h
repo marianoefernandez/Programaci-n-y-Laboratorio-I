@@ -28,6 +28,7 @@ typedef struct {
     int horaEntrada;
     int horaSalida;
     int idPropietario;
+    int estaEstacionado;
 }eVehiculo;
 
 //0-MUESTRO MENUES (4 de 4)
@@ -50,6 +51,13 @@ void printModificationMenu();
  *
  */
 
+ void printInformar();
+ /** \brief show modification submenu
+ *
+ *
+ */
+
+
 //FUNCIONES PARA INICIALIZAR (1 de 1)
 
 int inicializarPropietarios(ePropietario*, int);
@@ -61,6 +69,9 @@ int inicializarPropietarios(ePropietario*, int);
 * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
 *
 */
+
+int inicializarVehiculos(eVehiculo*, int);                                                                                        ///2.1 Función initEmployees:
+
 
 
 //FUNCIONES PARA AÑADIR (2 de 2)
