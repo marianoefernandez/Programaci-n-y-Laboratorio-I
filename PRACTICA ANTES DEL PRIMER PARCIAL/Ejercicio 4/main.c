@@ -21,15 +21,22 @@ int main()
             switch(opcion)
             {
             case 1:
-                if (agregarAgenda(agenda,TAM)== 0)
-                {
-                    printf("\nSe cargo el empleado\n");
-                }
-                else
-                {
-                    printf("\nNO HAY ESPACIO\n");
-                }
+                retorno=agregarAgenda(agenda,TAM);
 
+                switch(retorno)
+                {
+                    case 0:
+                        printf("\nSe cargo el empleado\n");
+                        break;
+
+                    case -1:
+                        printf("\nNO HAY ESPACIO\n");
+                        break;
+
+                    case -2:
+                        printf("\nERROR, EL LEGAJO YA EXISTE\n");
+                        break;
+                }
                 /*hardcoded(list,HARDCODING);
                 printf("\nSe hardcodearon empleados");
                 */
@@ -82,7 +89,6 @@ int main()
                 cantidadAgenda=agendaNotFree(agenda,TAM);
                 if (cantidadAgenda>0)
                 {
-                    ordenarAgendaPorApellido(agenda,TAM,0);
                     printAgendas(agenda,TAM);
                 }
                 else
@@ -90,13 +96,29 @@ int main()
                    printf("\nNo hay ninguna persona dada de alta, por favor primero realice una carga\n");
                 }
                 break;
+
+            case 5:
+                cantidadAgenda=agendaNotFree(agenda,TAM);
+                if (cantidadAgenda>0)
+                {
+                    ordenarAgendaPorApellido(agenda,TAM,0);
+                }
+                else
+                {
+                   printf("\nNo hay ninguna persona dada de alta, por favor primero realice una carga\n");
+                }
+                break;
+
+            case 6:
+                printf("\nSALIENDO...");
+
             default:
                 printf("\nSeleccione una opcion valida \n");
 
             }
             system("pause");
             system("cls");
-        }while(opcion!=0);
+        }while(opcion!=6);
     }
     else
     {

@@ -2,19 +2,22 @@
 #include <string.h>
 #define NOTFREE 1
 #define FREE 0
-#define TAM 200
+#define TAM 1000
 
 
 typedef struct
 {
-    char nombre[30];
-    char apellido[30];
-    int legajo;
+    int codigo;
+    char descripcion [51];
+    int importe;
+    int cantidad;
     int isEmpty;
-}eAgenda;
+}eProducto;
 
 void printFirstMenu();
 void printModificationMenu();
+void printOrdenarMenu();
+void printInformarMenu();
 int initAgenda(eAgenda*,int);
 int agregarAgenda(eAgenda*,int);
 int buscarAgendaPorLegajo(eAgenda*,int,int);

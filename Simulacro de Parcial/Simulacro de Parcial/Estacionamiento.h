@@ -174,6 +174,9 @@ int printVehiculos(ePropietario*,eVehiculo*,int);
 
 int printAutosConDuenios(ePropietario*,eVehiculo*,int);
 
+int printAutoDeDuenio(ePropietario*,eVehiculo*,int,int);
+
+
 
 
 

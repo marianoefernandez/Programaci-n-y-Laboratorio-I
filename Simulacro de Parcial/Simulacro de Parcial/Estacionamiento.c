@@ -412,7 +412,7 @@ int buscarPropietarioPorId(ePropietario* listaP, int len, int id)
 
 int buscarDuenios(ePropietario* listaP, eVehiculo* listaV, int len, int id)
 {
-    if
+
 }
 
 //4-MODIFICACION (1 de 1)
@@ -721,18 +721,49 @@ int printAutosConDuenios(ePropietario* listaP,eVehiculo* listaV ,int len)
     return 0;
 }
 
+/*
+int printAutosDeCadaDuenio(ePropietario* listaP,eVehiculo* listaV ,int len)
+{
+    int i;
+    int j;
+    int index;
+    int auxId;
+    printf("\n---CADA AUTO CON SU DUENIO---\n\n");
+    for(i=0;i<len;i++)
+    {
 
+    }
+    return 0;
+}
+*/
 
+int printAutoDeDuenio(ePropietario* listaP,eVehiculo* listaV ,int len,int id)
+{
+    int i;
+    int index;
 
+    index=buscarPropietarioPorId(listaP,len,id);
+    printf("\nLos autos de %s son: ",listaP[index].nombre);
+
+    for (i=0;i<len;i++)
+    {
+        if (id==listaV[i].idPropietario && listaV[i].estaEstacionado==NOTFREE)
+        {
+            printf("\n%s",listaV[i].patente);
+        }
+    }
+    printf("\n");
+    return 0;
+}
 //8-FUNCIONES DE HARDCODEO (2 de 2) LISTO
 
 void hardcodeoPropietarios(ePropietario* listaP, int cantidad) //TERMINADA
 {
-    int id[10] = {1,2,3,4,5,6,7,8,9,10};
-    char nombre[10][31] = {"Juliana","Victoria","Gabriel","Damaris","Tomas","Juliana","Juliana","Juliana","Damaris","Julian"};
-    int anio[10] = {2005,2005,2003,2001,2000,1999,2008,1977,2002,2000};
-    int mes[10] = {2,1,8,4,8,3,4,5,6,12};
-    int dia[10] = {28,29,5,24,10,11,17,18,27,26};
+    int id[7] = {1,2,3,4,5,6,7};
+    char nombre[7][31] = {"Juliana","Victoria","Gabriel","Damaris","Tomas","Luana","Julian"};
+    int anio[7] = {2005,2005,2003,2001,2000,2001,2000};
+    int mes[7] = {2,1,8,4,8,1,12};
+    int dia[7] = {28,29,5,24,10,27,26};
     int i;
 
     for (i=0; i<cantidad; i++)
@@ -748,13 +779,13 @@ void hardcodeoPropietarios(ePropietario* listaP, int cantidad) //TERMINADA
 
 void hardcodeoVehiculos(eVehiculo* listaV, int cantidad) //TERMINADA
 {
-    int id[10]={1,6,6,7,5,4,4,3,3,4};
-    char patente[10][15]={"AAA111", "BBB222", "AAA222","WWW777","AKK222","EEE111","UUU777","YYY778","ABC123","QQQ128"};
-    int horaIngreso[10]={10,9,8,11,10,11,9,7,7,14};
-    int horaSalida[10]={11,11,11,12,14,15,12,10,11,17};
-    int dia[10]={26,26,26,26,26,26,26,26,26,26};
-    int mes[10]={9,9,9,9,9,9,9,9,9,9};
-    int anio[10]={2019,2019,2019,2019,2019,2019,2019,2019,2019,2019};
+    int id[11]={1,6,6,7,5,4,4,3,3,4,4};
+    char patente[11][15]={"AAA111", "BBB222", "AAA222","WWW777","AKK222","EEE111","UUU777","YYY778","ABC123","QQQ128","HGB093"};
+    int horaIngreso[11]={10,9,8,11,10,11,9,7,7,14,19};
+    int horaSalida[11]={11,11,11,12,14,15,12,10,11,17,23};
+    int dia[11]={26,26,26,26,26,26,26,26,26,26,26};
+    int mes[11]={9,9,9,9,9,9,9,9,9,9,9};
+    int anio[11]={2019,2019,2019,2019,2019,2019,2019,2019,2019,2019,2019};
     int i;
 
     for (i=0; i<cantidad; i++)

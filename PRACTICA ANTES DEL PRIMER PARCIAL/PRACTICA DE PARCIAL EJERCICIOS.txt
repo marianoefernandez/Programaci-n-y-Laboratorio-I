@@ -18,11 +18,11 @@ Solo letras, ej. abBD
 Alfanumericos, ej. ab555gT6
 Teléfono, ej. 4XXX-XXXX
 
-4)Realizar una agenda para guardar los datos de hasta 200 personas de las cuales se toman los siguientes datos: (90% LISTO, falta que legajo no se pueda repetir)
+4)Realizar una agenda para guardar los datos de hasta 200 personas de las cuales se toman los siguientes datos: (LISTO)
 
 Nombre
 Apellido
-Legajo (NO SE PUEDE REPETIR) // FALTA IGUALAR PARA NO REPETIR LEGAJO
+Legajo (NO SE PUEDE REPETIR)
 a- Realizar un programa con un menú de opciones para hacer altas , bajas y modificaciones (ABM) de una agenda.
 
 b- Mostrar un listado ordenado por Apellido

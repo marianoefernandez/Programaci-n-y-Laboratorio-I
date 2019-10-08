@@ -5,7 +5,9 @@
 #define TAM 1000
 #define NOTFREE 1
 #define FREE 0
-#define HARDCODING 10
+#define HARDCODINGP 7
+#define HARDCODINGV 11
+
 
 int main()
 {
@@ -41,7 +43,7 @@ int main()
                 }
                 */
 
-                hardcodeoPropietarios(listaP,HARDCODING);
+                hardcodeoPropietarios(listaP,HARDCODINGP);
                 printf("\nSe hardcodearon propietarios");
 
                 break;
@@ -106,7 +108,7 @@ int main()
                         printf("\nNO HAY ESPACIO\n");
                     }
                     */
-                    hardcodeoVehiculos(listaV,HARDCODING);
+                    hardcodeoVehiculos(listaV,HARDCODINGV);
                     printf("\nSe hardcodearon vehiculos");
 
                 }
@@ -169,6 +171,8 @@ int main()
                             break;
 
                         case 5:
+                            printAutoDeDuenio(listaP,listaV,TAM,getInt("\nIngrese el ID: "));
+                            opcion2=0;
                             break;
 
                         case 6:
