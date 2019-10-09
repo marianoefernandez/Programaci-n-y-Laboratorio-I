@@ -54,7 +54,7 @@ B. Los datos del/os producto/s que superan el valor de precio promedio
 MINIMIZAR:
 Realizar las funciones necesarias a fin de minimizar la función main()
 
-6) Se solicita realizar una aplicación que permita administrar los libros de una libreria.
+6) PARTE UNO Se solicita realizar una aplicación que permita administrar los libros de una libreria.
 
 Datos Libro:
 
@@ -78,7 +78,7 @@ Stock
 
 5.LISTAR LIBROS: Realizar un solo listado con todos los libros
 
-7) A partir del anterior ejercicio incorporar la entidad autor
+6) PARTE DOS A partir del anterior ejercicio incorporar la entidad autor
 
 Datos del Autor:
 

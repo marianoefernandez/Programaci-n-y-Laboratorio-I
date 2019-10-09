@@ -153,7 +153,7 @@ void ordenarBurbujeo (int miArray[],int cantidad)
     }
 }
 
-void burbujeoMejorado (int miArray[],int cantidad)
+void burbujeoMejorado (int* miArray,int cantidad)
 {
     int j;
     int aux;
