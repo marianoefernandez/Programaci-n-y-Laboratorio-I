@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1570724561 source:d:\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\equipos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+	"Equipos.h"
+
+1570722001 d:\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\inputs.h
+
+1570723443 d:\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\equipos.h
+	<stdio.h>
+	<string.h>
+
+1570725687 source:d:\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1570719931 source:d:\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\jugadores.c
+
+1570719982 source:d:\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\partido.c
+
+1570719879 source:d:\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\referi.c
+
+1570725571 source:d:\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Equipos.h"
+
