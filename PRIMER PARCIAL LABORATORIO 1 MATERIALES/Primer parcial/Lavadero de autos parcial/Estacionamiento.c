@@ -201,6 +201,114 @@ int agregarPropietario(ePropietario* listaP,int len,int id)
     return retorno;
 }
 
+/*
+int validarFecha (ePropietario* listaP,eVehiculo* listaV,int orden)//1-año,2-dia,3-mes(Propietario),4-5-6(Vehículo)
+{
+    int retorno=1;
+    int biciesto[30];
+    int i;
+
+    for (i=0;i<30;i++)
+    {
+        if (i=0)
+        {
+            biciesto [i]=1900;
+        }
+
+        if (i>0)
+        {
+           biciesto[i]=biciesto[i-1] + 4;
+        }
+
+        printf("%d\n",biciesto[i]);
+    }
+
+    switch(orden)
+    {
+        case 1:
+            if (listaP.fechaNac.anio > 2019 && listaP.fechaNac.anio<1900)
+            {
+                retorno=0;
+            }
+            break;
+
+        case 2:
+            if (listaP.fechaNac.mes > 12 && listaP.fechaNac.mes<1)
+            {
+                retorno=0;
+            }
+            break;
+
+        case 3:
+            if (listaP.fechaNac.dia > 2019 && listaP.fechaNac.anio<1900)
+            {
+                retorno=0;
+            }
+
+            if (listaP.fechaNac.dia>30 && listaP.fechaNac.mes == 4 || listaP.fechaNac.mes == 6 || listaP.fechaNac.mes == 9 || listaP.fechaNac.mes == 11)
+            {
+                retorno=-1;
+            }
+
+                if (listaP.fechaNac.dia>28 && listaP.fechaNac.mes == 2)
+            {
+                retorno=-1;
+            }
+
+            for (i=0;i<30;i++)
+            {
+                if (listaP.fechaNac.anio==biciesto[i] && (listaP.fechaNac.dia>29 && listaP.fechaNac.mes == 2))
+                {
+                    retorno=-1;
+                }
+            }
+            break;
+
+        case 4:
+            if (listaV.fechaIngreso.anio > 2019 && listaV.fechaIngreso.anio<1900)
+            {
+                retorno=0;
+            }
+            break;
+
+        case 5:
+            if (listaV.fechaIngreso.mes > 12 && listaV.fechaIngreso.mes<1)
+            {
+                retorno=0;
+            }
+            break;
+
+        case 6:
+            if (listaV.fechaIngreso.dia > 2019 && listaV.fechaIngreso.anio<1900)
+            {
+                retorno=0;
+            }
+
+            if (listaV.fechaIngreso.dia>30 && listaV.fechaIngreso.mes == 4 || listaV.fechaIngreso.mes == 6 || listaV.fechaIngreso.mes == 9 || listaV.fechaIngreso.mes == 11)
+            {
+                retorno=-1;
+            }
+
+            if (listaV.fechaIngreso.dia>28 && listaV.fechaIngreso.mes == 2)
+            {
+                retorno=-1;
+            }
+
+            for (i=0;i<30;i++)
+            {
+                if (listaV.fechaIngreso.anio==biciesto[i] && (listaV.fechaIngreso.dia>29 && listaV.fechaIngreso.mes == 2))
+                {
+                    retorno=-1;
+                }
+            }
+            break;
+
+    }
+
+    return retorno;
+}
+*/
+
 int agregarVehiculo(eVehiculo* listaV,int len)
 {
     int i=0;
@@ -510,13 +618,12 @@ int ordenarPropietariosNombreAnio(ePropietario* listaP, int len, int order)     
     return retorno;
 }
 
-int ordenarPropietariosDuenioPatente(eVehiculo* listaV, ePropietario* listaP, int len, int order)
+int ordenarPropietariosDuenioPatente(eVehiculo* listaV, int len, int order)
 {
     int i;
     int j;
     int retorno=-1;
-    eVehiculo auxV[1];
-    ePropietario auxP[1];
+    eVehiculo aux[1];
 
     if(listaV!=NULL||len<0||order<0||order>1)
     {
@@ -527,41 +634,31 @@ int ordenarPropietariosDuenioPatente(eVehiculo* listaV, ePropietario* listaP, in
                 switch(order)
                 {
                 case 0:
-                    if (stricmp(listaP[i].nombre,listaP[j].nombre)>0)
+                    if (listaV[i].idPropietario>listaV[j].idPropietario)
                     {
-                        auxP[0]=listaP[i];
-                        listaP[i]=listaP[j];
-                        listaP[j]=auxP[0];
-
-                    }
-                    if((stricmp(listaP[i].nombre,listaP[j].nombre)==0) && stricmp(listaV[i].patente,listaV[j].patente)>0)
-                    {
-                        auxV[0]=listaV[i];
+                        aux[0]=listaV[i];
                         listaV[i]=listaV[j];
-                        listaV[j]=auxV[0];
-
-                        auxP[0]=listaP[i];
-                        listaP[i]=listaP[j];
-                        listaP[j]=auxP[0];
+                        listaV[j]=aux[0];
+                    }
+                    if(listaV[i].idPropietario==listaV[j].idPropietario && (stricmp(listaV[i].patente,listaV[j].patente)>0))
+                    {
+                        aux[0]=listaV[i];
+                        listaV[i]=listaV[j];
+                        listaV[j]=aux[0];
                     }
                     break;
                 case 1:
-                    if (stricmp(listaP[i].nombre,listaP[j].nombre)<0)
+                    if (listaV[i].idPropietario<listaV[j].idPropietario)
                     {
-                        auxP[0]=listaP[i];
-                        listaP[i]=listaP[j];
-                        listaP[j]=auxP[0];
-
-                    }
-                    if((stricmp(listaP[i].nombre,listaP[j].nombre)==0) && stricmp(listaV[i].patente,listaV[j].patente)<0)
-                    {
-                        auxV[0]=listaV[i];
+                        aux[0]=listaV[i];
                         listaV[i]=listaV[j];
-                        listaV[j]=auxV[0];
-
-                        auxP[0]=listaP[i];
-                        listaP[i]=listaP[j];
-                        listaP[j]=auxP[0];
+                        listaV[j]=aux[0];
+                    }
+                    if(listaV[i].idPropietario==listaV[j].idPropietario && (stricmp(listaV[i].patente,listaV[j].patente)<0))
+                    {
+                        aux[0]=listaV[i];
+                        listaV[i]=listaV[j];
+                        listaV[j]=aux[0];
                     }
                     break;
                 }
@@ -655,6 +752,23 @@ int PrintEstadiaPorAuto(ePropietario* listaP,eVehiculo* listaV ,int len)
     return 0;
 }
 
+
+/*
+int printAutosDeCadaDuenio(ePropietario* listaP,eVehiculo* listaV ,int len)
+{
+    int i;
+    int j;
+    int index;
+    int auxId;
+    printf("\n---CADA AUTO CON SU DUENIO---\n\n");
+    for(i=0;i<len;i++)
+    {
+
+    }
+    return 0;
+}
+*/
+
 int printAutoDeDuenio(ePropietario* listaP,eVehiculo* listaV ,int len,int id)
 {
     int i;
@@ -678,81 +792,24 @@ void mostrarTarifaPorDuenio (ePropietario* listaP,eVehiculo* listaV,int len)
 {
     int i;
     int j;
-    int total[len];
+    int total=0;
+    system("cls");
     for(i=0;i<len;i++)
     {
-        total[i]=0;
         if(listaP[i].isEmpty==NOTFREE)
         {
             for(j=0;j<len;j++)
         {
             if((listaP[i].idPropietario==listaV[j].idPropietario)&&(listaV[i].estaEstacionado==NOTFREE))
             {
-                total[i]+=calcularTarifaAuto(listaV,len,j);
+                total+=calcularTarifaAuto(listaV,len,j);
             }
         }
-        printf("\n%s debe en total %d$ por todos sus vehiculos.\n",listaP[i].nombre,total[i]);
-        total[i]=0;
+        printf("\n%s debe en total %d$ por todos sus vehiculos.\n",listaP[i].nombre,total);
+        total=0;
         }
     }
-    return 0;
-}
-
-int printAutoCadaDuenio(ePropietario* listaP,eVehiculo* listaV,int len)
-{
-    int i;
-    int j;
-    for(i=0;i<len;i++)
-    {
-        if(listaP[i].isEmpty==NOTFREE)
-        {
-           printf("Los autos de %s son: \n",listaP[i].nombre);
-        }
-            for(j=0;j<len;j++)
-        {
-            if((listaP[i].idPropietario==listaV[j].idPropietario)&&(listaV[j].estaEstacionado==NOTFREE))
-            {
-                printf("%s\n",listaV[j].patente);
-            }
-        }
-    }
-    return 0;
-}
-
-int printDuenioMasAutos(ePropietario* listaP,eVehiculo* listaV,int len)
-{
-    int i;
-    int j;
-    int contador[len];
-    int max;
-    int index;
-
-    max = contador[0];
-
-    for(i=0;i<len;i++)
-    {
-        contador[i]=0;
-        for(j=0;j<len;j++)
-        {
-            if((listaP[i].idPropietario==listaV[j].idPropietario)&&(listaV[j].estaEstacionado==NOTFREE))
-            {
-                contador[i]++;
-            }
-        }
-
-        if (listaP[i].isEmpty==NOTFREE)
-        {
-            if (contador[i]>max)
-            {
-                max=contador[i];
-                index=i;
-            }
-        }
-    }
-
-    printf("\nEl propietario con mayor cantidad de autos es %s con %d autos",listaP[index].nombre,max);
-
-    return 0;
+    return;
 }
 //7-HARDCODEO (2 de 2)
 
@@ -800,7 +857,122 @@ void hardcodeoVehiculos(eVehiculo* listaV, int cantidad) //TERMINADA
     }
 }
 
-//8-EXTRAS
+/*void hardcodeoPersonas(ePersona* persona, int cantidad) //TERMINADA
+{
+    int id[4] = {1,2,3,4};
+    char nombre[4][31] = {"Maria","Ezequiel","German","Yanina"};
+    int anio[4] = {1990,1980,2000,1995};
+    int mes[4] = {3,4,12,11};
+    int dia[4] = {33,22,25,11};
+    int i;
+
+    for (i=0; i<cantidad; i++)
+    {
+        persona[i].id = id[i];
+        strcpy(persona[i].nombre, nombre[i]);
+        persona[i].fechaNac.anio = anio[i];
+        persona[i].fechaNac.mes = mes[i];
+        persona[i].fechaNac.dia = dia[i];
+    }
+}
+
+void hardcodeoVehiculos(eVehiculo* vehiculo, int cantidad) //TERMINADA
+{
+    int id[4] = {1,2,2,4};
+    char patente[4][31] = {"AAA111","BBB222","AA111BB","DJ222BB"};
+    int anio[4] = {2019,2019,2019,2019};
+    int mes[4] = {9,9,9,9};
+    int dia[4] = {26,26,26,26};
+    int horaIngreso[4] = {10,9,8,11};
+    int horaSalida[4] = {11,11,11,12};
+    int i;
+
+    for (i=0; i<cantidad; i++)
+    {
+        vehiculo[i].idDuenio = id[i];
+        strcpy(vehiculo[i].patente, patente[i]);
+        vehiculo[i].fechaIngreso.anio = anio[i];
+        vehiculo[i].fechaIngreso.mes = mes[i];
+        vehiculo[i].fechaIngreso.dia = dia[i];
+        vehiculo[i].horaIngreso = horaIngreso[i];
+        vehiculo[i].horaSalida = horaSalida[i];
+    }
+}
+void hardcoded(Employee* list, int len) //TERMINADA
+{
+    int id[10] = {1,2,3,4,5,6,7,8,9,10};
+    char name[10][51] = {"Jorge","Mauro","Diego","Daniela","Juliana","Victoria","Carmen","Tomas","Damaris","Julian"};
+    char lastName[10][51] = {"Rios","Zarate","Perez","Gonzalez","Lopez","Rodriguez","Fernandez","Fidalgo","Tevez","Riquelme"};
+    float salary[10] = {2850,4425,3250,5785,6900,3450,777,2320,1400,11450};
+    int sector[10] = {8,33,11,11,8,8,7,7,33,13};
+
+    int i;
+    for (i=0; i<len; i++)
+    {
+        list[i].id = id[i];
+        strcpy(list[i].name, name[i]);
+        strcpy(list[i].lastName, lastName[i]);
+        list[i].salary = salary[i];
+        list[i].sector = sector[i];
+        list[i].isEmpty = NOTFREE;
+    }
+}
+
+ //8-EXTRAS
+
+ float totalSalary(Employee* list,int len)
+ {
+     float sumaSalarios=0;
+     int i;
+
+     for(i=0;i<len;i++)
+     {
+         if(list[i].isEmpty==NOTFREE)
+         {
+             sumaSalarios = sumaSalarios + list[i].salary;
+         }
+     }
+     return sumaSalarios;
+ }
+
+ float salaryAverage(Employee* list,int len,float allSalary)
+ {
+     int cantidadCargados=0;
+     float average;
+     int i;
+
+     for(i=0;i<len;i++)
+     {
+         if(list[i].isEmpty==NOTFREE)
+         {
+             cantidadCargados++;
+         }
+     }
+     average=allSalary/cantidadCargados;
+     return average;
+ }
+
+ int betterThanAverage(Employee* list,int len,float averageSalary)
+ {
+     int betterSalaryAverage=0;
+     float auxSalary;
+     int i;
+
+     for (i=0;i<len;i++)
+     {
+         if(list[i].isEmpty==NOTFREE)
+         {
+            auxSalary=list[i].salary;
+            if(auxSalary>averageSalary)
+            {
+               betterSalaryAverage++;
+            }
+         }
+     }
+
+     return betterSalaryAverage;
+ }
+ */
 
  int propietariosOcupados(ePropietario* listaP,int len)
  {

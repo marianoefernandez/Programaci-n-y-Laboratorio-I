@@ -155,7 +155,7 @@ int main()
                             break;
 
                         case 2:
-                            ordenarPropietariosDuenioPatente(listaV,listaP,TAM,1);
+                            ordenarPropietariosDuenioPatente(listaV,TAM,1);
                             printf("/nSe ordeno correctamente/n");
                             system("pause");
                             printVehiculos(listaP,listaV,TAM);
@@ -168,8 +168,6 @@ int main()
                             break;
 
                         case 4:
-                            printAutoCadaDuenio(listaP,listaV,TAM);
-                            opcion2=0;
                             break;
 
                         case 5:
@@ -188,8 +186,6 @@ int main()
                             break;
 
                         case 8:
-                            printDuenioMasAutos(listaP,listaV,TAM);
-                            opcion2=0;
                             break;
 
                         default:
@@ -203,6 +199,13 @@ int main()
                     system("pause");
                     system("cls");
                     }while (opcion2 !=0);
+                    opcion2=0;
+                    break;
+                    ordenarPropietariosNombreAnio(listaP,TAM,1);//DE A-Z
+                    printPropietarios(listaP,TAM);
+                    printf("\n\n\n");
+                    ordenarPropietariosDuenioPatente(listaV,TAM,1);
+                    printVehiculos(listaP,listaV,TAM);
                 }
                 break;
 

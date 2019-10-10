@@ -150,7 +150,7 @@ int ordenarPropietariosNombreAnio(ePropietario*,int,int);
  *
  */
 
- int ordenarPropietariosDuenioPatente(eVehiculo*,ePropietario*,int,int);
+ int ordenarPropietariosDuenioPatente(eVehiculo*,int,int);
 
 
 //6-MOSTRAR (2 de 2)
@@ -179,10 +179,6 @@ int printAutoDeDuenio(ePropietario*,eVehiculo*,int,int);
 int PrintEstadiaPorAuto(ePropietario*,eVehiculo*,int);
 
 void mostrarTarifaPorDuenio (ePropietario*,eVehiculo*,int);
-
-int printAutoCadaDuenio(ePropietario*,eVehiculo*,int);
-
-int printDuenioMasAutos(ePropietario*,eVehiculo*,int);
 
 
 //7-HARDCODEO (2 de 2) LISTO
