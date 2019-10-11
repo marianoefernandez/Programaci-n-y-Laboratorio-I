@@ -24,7 +24,8 @@ char getChar (char* mensaje)
     char aux;//PASAMOS EL DATO AL AUX
     printf("%s", mensaje);
     fflush(stdin);
-    scanf("%s", &aux);
+    scanf("%c", &aux);
+    printf("%c",aux);
     return aux;
 }
 

@@ -3,7 +3,6 @@
 #include <string.h>
 #include "inputs.h"
 #include "Equipos.h"
-
 //0-MENU
 void mostrarMenuE()
 {

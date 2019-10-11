@@ -1,16 +1,11 @@
 #include <stdio.h>
 #include <string.h>
+#include "Jugadores.h"
 #define NOTFREE 1
 #define FREE 0
 #define HARDCODING 10
 
 //ESTRUCTURAS
-typedef struct
-{
-    int dia;
-    int mes;
-    int anio;
-}eFecha;
 
 typedef struct
 {

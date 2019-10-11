@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Jugadores.h"
+#include "Equipos.h"
 #include "Referi.h"
 //#include "Partido.h"
 #define TAM 1000

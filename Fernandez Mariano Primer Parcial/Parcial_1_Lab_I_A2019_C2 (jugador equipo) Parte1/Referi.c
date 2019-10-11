@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "inputs.h"
+#include "Referi.h"
 
 
 //0-MENU
@@ -9,7 +10,6 @@ void mostrarMenuR()
 {
     printf("-----Elija una opcion-----\n\n");
     printf("1-Dar de alta\n");
-    printf("2-Listar\n");
 }
 
 //1-INICIALIZAR
@@ -161,14 +161,14 @@ int agregarReferis(eReferi* referis,int len,int codigo)
 
 //3-MOSTRAR
 
-int printReferi(eReferi* referis)
+int printReferi(eReferi* referis,int len)
 {
     int i;
     int index;
     printf("Codigo       Nombre          Apellido        Sexo          Fecha de Nacimiento          Email\n");
     for(i=0; i<len; i++)
     {
-        if(jugadores[i].isEmpty==NOTFREE)
+        if(referis[i].isEmpty==NOTFREE)
         {
             printf("%d-- %10s %7s %5c %7d/%d/%d %12s\n",referis[i].codigo,referis[i].nombre,referis[i].apellido,referis[i].sexo,referis[i].fechaNac.dia,referis[i].fechaNac.mes,referis[i].fechaNac.anio,referis[i].eMail);
         }

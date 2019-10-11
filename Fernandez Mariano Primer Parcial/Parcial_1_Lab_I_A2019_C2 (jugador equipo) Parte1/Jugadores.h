@@ -6,6 +6,7 @@
 #include "Equipos.h"
 
 
+
 typedef struct
 {
     int dia;

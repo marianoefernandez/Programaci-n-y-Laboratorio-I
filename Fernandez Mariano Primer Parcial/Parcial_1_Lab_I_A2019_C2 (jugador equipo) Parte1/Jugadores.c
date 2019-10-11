@@ -3,6 +3,8 @@
 #include <string.h>
 #include "inputs.h"
 #include "Jugadores.h"
+#include "Referi.h"
+
 
 //0-MENU
 void mostrarMenuJ()
