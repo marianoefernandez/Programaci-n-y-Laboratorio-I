@@ -4,9 +4,7 @@
 #define FREE 0
 #define HARDCODING 10
 
-
-//ESTRUCTURA
-
+//ESTRUCTURAS
 typedef struct
 {
     int codigo;
@@ -17,7 +15,7 @@ typedef struct
 
 
 //0-MENUS
-void mostrarMenu();
+void mostrarMenuE();
 /** \brief Muestra menu
  *
  *
@@ -33,7 +31,7 @@ int inicializarEquipos(eEquipo*,int);
  *
  */
 
-int getFree(eEquipo*,int); //TERMINADA
+int getFreeE(eEquipo*,int); //TERMINADA
 /** \brief Busca pos libre del array
  *
  * \param puntero a estructura eEquipo

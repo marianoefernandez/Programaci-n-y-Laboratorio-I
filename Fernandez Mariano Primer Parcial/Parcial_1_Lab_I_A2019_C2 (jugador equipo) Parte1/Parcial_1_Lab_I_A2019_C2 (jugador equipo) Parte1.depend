@@ -30,3 +30,44 @@
 	<string.h>
 	"Equipos.h"
 
+1570762754 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\equipos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+	"Equipos.h"
+
+1570747402 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\inputs.h
+
+1570757161 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\equipos.h
+	<stdio.h>
+	<string.h>
+
+1570747402 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1570747402 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\partido.c
+
+1570747402 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\referi.c
+
+1570761830 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Jugadores.h"
+
+1570768664 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\jugadores.h
+	<stdio.h>
+	<string.h>
+	"Equipos.h"
+
+1570762530 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\jugadores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+	"Jugadores.h"
+

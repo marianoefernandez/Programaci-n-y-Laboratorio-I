@@ -5,7 +5,7 @@
 #include "Equipos.h"
 
 //0-MENU
-void mostrarMenu()
+void mostrarMenuE()
 {
     printf("-----Elija una opcion-----\n\n");
     printf("1-Dar de alta\n");
@@ -30,7 +30,7 @@ int inicializarEquipos(eEquipo* equipos, int len)
     return retorno;
 }
 
-int getFree(eEquipo* equipos,int len) //TERMINADA
+int getFreeE(eEquipo* equipos,int len) //TERMINADA
 {
     int i;
     int index = -1;//DEFINIMOS VALOR
@@ -53,7 +53,7 @@ int agregarEquipo(eEquipo* equipos,int len,int codigo)
     int i;
     int retorno= -1;
 
-    i=getFree(equipos, len);
+    i=getFreeE(equipos, len);
 
     if(i>=0)
     {
@@ -143,13 +143,13 @@ int ordenarEquiposNombreYLocalidad(eEquipo* equipos, int len, int order)        
 
 void printEquipo(eEquipo equipos)
 {
-    printf("\n%d -- %10s %10s\n\n", equipos.codigo, equipos.nombre, equipos.localidad);
+    printf("\n%d -- %10s %15s\n\n", equipos.codigo, equipos.nombre, equipos.localidad);
 }
 
 int printEquipos(eEquipo* equipos, int len)
 {
     int i;
-    printf("ID        Nombre          Localidad\n");
+    printf("Codigo        Nombre          Localidad\n");
     for(i=0; i<len; i++)
     {
         if(equipos[i].isEmpty==NOTFREE)
@@ -159,4 +159,6 @@ int printEquipos(eEquipo* equipos, int len)
     }
     return 0;
 }
+
+
 

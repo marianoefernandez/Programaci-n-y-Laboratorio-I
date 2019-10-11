@@ -4,9 +4,7 @@
 #define FREE 0
 #define HARDCODING 10
 
-
-//ESTRUCTURA
-
+//ESTRUCTURAS
 typedef struct
 {
     int dia;
@@ -17,11 +15,27 @@ typedef struct
 typedef struct
 {
     int codigo;
-    char apellido[32];
     char nombre[32];
+    char apellido[32];
+    int codigoE;
+    char eMail[32];
     char sexo;
-    char email[32];
-    char localidad[34];
     eFecha fechaNac;
     int isEmpty;
 }eReferi;
+
+//0-MENU
+void mostrarMenuR();
+
+//1-INICIALIZAR
+int inicializarReferis(eReferi*,int);
+
+int getFreeR(eReferi*,int); //TERMINADA
+
+//2-ALTAS
+
+int agregarReferis(eReferi*,int,int);
+
+//3-MOSTRAR
+
+int printReferi(eReferi*, int);

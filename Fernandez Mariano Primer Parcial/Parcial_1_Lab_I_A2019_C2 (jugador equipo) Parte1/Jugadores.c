@@ -5,7 +5,7 @@
 #include "Jugadores.h"
 
 //0-MENU
-void mostrarMenu()
+void mostrarMenuJ()
 {
     printf("-----Elija una opcion-----\n\n");
     printf("1-Dar de alta\n");
@@ -38,7 +38,7 @@ int buscarEquipoPorCodigo(eEquipo* equipos, int len, int codigo)
     {
         for(i=0; i<len; i++)
         {
-            if(equipos[i].codigo==id && equipos[i].isEmpty==NOTFREE)
+            if(equipos[i].codigo==codigo && equipos[i].isEmpty==NOTFREE)
             {
                 retorno = i;
                 break;
@@ -48,7 +48,7 @@ int buscarEquipoPorCodigo(eEquipo* equipos, int len, int codigo)
     return retorno;
 }
 
-int getFree(eJugadores* jugadores,int len) //TERMINADA
+int getFreeJ(eJugadores* jugadores,int len) //TERMINADA
 {
     int i;
     int index = -1;//DEFINIMOS VALOR
@@ -72,13 +72,14 @@ int agregarJugadores(eJugadores* jugadores,int len,int codigo)
     char diaAux[10];
     char mesAux[10];
     char anioAux[10];
+    char auxSexo;
     int dia;
     int codigoAux;
     int mes;
     int anio;
     int retorno= -1;
 
-    i=getFree(jugadores, len);
+    i=getFreeJ(jugadores, len);
 
     if(i>=0)
     {
@@ -98,13 +99,13 @@ int agregarJugadores(eJugadores* jugadores,int len,int codigo)
         }
         stringToUpper(jugadores[i].apellido);//Paso primer caracter a Mayuscula
 
-        getString("\nIngrese el sexo: ",jugadores[i].sexo);//Pido
+        auxSexo=getChar("\nIngrese el sexo: ");//Pido
         //VALIDACION
-        while(sexo!= 'M' || sexo!= 'm' || sexo!= 'F' || sexo!= 'f' )
+        while(auxSexo!= 'M' || auxSexo!= 'm' || auxSexo!= 'F' || auxSexo!= 'f')
         {
-            getString("\nPOR FAVOR SOLO INGRESE f o m\nIngrese el sexo nuevamente: ",jugadores[i].sexo);//Valido
+            auxSexo=getChar("\nERROR, SOLO INGRESE f/m Ingrese el sexo: ");//Valido
         }
-        stringToUpper(jugadores[i].sexo);
+        jugadores[i].sexo=auxSexo;
 
         getString("\nIngrese el codigo del equipo: ",codigoAux);//Pido
         //VALIDACION
@@ -181,7 +182,7 @@ int agregarJugadores(eJugadores* jugadores,int len,int codigo)
 
 //3-ORDENAR
 
-int ordenarEquiposNombreYApellido(eJugadores* jugadores, int len, int order)                                                            ///2.5 Función sortEmployees:
+int ordenarJugadoresNombreYApellido(eJugadores* jugadores, int len, int order)                                                            ///2.5 Función sortEmployees:
 {
     int i;
     int j;
@@ -234,7 +235,7 @@ int ordenarEquiposNombreYApellido(eJugadores* jugadores, int len, int order)    
 
 //4-MOSTRAR
 
-int printEquipos(eEquipo* equipos,eJugadores* jugadores int len)
+int printJugadores(eEquipo* equipos,eJugadores* jugadores, int len)
 {
     int i;
     int index;
@@ -242,11 +243,11 @@ int printEquipos(eEquipo* equipos,eJugadores* jugadores int len)
     printf("Codigo       Nombre          Apellido        Sexo          Fecha de Nacimiento          Equipo\n");
     for(i=0; i<len; i++)
     {
-        if(equipos[i].isEmpty==NOTFREE)
+        if(jugadores[i].isEmpty==NOTFREE)
         {
-            auxCodigo=listaV[i].idPropietario;
-            index=buscarPropietarioPorId(listaP,len,auxId);
-            printf("")
+            auxCodigo=equipos[i].codigo;
+            index=buscarEquipoPorCodigo(jugadores,len,auxCodigo);
+            printf("%d-- %10s %7s %5c %7d/%d/%d %12s\n",jugadores[i].codigo,jugadores[i].nombre,jugadores[i].apellido,jugadores[i].sexo,jugadores[i].fechaNac.dia,jugadores[i].fechaNac.mes,jugadores[i].fechaNac.anio,equipos[i].nombre);
         }
     }
     return 0;
