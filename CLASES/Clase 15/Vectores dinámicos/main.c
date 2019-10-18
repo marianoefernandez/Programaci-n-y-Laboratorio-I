@@ -40,6 +40,9 @@ int main()
        {
             printf("No hay mas espacio en memoria");
        }
+       printf("Lo reducimos\n");
+
+       realloc(miVector,sizeof(int)*3);
 
     return 0;
 }
