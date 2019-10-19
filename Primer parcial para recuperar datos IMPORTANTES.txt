@@ -1,0 +1,60 @@
+OBJETIVO
+Hacer todo en el main primero, y luego de eso hacerlo en UNA SOLA ENTIDAD y al final tratar de dividirlo en varias!
+
+Equipos:
+Altas,Bajas,Modificación,Listar
+
+Jugadores:
+Altas,Bajas,Listar
+
+Referis:
+Altas
+
+Partidos:
+Altas, Listar
+
+1-Las estructuras no deben tener campos identicos.
+
+2-Terminar todo en una entidad y luego ir dividiendo!
+
+3-Para inicializar una lista se tiene que preguntar si es distinta de NULL y el tamaño mayor que cero, luego
+de eso poner isEmpty como FREE.
+Que retorne 0 si todo OK y -1 si error.
+
+4-Para buscar una lista por còdigo o id se tiene que recorrer el array si es distinto de NULL y mayor a cero
+y si está OCUPADO el isEmpty y el código cargado en la estructura es igual al codigo puesto retorne la pos
+de dicho código, sino -1 error.
+
+5-Para buscar libre recorrer el array  y si está vacío y retornar el indice siguiente si está o no vacio
+Si retorna -1 no está libre o da error.
+
+6-PARA LAS ALTAS: recorremos el buscarLibre, todo lo que sea entero se usa una cadena auxiliar y se valida.
+Se hace un if si (i>=0) y se va pidiendo cada dato. Retorna -1 si error.
+
+7-PARA LAS BAJAS: Se recorre la lista si es igual a NULL o el tamaño es mayor a 0  , se busca lo que se quiera eliminar por id , o sea el indice, si Indice es !=1 es que existe y por ende si se sabe que existe y está ocupado, se le cambia el estado a LIBRE y por ende desaparece, obvio si el usuario confirma la baja.
+Si retorna 1 es que o nunca se ocupo o da error
+
+8-Para modificar se pregunta si la lista es NULL y el tamaño mayor a len.
+Se pide el codigo y se busca el index del codigo ingresado
+Luego se pregunta con un if si el index es mayor igual a 0 y se hace la modificacion con un switch y se van cambiando cada dato.
+Si el retorno es -1 el dato ya no existe o da error. Sino 0 si todo bien.
+
+9-Para ordenar usamos burbujeo, en si, if (lista[i]>lista[j])
+Y en dos cosas a la vez igualamos en 0 la prioridad  && lista[i]>lista[j]
+En ese caso el aux lo incializamos en pos 0.
+
+CASE 1 EQUIPOS
+CASE 2 JUGADORES
+CASE 3 REFERIS
+CASE 4 PARTIDOS
+
+MENU CASE 5 LISTAR + ENTIDAD LISTAR
+
+1. Listar Jugadores por equipo 
+2. Informar el referí que más partidos dirigió. 
+3. Ingresar un nombre y listar todos  los jugadores con ese nombre  y en qué equipo juega 
+4. Listar el o los  equipos con nombre más largo. 
+5. Ingresar una fecha y listar los equipos y referí de los partidos de esa fecha 
+6. Listar los  equipo más jóvenes(promedio de edad). 
+ 
+ 
