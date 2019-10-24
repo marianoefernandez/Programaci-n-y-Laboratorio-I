@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1571925388 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\clases\clase 16\ordenamiento por punteros\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
