@@ -29,3 +29,8 @@ a void es cualquier cosa.
 
 7)Controller muestra los datos, se usa de auxiliar, el linkedlist, lista la lista, hace bajas, altas, modificaciones
 el parser separa cada dato, y employee es toda la estructura y funciones para el empleado en si!
+
+SEGUNDO PARCIAL 21 DE NOVIEMBRE/28 DE NOVIEMBRE (SABER USAR TU LINKEDLIST)
+
+PRIMER PARCIAL RECUPERATORIO 28 DE NOVIEMBRE/5 DE DICIEMBRE
+
