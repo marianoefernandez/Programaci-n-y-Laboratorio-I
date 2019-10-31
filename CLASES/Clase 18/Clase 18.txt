@@ -1,0 +1,30 @@
+Clase 18:
+
+1)TP 3, realiza ingenieria a inversa sobre una funcionalidad.
+Los parser, permiten leerlo.
+con el linkelist es mucho más fácil de realizar operaciones con arrays de estructuras dinámico mucho más simple.
+
+2)Siempre tener en claro que recibe, que hace y que retorna!
+
+3)El Parser muestra cada dato separado por coma de algun archivo cargado.
+
+4)El controller abre el archivo, el parser lo asigna al programa, el linkedlist añade la lista, y employeee tiene 
+la info y funciones de la lista
+
+5)Parser funciones
+
+-La primera parsea el empleado para un archivo de texto, lo que hace es recorrer hasta el \n , separando
+ cada dato en cada coma. 
+Primero se pregunta si es distinto de NULL el archivo, luego se itera hasta el final del archivo o sea distinto
+de feof se hace el parseo con fscanf
+"%[^,],%[^,],%[^,],%[^\n]\n", 3 comas y un final (\n)
+Si la lista es distinta de NULL se agregan los datos parseados.
+
+-La segunda función parsea al empleado de forma binaria, si el archivo es !=NULL lo crea e itera hasta el final 
+!=feof, realiza una construcción al puntero pEmpleado, lee el archivo, y lo va agregando con el linkedlist
+directamente sin usar cadenas de caracteres
+
+6)Las funciones que devuelven un puntero a *VOID si se quiere definir que devuelve, se lo castea, ya que puntero
+a void es cualquier cosa.
+
+7)Controller carga los datos!
