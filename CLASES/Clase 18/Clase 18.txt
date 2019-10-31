@@ -27,4 +27,5 @@ directamente sin usar cadenas de caracteres
 6)Las funciones que devuelven un puntero a *VOID si se quiere definir que devuelve, se lo castea, ya que puntero
 a void es cualquier cosa.
 
-7)Controller carga los datos!
+7)Controller muestra los datos, se usa de auxiliar, el linkedlist, lista la lista, hace bajas, altas, modificaciones
+el parser separa cada dato, y employee es toda la estructura y funciones para el empleado en si!
