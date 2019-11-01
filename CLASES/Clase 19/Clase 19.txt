@@ -1,0 +1,17 @@
+Clase 19:
+
+1)LinkedList apunta a un elemento que apunta al siguiente.
+2)Constructor que pasa de la pila al heap.
+3)Primero creamos la lista en memoria, empieza de cero y crea puntero a primer nodo
+4)Hacemos los strcpy y flechita con los atoi para asignar los parametros del constructor!
+5) aux = (Employee*) ll_get (listaEmpleados,i); (Imprimo con Flechita)
+6)add agrega nodo nuevo a lista, el set y el push depende de un indice el set reemplaza, y el push lo mete en el medio
+7)ll_sort recibe un puntero a función, el sort va a llamar a la función de comparación y devuelve el ordenamiento.
+8)
+comparaPorNombre(void* p1 , void* p2)
+{
+Employee* e1  =( Employee)* p1;
+Employee* e2  = (Employee)* p2;
+
+return(strcmp (p1->nombre,p2->nombre);
+}
