@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1542946049 source:c:\users\mezeq\onedrive\escritorio\trabajos-practicos-de-laboratorio-1-2018-master\trabajos-practicos-de-laboratorio-1-2018-master\tp 3 laboratorio 1\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"Controller.h"
+	"funcionesGet.h"
+
+1542946049 c:\users\mezeq\onedrive\escritorio\trabajos-practicos-de-laboratorio-1-2018-master\trabajos-practicos-de-laboratorio-1-2018-master\tp 3 laboratorio 1\linkedlist.h
+
+1542946049 c:\users\mezeq\onedrive\escritorio\trabajos-practicos-de-laboratorio-1-2018-master\trabajos-practicos-de-laboratorio-1-2018-master\tp 3 laboratorio 1\employee.h
+	"LinkedList.h"
+
+1542946049 c:\users\mezeq\onedrive\escritorio\trabajos-practicos-de-laboratorio-1-2018-master\trabajos-practicos-de-laboratorio-1-2018-master\tp 3 laboratorio 1\controller.h
+
+1542946049 c:\users\mezeq\onedrive\escritorio\trabajos-practicos-de-laboratorio-1-2018-master\trabajos-practicos-de-laboratorio-1-2018-master\tp 3 laboratorio 1\funcionesget.h
+
+1542946049 source:c:\users\mezeq\onedrive\escritorio\trabajos-practicos-de-laboratorio-1-2018-master\trabajos-practicos-de-laboratorio-1-2018-master\tp 3 laboratorio 1\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+
+1542946049 source:c:\users\mezeq\onedrive\escritorio\trabajos-practicos-de-laboratorio-1-2018-master\trabajos-practicos-de-laboratorio-1-2018-master\tp 3 laboratorio 1\funcionesget.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesGet.h"
+
+1542946049 source:c:\users\mezeq\onedrive\escritorio\trabajos-practicos-de-laboratorio-1-2018-master\trabajos-practicos-de-laboratorio-1-2018-master\tp 3 laboratorio 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1542946049 source:c:\users\mezeq\onedrive\escritorio\trabajos-practicos-de-laboratorio-1-2018-master\trabajos-practicos-de-laboratorio-1-2018-master\tp 3 laboratorio 1\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1542946049 c:\users\mezeq\onedrive\escritorio\trabajos-practicos-de-laboratorio-1-2018-master\trabajos-practicos-de-laboratorio-1-2018-master\tp 3 laboratorio 1\parser.h
+
