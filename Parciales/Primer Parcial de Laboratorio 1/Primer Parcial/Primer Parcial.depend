@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1571489881 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\parciales\primer parcial de laboratorio 1\primer parcial\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1571489881 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\parciales\primer parcial de laboratorio 1\primer parcial\inputs.h
+
