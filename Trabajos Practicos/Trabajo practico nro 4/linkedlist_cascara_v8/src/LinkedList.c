@@ -15,7 +15,14 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement);
  */
 LinkedList* ll_newLinkedList(void)
 {
-    LinkedList* this= NULL;
+    LinkedList* this;
+    this=(LinkedList*)malloc(sizeof(LinkedList));//Si la lista es igual a la lista multiplicado el malloc del sizeof
+
+    if(this!=NULL)//Si la lista es diferente de NULL
+    {
+        this->size=0;
+        this->pFirstNode=NULL;
+    }
 
     return this;
 }
@@ -29,6 +36,10 @@ LinkedList* ll_newLinkedList(void)
 int ll_len(LinkedList* this)
 {
     int returnAux = -1;
+    if(this!=NULL)
+    {
+        returnAux=this->size;
+    }
     return returnAux;
 }
 
@@ -43,8 +54,28 @@ int ll_len(LinkedList* this)
  */
 static Node* getNode(LinkedList* this, int nodeIndex)
 {
-    return NULL;
+    int i;
+    int len;
+
+    Node* pNode=NULL;
+
+    if(this!=NULL)///SI LA LISTA ES DISTINTA DE NULL, SACAMOS EL LEN
+    {
+        len = ll_len(this);///El len se saca con ll_len a la lista
+        if(this!=NULL && nodeIndex>-1 && nodeIndex<len)//Si la lista es distinta de NULL y el indice del nodo es menor a 0 o mayor al tamaño que sacamos anteriormente se apunta al proxmimo nodo
+        {
+            pNode=this->pFirstNode;///EL NODO ES IGUAL A LA LISTA APUNTANDO AL PRIMER NODO
+
+            for(i=0; i<nodeIndex; i++)///RECORREMOS EL INDICE CON UN FOR Y APUNTAMOS AL PROXIMO NODO
+            {
+                pNode= pNode->pNextNode;
+            }
+        }
+    }
+
+    return pNode;///Retornamos el Nodo y si no existe retorna NULL como pusimos al principio
 }
+
 
 /** \brief  Permite realizar el test de la funcion getNode la cual es privada
  *
