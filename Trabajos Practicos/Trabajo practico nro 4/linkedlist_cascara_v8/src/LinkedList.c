@@ -59,16 +59,16 @@ static Node* getNode(LinkedList* this, int nodeIndex)
 
     Node* pNode=NULL;
 
-    if(this!=NULL)///SI LA LISTA ES DISTINTA DE NULL, SACAMOS EL LEN
+    if(this!=NULL)///SI LA LISTA ES DISTINTA DE NULL, CALCULAMOS EL LEN
     {
         len = ll_len(this);///El len se saca con ll_len a la lista
-        if(this!=NULL && nodeIndex>-1 && nodeIndex<len)//Si la lista es distinta de NULL y el indice del nodo es menor a 0 o mayor al tamaño que sacamos anteriormente se apunta al proxmimo nodo
+        if(this!=NULL && nodeIndex>-1 && nodeIndex<len)///Si la lista es distinta de NULL y el indice del nodo es menor a 0 o mayor al tamaño que sacamos anteriormente se apunta al proxmimo nodo
         {
             pNode=this->pFirstNode;///EL NODO ES IGUAL A LA LISTA APUNTANDO AL PRIMER NODO
 
             for(i=0; i<nodeIndex; i++)///RECORREMOS EL INDICE CON UN FOR Y APUNTAMOS AL PROXIMO NODO
             {
-                pNode= pNode->pNextNode;
+                pNode= pNode->pNextNode;///Apuntamos al prox nodo
             }
         }
     }
@@ -102,7 +102,33 @@ Node* test_getNode(LinkedList* this, int nodeIndex)
  */
 static int addNode(LinkedList* this, int nodeIndex,void* pElement)
 {
+    ///COMO SE AGREGA UN NODO
+
     int returnAux = -1;
+    int len; ///TAMAÑO DE LA LISTA
+
+    Node* pNewNode=malloc(sizeof(Node));///DEFINIMOS DINÁMICAMENTE UN NUEVO NODO
+    Node* pActualNode=NULL;///Nodo actual igual a NULL
+    pNewNode->pElement=pElement;///Flechita del nuevo nodo a pElement = pElement
+
+    if(this!=NULL && pNewNode!=NULL)
+    {
+        len=ll_len(this);///Definimos el largo del nodo con el ll_len
+        if(nodeIndex>-1 && nodeIndex<=len)///Si el indice del nodo es mayor a -1 y el indice es mayor o igual al len
+            if(nodeIndex==0)
+        {
+            pNewNode->pNextNode=this->pFirstNode;///El primer nodo agregado flechita a proximo nodo es igual a la lista flechita al primer nodo
+            this->pFirstNode=pNewNode;
+        }
+        else
+        {
+            pActualNode=getNode(this,nodeIndex-1);
+            pNewNode->pNextNode=pActualNode->pNextNode;
+            pActualNode->pNextNode=pNewNode;
+        }
+        returnAux=0;
+        this->size++;///AUMENTAMOS EL TAMAÑO DE LA LISTA EN UNO
+    }
     return returnAux;
 }
 
