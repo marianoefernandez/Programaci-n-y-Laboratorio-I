@@ -16,11 +16,11 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement);
 LinkedList* ll_newLinkedList(void)
 {
     LinkedList* this;
-    this=(LinkedList*)malloc(sizeof(LinkedList));//Si la lista es igual a la lista multiplicado el malloc del sizeof
+    this=(LinkedList*)malloc(sizeof(LinkedList));///Si la lista es igual a la lista multiplicado el malloc del sizeof
 
-    if(this!=NULL)//Si la lista es diferente de NULL
+    if(this!=NULL)///Si la lista es diferente de NULL
     {
-        this->size=0;
+        this->size=0;///Seteamos el size en 0
         this->pFirstNode=NULL;
     }
 
@@ -156,9 +156,14 @@ int test_addNode(LinkedList* this, int nodeIndex,void* pElement)
  */
 int ll_add(LinkedList* this, void* pElement)
 {
-    int returnAux = -1;
+    int returnAux = -1;///SETEO EN -1
 
-    return returnAux;
+    if (this !=NULL)///PREGUNTO SI LA LISTA ES DISTINTA DE NULL
+    {
+        addNode(this,this->size,pElement);///AGREGA EL NODO
+        returnAux=0;///RETORNAMOS 0
+    }
+    return returnAux;///RETORNAMOS 0 SI BIEN y -1 SI MAL
 }
 
 /** \brief Permite realizar el test de la funcion addNode la cual es privada
@@ -171,9 +176,25 @@ int ll_add(LinkedList* this, void* pElement)
  */
 void* ll_get(LinkedList* this, int index)
 {
-    void* returnAux = NULL;
+    int len;
+    void* returnAux = NULL;///SETEAMOS UN RETORNO A NULL
+    Node* pNewNode;///DEFINIMOS UN PUNTERO A UN NUEVO NODO
 
-    return returnAux;
+    if (this != NULL)///SI LA LISTA ES DISTINTA DE NULL
+    {
+        len=ll_len(this);///CALCULAMOS EL LEN
+
+        if(index>=0 && index<len)///SI EL INDICE ES MAYOR O IGUAL A CERO Y MENOR AL LEN
+        {
+            pNewNode=getNode(this,index);///OBTENEMOS EL NUEVO NODO EN EL INDICE QUE PUSIMOS PRINCIPALMENTE
+            if(pNewNode!=NULL)///SI ESE NODO EXISTE O SEA QUE EL INDICE QUE PUSIMOS CORRESPONDE A UN NODO CARGADO
+            {
+                returnAux=pNewNode->pElement;///RETORNAMOS EL ELEMENTO (DIR DE MEMORIA) DEL NODO EN EL INDICE MARCADO
+            }
+        }
+    }
+
+    return returnAux;///RETORNAMOS ELEMENTO O NULL
 }
 
 
