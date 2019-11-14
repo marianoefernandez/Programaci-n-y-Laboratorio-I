@@ -620,7 +620,7 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
                                 ll_set(this,i+1,pElementAux);
                                 flag= 1;///SETAMOS FLAG EN UNO CUANDO TERMINE EL SWAP
                             }
-                            returnAux=1;
+                            returnAux=0;
                         }
                     }while(flag);
                 }
