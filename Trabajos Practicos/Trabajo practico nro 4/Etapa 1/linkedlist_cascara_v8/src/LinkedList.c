@@ -6,7 +6,7 @@
 
 static Node* getNode(LinkedList* this, int nodeIndex);
 static int addNode(LinkedList* this, int nodeIndex,void* pElement);
-
+0
 LinkedList* ll_newLinkedList(void)
 {
     LinkedList* this;
