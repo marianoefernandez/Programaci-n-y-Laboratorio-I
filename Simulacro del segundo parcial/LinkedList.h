@@ -201,3 +201,6 @@ LinkedList* ll_clone(LinkedList* this);
                                 ( 0) Si ok
  */
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);
+
+LinkedList* ll_filter(LinkedList*, int(*pFunc)(void*));
+

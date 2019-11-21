@@ -45,11 +45,11 @@ int controller_ListEmployee(LinkedList* pLista)
         for(i=0; i < ll_len(pLista); i++)
         {
             pLlamado = ll_get(pLista,i);
-            llamada_getId(pLista,&id);
-            llamada_getFecha(pEmpleado, fecha->dia,fecha->mes,fecha->anio);
-            llamada_getNumeroCliente(pEmpleado,&numCliente);
-            llamada_getIdProblema(pLista,&idProblema);
-            llamada_getSolucion(pLista, solucion);
+            llamada_getId(pLlamado,&id);
+            llamada_getFecha(pLlamado, fecha.dia,fecha.mes,fecha.anio);
+            llamada_getNumeroCliente(pLlamado,&numCliente);
+            llamada_getIdProblema(pLlamado,&idProblema);
+            llamada_getSolucion(pLlamado, solucion);
 
             switch (idProblema)
             {
@@ -74,7 +74,7 @@ int controller_ListEmployee(LinkedList* pLista)
                     break;
 
             }
-            printf("%d -- %d/%d/%d %20d %20s, %s \n\n", id,fecha->dia,fecha->mes,fecha->anio, numCliente, probl, solucion);
+            printf("%d -- %d/%d/%d %20d %20s, %s \n\n", id,fecha.dia,fecha.mes,fecha.anio, numCliente, problema, solucion);
         }
     }
     return ret;
@@ -83,7 +83,7 @@ int controller_ListEmployee(LinkedList* pLista)
 int controller_saveAsText(char* path , LinkedList* lista)
 {
     FILE* pArchivo;
-    llamados* llamadoAux;
+    llamada* llamadoAux;
 
     int ret = 0;
     int* idAux;
@@ -108,7 +108,7 @@ int controller_saveAsText(char* path , LinkedList* lista)
         fechaAux->dia = malloc(sizeof(int));
         fechaAux->mes = malloc(sizeof(int));
         fechaAux->anio = malloc(sizeof(int));
-        solucion = malloc(sizeof(char)*20);
+        solucionAux = malloc(sizeof(char)*20);
         idProblemaAux = malloc(sizeof(int));
         numClienteAux = malloc(sizeof(int));
 
@@ -117,12 +117,12 @@ int controller_saveAsText(char* path , LinkedList* lista)
 
         for(i=0; i< ll_len(lista); i++)
         {
-            pLlamado = ll_get(pLista,i);
-            llamada_getId(pLista,&idAux);
-            llamada_getFecha(pEmpleado, fechaAux->dia,fechaAux->mes,fechaAux->anio);
-            llamada_getNumeroCliente(pEmpleado,&numClienteAux);
-            llamada_getIdProblema(pLista,&idProblemaAux);
-            llamada_getSolucion(pLista, solucionAux);
+            llamadoAux = ll_get(lista,i);
+            llamada_getId(llamadoAux,&idAux);
+            llamada_getFecha(llamadoAux, fechaAux->dia,fechaAux->mes,fechaAux->anio);
+            llamada_getNumeroCliente(llamadoAux,&numClienteAux);
+            llamada_getIdProblema(llamadoAux,&idProblemaAux);
+            llamada_getSolucion(llamadoAux, solucionAux);
 
             if (idProblema=idProblemaAux)
             {

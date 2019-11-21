@@ -7,12 +7,12 @@
 
 //ESTRUCTURA EMPLEADO
 
-llamado* new_llamado()
+llamada* new_llamado()
 //CONSTRUYE UN NUEVO EMPLEADO MEDIANTE UN MALLOC, LUEGO SI ESE PUNTERO A EMPLEADO EXISTE EN MEMORIA LO SETEA EN 0 TODO
 {
-    llamado* nuevoLLamado;///Siempre Puntero
+    llamada* nuevoLLamado;///Siempre Puntero
     eFecha* fecha;
-    nuevoLLamado=(llamado*)malloc(sizeof(llamado));///Siempre va un (Employee*) antes del malloc
+    nuevoLLamado=(llamada*)malloc(sizeof(llamada));///Siempre va un (Employee*) antes del malloc
 
 
     if (nuevoLLamado != NULL)
