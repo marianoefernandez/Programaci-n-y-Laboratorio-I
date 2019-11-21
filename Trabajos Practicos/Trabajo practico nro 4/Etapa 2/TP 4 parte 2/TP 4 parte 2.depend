@@ -1,5 +1,54 @@
 # depslib dependency file v1.0
-1573822046 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 4\etapa 2\tp 4 parte 2\main.c
+1574202103 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 4\etapa 2\tp 4 parte 2\controller.c
 	<stdio.h>
 	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"Controller.h"
+	"inputs.h"
+
+1573969202 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 4\etapa 2\tp 4 parte 2\linkedlist.h
+
+1574020922 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 4\etapa 2\tp 4 parte 2\employee.h
+	"LinkedList.h"
+
+1573969202 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 4\etapa 2\tp 4 parte 2\controller.h
+
+1573969202 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 4\etapa 2\tp 4 parte 2\inputs.h
+
+1574222325 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 4\etapa 2\tp 4 parte 2\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"Employee.h"
+
+1573969202 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 4\etapa 2\tp 4 parte 2\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1574120464 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 4\etapa 2\tp 4 parte 2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1573128639 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 4\etapa 2\tp 4 parte 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1574226236 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 4\etapa 2\tp 4 parte 2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1573128639 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\trabajos practicos\trabajo practico nro 4\etapa 2\tp 4 parte 2\parser.h
 

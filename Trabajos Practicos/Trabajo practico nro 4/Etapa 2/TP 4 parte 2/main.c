@@ -1,7 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <conio.h>
+
+#include "LinkedList.h"
+#include "Controller.h"
+#include "Employee.h"
+
+/*********************** *****************************
+    Menu:
+     1. Cargar los datos de los empleados desde el archivo data.csv (modo texto).
+     2. Cargar los datos de los empleados desde el archivo data.csv (modo binario).
+     3. Alta de empleado
+     4. Modificar datos de empleado
+     5. Baja de empleado
+     6. Listar empleados
+     7. Ordenar empleados
+     8. Guardar los datos de los empleados en el archivo data.csv (modo texto).
+     9. Guardar los datos de los empleados en el archivo data.csv (modo binario).
+    10. Salir
+*****************************************************/
 
 int main()
 {
@@ -10,6 +27,7 @@ int main()
     int opcion;
     int flagTexto= 0;
     int flagBinario= 0;
+    int retorno;
 
     do
     {
@@ -98,17 +116,33 @@ int main()
             break;
 
         case 5:
-            if(controller_removeEmployee(listaEmpleados) == -1)
+            retorno = controller_removeEmployee(listaEmpleados);
+
+            switch(retorno)
             {
-                printf("\nNo se encontro el ID.\n\n");
-            }
-            else if(validarRemove == -2)
-            {
-                printf("\nNo se elimino el empleado.\n\n");
-            }
-            else
-            {
-                printf("\nSe elimino el empleado.\n\n");
+                case 1:
+                {
+                    printf("\nSe elimino el usuario.\n\n");
+                    break;
+                }
+
+                case 0:
+                {
+                    printf("\nNo se encontro el ID.\n\n");
+                    break;
+                }
+
+                case -1:
+                {
+                    printf("\nOperacion cancelada por el usuario.\n\n");
+                    break;
+                }
+
+                case -2:
+                {
+                    printf("\nOpcion incorrecta.\n\n");
+                    break;
+                }
             }
             break;
 

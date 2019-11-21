@@ -97,5 +97,39 @@ int employee_setSueldo(Employee*,int);
  *
  */
 int employee_getSueldo(Employee*,int*);
+/** \brief Ordena la lista de empleados.
+ *
+ * \param pArrayListEmployee LinkedList* Puntero a la lista de empleados.
+ * \return int 1 si todo ok y 0 si hay error
+ *
+ */
+int employee_sortEmployee(LinkedList*);
+/** \brief Ordena la lista de empleados por sueldo.
+ *
+ * \param uno void* objeto generico uno
+ * \param dos void* objeto generico dos
+ * \return int 1 si todo ok y 0 si hay error
+ *
+ */
+int employee_ordenarPorSueldo(void*, void*);
+/** \brief Ordena la lista de empleados por nombre.
+ *
+ * \param uno void* objeto generico uno
+ * \param dos void* objeto generico dos
+ * \return int 1 si todo ok y 0 si hay error
+ *
+ */
+int employee_ordenarPorNombre(void*, void*);
+/** \brief Ordena la lista de empleados por horas trabajadas.
+ *
+ * \param uno void* objeto generico uno
+ * \param dos void* objeto generico dos
+ * \return int 1 si todo ok y 0 si hay error
+ *
+ */
+int employee_ordenarPorHoras(void*, void*);
+
+
+#endif // employee_H_INCLUDED
 
 
