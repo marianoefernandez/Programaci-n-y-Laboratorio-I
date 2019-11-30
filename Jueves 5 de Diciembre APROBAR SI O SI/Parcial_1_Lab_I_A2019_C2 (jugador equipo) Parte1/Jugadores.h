@@ -39,3 +39,8 @@ int ordenarJugadoresNombreYApellido(eJugadores*, int, int);
 //4-MOSTRAR
 
 //int printJugadores(eEquipo*,eJugadores*, int);
+
+//5-EXTRAS
+
+void hardcodeoJugadores(eJugadores*);
+

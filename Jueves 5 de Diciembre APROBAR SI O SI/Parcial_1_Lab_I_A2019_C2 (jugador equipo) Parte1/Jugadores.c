@@ -96,8 +96,8 @@ int agregarJugadores(eJugadores* jugadores,int len,int codigo)
         {
             getString("\nPOR FAVOR SOLO INGRESE NUMEROS\nIngrese el codigo nuevamente: ",codigoAux);//Valido
         }
-        codigoAux=atoi(codigo);//Paso cadena a numero
-        jugadores[i].codigo=codigoAux;
+        codigo=atoi(codigoAux);//Paso cadena a numero
+        jugadores[i].codigo=codigo;
 
 
         getString("\nIngrese el anio de nacimiento: ",anioAux);//Pido
@@ -217,4 +217,25 @@ int ordenarJugadoresNombreYApellido(eJugadores* jugadores, int len, int order)  
 }
 
 //4-MOSTRAR
+
+
+//5-EXTRAS
+
+void hardcodeoJugadores(eJugadores* jugadores)
+{
+    int i;
+    char nombre[10][52]={"Independiente","Racing","Boca","River","Barcelona","Real Madrid","Liverpool","Manchester City","PSG","Flamengo"};
+    char apellido[10][52]={"Independiente","Racing","Boca","River","Barcelona","Real Madrid","Liverpool","Manchester City","PSG","Flamengo"};
+    int codigoEquipo[10]={3,3,3,4,4,1,6,5,9,2};
+
+
+    for(i=0;i<10;i++)
+    {
+        equipos[i].codigo=i+1;
+        strcpy(equipos[i].nombre,nombre[i]);
+        strcpy(equipos[i].localidad,localidad[i]);
+        equipos[i].isEmpty=NOTFREE;
+    }
+}
+
 
