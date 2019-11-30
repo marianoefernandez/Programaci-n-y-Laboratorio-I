@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1570726456 source:c:\users\alumno\desktop\parcial lautaro lezama 1 b\main.c
+	"utn.h"
+
+1570726155 c:\users\alumno\desktop\parcial lautaro lezama 1 b\utn.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570726564 source:c:\users\alumno\desktop\parcial lautaro lezama 1 b\utn.c
+	"utn.h"
+
+1570795349 source:d:\lezamaverde\laboratorio1\parcial lautaro lezama 1 b\main.c
+	"utn.h"
+
+1570795132 d:\lezamaverde\laboratorio1\parcial lautaro lezama 1 b\utn.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570795387 source:d:\lezamaverde\laboratorio1\parcial lautaro lezama 1 b\utn.c
+	"utn.h"
+
+1571308641 source:c:\users\lauta\desktop\facultad\laboratorio1\parcial lautaro lezama 1 b\main.c
+	"utn.h"
+
+1571308602 c:\users\lauta\desktop\facultad\laboratorio1\parcial lautaro lezama 1 b\utn.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1571308602 source:c:\users\lauta\desktop\facultad\laboratorio1\parcial lautaro lezama 1 b\utn.c
+	"utn.h"
+
+1574347940 source:c:\users\mezeq\onedrive\escritorio\laboratorio1-master\parcial lautaro lezama 1 b\main.c
+	"utn.h"
+
+1574347940 c:\users\mezeq\onedrive\escritorio\laboratorio1-master\parcial lautaro lezama 1 b\utn.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1574347940 source:c:\users\mezeq\onedrive\escritorio\laboratorio1-master\parcial lautaro lezama 1 b\utn.c
+	"utn.h"
+

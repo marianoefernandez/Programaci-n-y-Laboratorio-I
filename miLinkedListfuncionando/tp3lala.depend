@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1573128639 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\milinkedlistfuncionando\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"Controller.h"
+	"inputs.h"
+
+1574373442 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\milinkedlistfuncionando\linkedlist.h
+
+1573128639 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\milinkedlistfuncionando\employee.h
+	"LinkedList.h"
+
+1573128639 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\milinkedlistfuncionando\controller.h
+
+1573128639 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\milinkedlistfuncionando\inputs.h
+
+1573128639 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\milinkedlistfuncionando\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+
+1573128639 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\milinkedlistfuncionando\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1574571803 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\milinkedlistfuncionando\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1573128639 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\milinkedlistfuncionando\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1573128639 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\milinkedlistfuncionando\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1573128639 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\milinkedlistfuncionando\parser.h
+

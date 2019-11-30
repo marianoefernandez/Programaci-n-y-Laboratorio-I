@@ -1,0 +1,92 @@
+HACER TODO CON FUNCIONES
+UNA BIBLIOTECA POR CADA ENTIDAD
+
+1) Crear una función que permita ingresar un numero al usuario y lo retorne. (LISTO)
+Crear una función que reciba el radio de un círculo y retorne su área. 
+Utilizar las funciones de los puntos 1 y 2 para hacer un programa que calcule el área
+ de un círculo cuyo radio es ingresado por el usuario. Documentar las funciones al estilo Doxygen.
+
+2)Desarrollar una biblioteca "utn.h" que posea funciones para pedirle al usuario el ingreso de datos(LISTO)
+getInt()
+getFloat()
+getChar()
+
+3)Agregar a la biblioteca utn.h funciones para validar diferentes tipos de valores:(LISTO)
+
+Solo números, ej. 123436679
+Solo letras, ej. abBD
+Alfanumericos, ej. ab555gT6
+Teléfono, ej. 4XXX-XXXX
+
+4)Realizar una agenda para guardar los datos de hasta 200 personas de las cuales se toman los siguientes datos: (LISTO)
+
+Nombre
+Apellido
+Legajo (NO SE PUEDE REPETIR)
+a- Realizar un programa con un menú de opciones para hacer altas , bajas y modificaciones (ABM) de una agenda.
+
+b- Mostrar un listado ordenado por Apellido
+
+5)Desarrollar una aplicación para un comercio que le permita administrar sus productos.
+
+Datos de cada producto:
+
+Código (1 a 1000) (Validar)
+Descripción (máximo 50 caracteres) (Validar)
+Importe (Validar)
+Cantidad (Validar)
+1. ALTAS: No es necesario el ingreso de todos los productos.
+2. MODIFICAR: Se ingresará el Código de Producto, permitiendo modificar:
+
+Descripción
+Importe
+Cantidad
+3. BAJA: Se ingresa el Código de Producto y se limpiarán los datos asociados
+4. LISTAR: Realizar un solo listado de los datos ordenados por los siguientes criterios:
+
+Descripción (descendente)
+Cantidad (ascendente)
+
+5.INFORMAR
+A. Los datos del/os producto/s de menor Importe.
+B. Los datos del/os producto/s que superan el valor de precio promedio
+
+MINIMIZAR:
+Realizar las funciones necesarias a fin de minimizar la función main()
+
+6) PARTE UNO Se solicita realizar una aplicación que permita administrar los libros de una libreria.
+
+Datos Libro:
+
+Código del libro (1 a 5.000) Validar
+Título (máximo 50 caracteres) Validar
+Código del Autor (1 a 500) Validar
+Stock (numerico)
+
+1.ALTAS: No es necesario el ingreso de todos los libros.
+
+2.MODIFICAR: Se ingresará el Código del Libro, permitiendo modificar:
+
+Código del libro
+Título
+Código del Autor
+Stock
+
+3.BAJA: Se ingresa el Código del Libro.
+
+4.ORDENAR: Se ordenara el array por titulo y ante igualdad por código
+
+5.LISTAR LIBROS: Realizar un solo listado con todos los libros
+
+6) PARTE DOS A partir del anterior ejercicio incorporar la entidad autor
+
+Datos del Autor:
+
+Código del Autor (1 a 500) Validar
+Nombre (máximo 50 caracteres) Validar
+Apellido (máximo 50 caracteres) Validar
+ALTAS: No es necesario el ingreso de todos los autores.
+
+BAJA: Se ingresa el Código del autor
+
+LISTAR LIBROS: Realizar un solo listado con todos los libros, en el deberá figurar el apellido del autor.

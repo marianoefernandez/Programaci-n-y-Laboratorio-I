@@ -286,7 +286,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
-        Employee* pEmpleado;
+    Employee* pEmpleado;
 
     int ret = 0;
     int i;

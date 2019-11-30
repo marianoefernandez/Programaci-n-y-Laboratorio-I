@@ -1,0 +1,2 @@
+Entender el parser
+y para que sirve cada función.

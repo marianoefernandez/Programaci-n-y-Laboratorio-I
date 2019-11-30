@@ -1,0 +1,83 @@
+# depslib dependency file v1.0
+1569513078 source:d:\mahafud\laboratorio-i\estacionamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1569514512 source:d:\mahafud\laboratorio-i\estacionamiento\estacionamiento.c
+	"Estacionamiento.h"
+
+1569514662 d:\mahafud\laboratorio-i\estacionamiento\estacionamiento.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1569590884 source:d:\mahafud\laboratorio-i\clase 11 estacionamiento\estacionamiento.c
+	"Estacionamiento.h"
+
+1569591007 d:\mahafud\laboratorio-i\clase 11 estacionamiento\estacionamiento.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1569588211 source:d:\mahafud\laboratorio-i\clase 11 estacionamiento\main.c
+	"Estacionamiento.h"
+
+1569597465 source:d:\mahafud\laboratorio-i\clase 12 estacionamiento parte 2\estacionamiento.c
+	"Estacionamiento.h"
+
+1569597224 d:\mahafud\laboratorio-i\clase 12 estacionamiento parte 2\estacionamiento.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1569597201 source:d:\mahafud\laboratorio-i\clase 12 estacionamiento parte 2\main.c
+	"Estacionamiento.h"
+
+1569624680 source:c:\users\joelcck\google drive\workspace\laboratorio-i\clase 12 estacionamiento parte 2\main.c
+	"Estacionamiento.h"
+
+1569624680 c:\users\joelcck\google drive\workspace\laboratorio-i\clase 12 estacionamiento parte 2\estacionamiento.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1569627284 source:c:\users\joelcck\google drive\workspace\laboratorio-i\clase 12 estacionamiento parte 2\estacionamiento.c
+	"Estacionamiento.h"
+
+1570114655 source:d:\mahafud\laboratorio-i\clase 13 estacionamiento parte 3\estacionamiento.c
+	"Estacionamiento.h"
+
+1570114655 d:\mahafud\laboratorio-i\clase 13 estacionamiento parte 3\estacionamiento.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1570115056 source:d:\mahafud\laboratorio-i\clase 13 estacionamiento parte 3\main.c
+	"Estacionamiento.h"
+
+1570115413 source:c:\users\mezeq\onedrive\escritorio\clase 13 estacionamiento parte 3\estacionamiento.c
+	"Estacionamiento.h"
+
+1570115413 c:\users\mezeq\onedrive\escritorio\clase 13 estacionamiento parte 3\estacionamiento.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1570115413 source:c:\users\mezeq\onedrive\escritorio\clase 13 estacionamiento parte 3\main.c
+	"Estacionamiento.h"
+
+1570115413 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\clases\clase 13\estacionamiento.c
+	"Estacionamiento.h"
+
+1570115413 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\clases\clase 13\estacionamiento.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1570115413 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\clases\clase 13\main.c
+	"Estacionamiento.h"
+

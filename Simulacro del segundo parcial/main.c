@@ -49,11 +49,12 @@ int main()
         case 1:
             if(flagTexto == 0)
             {
+                /*
                 printf("Ingrese el nombre del archivo a abrir(agregue el .csv al final): ");
                 fflush(stdin);
                 gets(archivo);
-
-                if(controller_loadFromText(archivo,listaLlamados) == 1)
+                */
+                if(controller_loadFromText("DATOS.csv",listaLlamados) == 1)
                 {
                     printf("\nSe cargo el archivo.\n\n");
                 }

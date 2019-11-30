@@ -73,30 +73,29 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement)
 {
     ///COMO SE AGREGA UN NODO
 
-    int returnAux = -1;
-    int len; ///TAMAÑO DE LA LISTA
+    int returnAux = -1;///SETEO RETORNO EN -1
+    int len;
 
-    Node* pNewNode=malloc(sizeof(Node));///DEFINIMOS DINÁMICAMENTE UN NUEVO NODO
-    Node* pActualNode=NULL;///Nodo actual igual a NULL
-    pNewNode->pElement=pElement;///Flechita del nuevo nodo a pElement = pElement
+    len=ll_len(this);///CALCULO EL LEN
 
-    if(this!=NULL && pNewNode!=NULL)
+    if(this != NULL && nodeIndex >= 0 && nodeIndex <= len) ///SI LA LISTA ES DISTINTA DE NULL Y EL NODO ES MAYOR A -1 Y MENOR O IGUAL AL LEN<= POR SI QUIERE ENLAZARLO AL FINAL
     {
-        len=ll_len(this);///Definimos el largo del nodo con el ll_len
-        if(nodeIndex>-1 && nodeIndex<=len)///Si el indice del nodo es mayor a -1 y el indice es mayor o igual al len
-            if(nodeIndex==0)
+
+        Node* pNode = (Node*)malloc(sizeof(Node));///EL PUNTERO A NODO ES IGUAL A MALLOC LO CONSTRUYO
+        pNode->pElement = pElement;///EL ELEMENTO DEL PUNTERO A NODO ES IGUAL AL ELEMENTO
+
+        if(nodeIndex == 0)///SI EL INDICE DEL NODO ES 0
         {
-            pNewNode->pNextNode=this->pFirstNode;///El primer nodo agregado flechita a proximo nodo es igual a la lista flechita al primer nodo
-            this->pFirstNode=pNewNode;
+            pNode->pNextNode = this->pFirstNode;///EL PROXIMO NODO ES IGUAL AL PRIMER NODO
+            this->pFirstNode = pNode;///EL PRIMER NODO ES IGUAL AL PUNTERO A NODO
         }
         else
         {
-            pActualNode=getNode(this,nodeIndex-1);
-            pNewNode->pNextNode=pActualNode->pNextNode;
-            pActualNode->pNextNode=pNewNode;
+            pNode->pNextNode = getNode(this,nodeIndex);///SI ES MÁS DE UNO EL NODO LO OBTIENE
+            getNode(this,nodeIndex-1)->pNextNode = pNode;///INDICE -1 APUNTA A PROX NODO
         }
-        returnAux=0;
-        this->size++;///AUMENTAMOS EL TAMAÑO DE LA LISTA EN UNO
+        this->size++;///SE LE SUBE EL SIZE
+        returnAux = 0;
     }
     return returnAux;
 }
@@ -112,7 +111,7 @@ int ll_add(LinkedList* this, void* pElement)
 
     if (this !=NULL)///PREGUNTO SI LA LISTA ES DISTINTA DE NULL
     {
-        addNode(this,this->size,pElement);///AGREGA EL NODO
+        addNode(this,ll_len(this),pElement);///AGREGA EL NODO
         returnAux=0;///RETORNAMOS 0
     }
     return returnAux;///RETORNAMOS 0 SI BIEN y -1 SI MAL

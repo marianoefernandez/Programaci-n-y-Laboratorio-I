@@ -16,7 +16,7 @@ int controller_loadFromText(char* path , LinkedList* lista)
     if(pArchivo!=NULL)
     {
         pArchivo=fopen(path, "r");
-        parser_EmployeeFromText(pArchivo,lista);
+        parser_llamados(pArchivo,lista);
         ret = 1;
     }
     fclose(pArchivo);

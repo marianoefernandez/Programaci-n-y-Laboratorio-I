@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1570804984 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\equipos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+	"Equipos.h"
+
+1570804691 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\inputs.h
+
+1570804691 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\equipos.h
+	<stdio.h>
+	<string.h>
+
+1570795290 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1570794414 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\jugadores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+	"Jugadores.h"
+	"Referi.h"
+
+1570804951 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\jugadores.h
+	<stdio.h>
+	<string.h>
+	"Equipos.h"
+
+1570795440 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\referi.h
+	<stdio.h>
+	<string.h>
+	"Jugadores.h"
+
+1570794824 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Referi.h"
+
+1570794891 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\fernandez mariano primer parcial\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\referi.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+	"Referi.h"
+

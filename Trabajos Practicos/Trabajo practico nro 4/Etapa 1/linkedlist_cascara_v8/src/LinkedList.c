@@ -128,7 +128,7 @@ void* ll_get(LinkedList* this, int index)
     {
         len=ll_len(this);///CALCULAMOS EL LEN
 
-        if(index>=0 && index<len)///SI EL INDICE ES MAYOR O IGUAL A CERO Y MENOR AL LEN
+        if(index>-1 && index<len)///SI EL INDICE ES MAYOR A -1 Y MENOR AL LEN
         {
             pNewNode=getNode(this,index);///OBTENEMOS EL NUEVO NODO EN EL INDICE QUE PUSIMOS PRINCIPALMENTE
             if(pNewNode!=NULL)///SI ESE NODO EXISTE O SEA QUE EL INDICE QUE PUSIMOS CORRESPONDE A UN NODO CARGADO
@@ -151,7 +151,7 @@ int ll_set(LinkedList* this, int index,void* pElement)
     {
         len=ll_len(this);///CALCULAMOS EL LEN
 
-        if(index>=0 && index<len)///SI EL INDICE ES MAYOR O IGUAL A CERO Y MENOR AL LEN
+        if(index>-1 && index<len)///SI EL INDICE ES MAYOR O IGUAL A CERO Y MENOR AL LEN
         {
             pNewNode=getNode(this,index);///OBTENEMOS EL NUEVO NODO EN EL INDICE QUE PUSIMOS PRINCIPALMENTE
             if(pNewNode!=NULL)///SI ESE NODO EXISTE O SEA QUE EL INDICE QUE PUSIMOS CORRESPONDE A UN NODO CARGADO
@@ -173,7 +173,7 @@ int ll_remove(LinkedList* this,int index)
 
     if(this!=NULL)///SI LA LISTA ES DISTINTA DE NULL
     {
-        if (index>=0 && index<this->size)///PREGUNTAMOS SI EL INDEX ES MAYOR O IGUAL A CERO Y SI ES MENOR QUE EL SIZE
+        if (index>-1 && index<this->size)///PREGUNTAMOS SI EL INDEX ES MAYOR O IGUAL A CERO Y SI ES MENOR QUE EL SIZE
         {
             returnAux=0;
 
