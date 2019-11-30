@@ -97,7 +97,7 @@ int agregarJugadores(eJugadores* jugadores,int len,int codigo)
             getString("\nPOR FAVOR SOLO INGRESE NUMEROS\nIngrese el codigo nuevamente: ",codigoAux);//Valido
         }
         codigo=atoi(codigoAux);//Paso cadena a numero
-        jugadores[i].codigo=codigo;
+        jugadores[i].codigo=codigoAux;
 
 
         getString("\nIngrese el anio de nacimiento: ",anioAux);//Pido

@@ -17,6 +17,7 @@ int main()
     int codigoE=0;
     int codigoJ=0;
     int codigoR=0;
+    int cantidadEquipos;
     int retorno;
     int cantidadPropietariosOcupados;
     eEquipo equipos[TAM];
@@ -30,6 +31,7 @@ int main()
             printf("\n2-Jugadores");
             printf("\n3-Referi");
             printf("\n4-Partido");
+            printf("\n5-Salir");
             opcion=getInt("\nSu opcion: ");
 
         switch(opcion)
@@ -39,11 +41,12 @@ int main()
         {
             do
             {
-                mostrarMenuE();
+                    mostrarMenuE();
                     opcionE=getInt("\nSu opcion: ");
                     switch(opcionE)
                     {
                     case 1:
+                        /*
                         codigoE++;
                         if (agregarEquipo(equipos,TAM,codigoE)==0)
                         {
@@ -56,14 +59,24 @@ int main()
                             printf("\nNo hay espacio\n");
                             opcionJ=0;
                         }
+                        */
+                        hardcodeoEquipos(equipos);
                         break;
 
                     case 2:
                         if (ordenarEquiposNombreYLocalidad(equipos,TAM,1)==0)
                         {
-                            printf("\nSe ordeno correctamente\n");
-                            printEquipos(equipos,TAM);
-                            system("pause");
+                            cantidadEquipos=cantidadEquiposOcupados(equipos,TAM);
+                            if(cantidadEquipos>0)
+                            {
+                                printf("\nSe ordeno correctamente\n");
+                                printEquipos(equipos,TAM);
+                                system("pause");
+                            }
+                            else
+                            {
+                                printf("\nPor favor, primero cargue un dato");
+                            }
                             opcionE=0;
                         }
                             else
@@ -73,6 +86,10 @@ int main()
                             }
                     break;
 
+                    case 3:
+                        printf("\nSaliendo...");
+                        break;
+
                     default:
                         printf("\nSeleccione una opcion valida \n");
                         break;
@@ -81,7 +98,7 @@ int main()
                     system("pause");
                     system("cls");
                 }
-                while(opcionE!=0);
+                while(opcionE!=3);
         }
         else
         {
@@ -95,7 +112,7 @@ int main()
             {
             do
             {
-                mostrarMenuJ();
+                    mostrarMenuJ();
                     opcionJ=getInt("\nSu opcion: ");
                     switch(opcionJ)
                     {
@@ -118,7 +135,7 @@ int main()
                         if (ordenarJugadoresNombreYApellido(equipos,TAM,1)==0)
                         {
                             printf("\nSe ordeno correctamente\n");
-                            printJugadores(equipos,jugadores,TAM);
+                            printJugadoresPorEquipo(equipos,jugadores,TAM);
                             system("pause");
                             opcionJ=0;
                         }
@@ -190,6 +207,14 @@ int main()
         break;
 
 
+    case 5:
+        {
+            printf("Saliendo...");
+            break;
+        }
+
+
+
 
     default:
         printf("\nSeleccione una opcion valida \n");
@@ -198,6 +223,6 @@ int main()
 
     system("pause");
     system("cls");
-} while(opcion!=0);
+} while(opcion!=5);
     return 0;
 }

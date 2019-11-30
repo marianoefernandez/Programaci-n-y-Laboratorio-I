@@ -10,6 +10,7 @@ void mostrarMenuE()
     printf("-----Elija una opcion-----\n\n");
     printf("1-Dar de alta\n");
     printf("2-Listar\n");
+    printf("3-Salir\n");
 }
 
 //1-INICIALIZAR
@@ -178,7 +179,7 @@ int printEquipos(eEquipo* equipos, int len)
     return 0;
 }
 
-int printJugadores(eEquipo* equipos,eJugadores* jugadores, int len)
+int printJugadoresPorEquipo(eEquipo* equipos,eJugadores* jugadores, int len)
 {
     int i;
     int index;
@@ -197,6 +198,38 @@ int printJugadores(eEquipo* equipos,eJugadores* jugadores, int len)
     return 0;
 }
 
+//5-EXTRAS
+
+int cantidadEquiposOcupados(eEquipo* equipos, int len)
+{
+    int i;
+    int cantidadEquipos;
+    for (i=0;i<len;i++)
+    {
+        if (equipos[i].isEmpty == NOTFREE)
+        {
+            cantidadEquipos++;
+            break;//SI DEVUELVE -1 NO HAY ESPACIO
+        }
+    }
+    return cantidadEquipos;
+}
+
+void hardcodeoEquipos(eEquipo* equipos)
+{
+    int i;
+    char nombre[10][52]={"Independiente","Racing","Boca","River","Barcelona","Real Madrid","Liverpool","Manchester City","PSG","Flamengo"};
+    char localidad[10][34]={"Avellaneda","Avellaneda","La Boca","Nuniez","Barcelona","Madrid","Liverpool","Manchester","Paris","Rio de Janeiro"};
+
+
+    for(i=0;i<10;i++)
+    {
+        equipos[i].codigo=i+1;
+        strcpy(equipos[i].nombre,nombre[i]);
+        strcpy(equipos[i].localidad,localidad[i]);
+        equipos[i].isEmpty=NOTFREE;
+    }
+}
 
 
 

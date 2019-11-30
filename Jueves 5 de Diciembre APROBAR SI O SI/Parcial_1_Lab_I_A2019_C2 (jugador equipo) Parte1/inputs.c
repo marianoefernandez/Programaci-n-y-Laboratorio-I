@@ -130,13 +130,25 @@ int isPhone(char* telefono)
 int isOnlyLetters(char* cadena)
 {
     int i=0;
+    int ret;
+    int cantidad;
+    cantidad=strlen(cadena);
+    printf("\n%d",cantidad);
     while (cadena[i] != '\0')
     {
         if(((cadena[i] <  'a' || cadena [i] > 'z') && (cadena[i] < 'A' || cadena[i] > 'Z')) && (cadena[i] != ' '))
-            return 0;//RETORNA 0 SI TODO MAL
+            ret=0;//RETORNA 0 SI TODO MAL
         i++;
     }
-    return 1;//RETORNA 1 SI TODO OK
+
+    ret=1;
+
+    if(cantidad==0)
+    {
+        ret=0;
+    }
+
+    return ret;//RETORNA 1 SI TODO OK
 }
 
 int isNumeric(char* numero)

@@ -75,7 +75,7 @@ void printEquipo(eEquipo equipo);
  *
  */
 
-int printJugadores(eEquipo*,eJugadores*, int);
+int printJugadoresPorEquipo(eEquipo*,eJugadores*, int);
 
 
 int printEquipos(eEquipo* equipo, int len);
@@ -86,5 +86,11 @@ int printEquipos(eEquipo* equipo, int len);
  * \return retorna 0
  *
  */
+
+ //5-EXTRAS
+
+int cantidadEquiposOcupados(eEquipo*,int);
+void hardcodeoEquipos(eEquipo*);
+
 
 
