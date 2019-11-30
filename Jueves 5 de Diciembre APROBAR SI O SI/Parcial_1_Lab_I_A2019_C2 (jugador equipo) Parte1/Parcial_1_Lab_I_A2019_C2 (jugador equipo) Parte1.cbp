@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Equipos.h" />
+		<Unit filename="Fecha.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Fecha.h" />
 		<Unit filename="Jugadores.c">
 			<Option compilerVar="CC" />
 		</Unit>

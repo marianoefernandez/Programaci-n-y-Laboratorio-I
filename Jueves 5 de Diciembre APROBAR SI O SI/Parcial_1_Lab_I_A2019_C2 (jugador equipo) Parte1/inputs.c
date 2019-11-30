@@ -133,7 +133,6 @@ int isOnlyLetters(char* cadena)
     int ret;
     int cantidad;
     cantidad=strlen(cadena);
-    printf("\n%d",cantidad);
     while (cadena[i] != '\0')
     {
         if(((cadena[i] <  'a' || cadena [i] > 'z') && (cadena[i] < 'A' || cadena[i] > 'Z')) && (cadena[i] != ' '))
