@@ -3,6 +3,7 @@
 #define NOTFREE 1
 #define FREE 0
 #define HARDCODING 10
+#include "Jugadores.h"
 
 //ESTRUCTURAS
 typedef struct
@@ -20,7 +21,6 @@ void mostrarMenuE();
  *
  *
  */
-
 //1-INICIALIZAR
 int inicializarEquipos(eEquipo*,int);
 /** \brief Inicializa todos los equipos en la variable los pone libre
@@ -39,6 +39,9 @@ int getFreeE(eEquipo*,int); //TERMINADA
  * \return retorna -1 si hay error y indice del array si todo ok
  *
  */
+
+ int buscarEquipoPorCodigo(eEquipo*, int, int);
+
 
 
 //2-ALTAS
@@ -71,6 +74,9 @@ void printEquipo(eEquipo equipo);
  * \param estructura eEquipo
  *
  */
+
+int printJugadores(eEquipo*,eJugadores*, int);
+
 
 int printEquipos(eEquipo* equipo, int len);
 /** \brief Imprime info de una lista de equipos

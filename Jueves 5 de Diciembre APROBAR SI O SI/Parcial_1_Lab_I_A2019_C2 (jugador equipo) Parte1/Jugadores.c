@@ -3,8 +3,7 @@
 #include <string.h>
 #include "inputs.h"
 #include "Jugadores.h"
-#include "Referi.h"
-
+//#include "Equipos.h"
 
 //0-MENU
 void mostrarMenuJ()
@@ -29,24 +28,6 @@ int inicializarJugadores(eJugadores* jugadores, int len)
         retorno=0;
     }
 
-    return retorno;
-}
-
-int buscarEquipoPorCodigo(eEquipo* equipos, int len, int codigo)
-{
-    int i;
-    int retorno = -1;
-    if(equipos!=NULL && len>0)
-    {
-        for(i=0; i<len; i++)
-        {
-            if(equipos[i].codigo==codigo && equipos[i].isEmpty==NOTFREE)
-            {
-                retorno = i;
-                break;
-            }
-        }
-    }
     return retorno;
 }
 
@@ -136,7 +117,7 @@ int agregarJugadores(eJugadores* jugadores,int len,int codigo)
         jugadores[i].fechaNac.anio=anio;
 
 
-                getString("\nIngrese el mes de nacimiento: ",mesAux);//Pido
+        getString("\nIngrese el mes de nacimiento: ",mesAux);//Pido
         //VALIDACION
         while(isNumeric(mesAux) == 0)
         {
@@ -236,23 +217,4 @@ int ordenarJugadoresNombreYApellido(eJugadores* jugadores, int len, int order)  
 }
 
 //4-MOSTRAR
-
-int printJugadores(eEquipo* equipos,eJugadores* jugadores, int len)
-{
-    int i;
-    int index;
-    int auxCodigo;
-    printf("Codigo       Nombre          Apellido        Sexo          Fecha de Nacimiento          Equipo\n");
-    for(i=0; i<len; i++)
-    {
-        if(jugadores[i].isEmpty==NOTFREE)
-        {
-            auxCodigo=equipos[i].codigo;
-            index=buscarEquipoPorCodigo(jugadores,len,auxCodigo);
-            printf("%d-- %10s %7s %5c %7d/%d/%d %12s\n",jugadores[i].codigo,jugadores[i].nombre,jugadores[i].apellido,jugadores[i].sexo,jugadores[i].fechaNac.dia,jugadores[i].fechaNac.mes,jugadores[i].fechaNac.anio,equipos[i].nombre);
-        }
-    }
-    return 0;
-}
-
 

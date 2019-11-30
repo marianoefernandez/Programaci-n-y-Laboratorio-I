@@ -3,6 +3,7 @@
 #include <string.h>
 #include "inputs.h"
 #include "Equipos.h"
+
 //0-MENU
 void mostrarMenuE()
 {
@@ -42,6 +43,24 @@ int getFreeE(eEquipo* equipos,int len) //TERMINADA
         }
     }
     return index;
+}
+
+int buscarEquipoPorCodigo(eEquipo* equipos, int len, int codigo)
+{
+    int i;
+    int retorno = -1;
+    if(equipos!=NULL && len>0)
+    {
+        for(i=0; i<len; i++)
+        {
+            if(equipos[i].codigo==codigo && equipos[i].isEmpty==NOTFREE)
+            {
+                retorno = i;
+                break;
+            }
+        }
+    }
+    return retorno;
 }
 
 
@@ -158,6 +177,26 @@ int printEquipos(eEquipo* equipos, int len)
     }
     return 0;
 }
+
+int printJugadores(eEquipo* equipos,eJugadores* jugadores, int len)
+{
+    int i;
+    int index;
+    int auxCodigo;
+
+    printf("Codigo       Nombre          Apellido        Sexo          Fecha de Nacimiento          Equipo\n");
+    for(i=0; i<len; i++)
+    {
+        if(jugadores[i].isEmpty==NOTFREE)
+        {
+            auxCodigo=equipos[i].codigo;
+            index=buscarEquipoPorCodigo(jugadores,len,auxCodigo);
+            printf("%d-- %10s %7s %5c %7d/%d/%d %12s\n",jugadores[i].codigo,jugadores[i].nombre,jugadores[i].apellido,jugadores[i].sexo,jugadores[i].fechaNac.dia,jugadores[i].fechaNac.mes,jugadores[i].fechaNac.anio,equipos[i].nombre);
+        }
+    }
+    return 0;
+}
+
 
 
 

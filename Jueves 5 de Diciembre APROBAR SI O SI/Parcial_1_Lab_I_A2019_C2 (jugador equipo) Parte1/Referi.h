@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
-#include "Jugadores.h"
 #define NOTFREE 1
 #define FREE 0
 #define HARDCODING 10
+#include "Fecha.h"
 
 //ESTRUCTURAS
 
@@ -20,6 +20,7 @@ typedef struct
 }eReferi;
 
 //0-MENU
+
 void mostrarMenuR();
 
 //1-INICIALIZAR

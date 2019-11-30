@@ -49,3 +49,60 @@
 	"inputs.h"
 	"Referi.h"
 
+1575130728 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\equipos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+	"Equipos.h"
+
+1575127977 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\inputs.h
+
+1575130944 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\equipos.h
+	<stdio.h>
+	<string.h>
+	"Jugadores.h"
+
+1575127977 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1575129234 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\fecha.c
+
+1575130751 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\jugadores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+	"Jugadores.h"
+
+1575131148 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\jugadores.h
+	<stdio.h>
+	<string.h>
+	"Fecha.h"
+
+1575131351 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\fecha.h
+
+1575131241 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Equipos.h"
+	"Referi.h"
+
+1575131186 c:\users\alumno\desktop\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\referi.h
+	<stdio.h>
+	<string.h>
+	"Fecha.h"
+
+1575127977 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\partido.c
+
+1575127977 source:c:\users\alumno\desktop\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\parcial_1_lab_i_a2019_c2 (jugador equipo) parte1\referi.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+	"Referi.h"
+

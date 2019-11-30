@@ -3,11 +3,11 @@
 #include <string.h>
 #include "Equipos.h"
 #include "Referi.h"
-//#include "Partido.h"
 #define TAM 1000
 #define NOTFREE 1
 #define FREE 0
 #define HARDCODING 10
+
 int main()
 {
     int opcion;

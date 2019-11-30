@@ -3,16 +3,8 @@
 #define NOTFREE 1
 #define FREE 0
 #define HARDCODING 10
-#include "Equipos.h"
+#include "Fecha.h"
 
-
-
-typedef struct
-{
-    int dia;
-    int mes;
-    int anio;
-}eFecha;
 
 typedef struct
 {
@@ -25,13 +17,14 @@ typedef struct
     int isEmpty;
 }eJugadores;
 
+
 //0-MENU
 void mostrarMenuJ();
 
 //1-INICIALIZAR
 int inicializarJugadores(eJugadores*,int);
 
-int buscarEquipoPorCodigo(eEquipo*, int, int);
+//int buscarEquipoPorCodigo(eEquipo*, int, int);
 
 int getFreeJ(eJugadores*,int); //TERMINADA
 
@@ -45,4 +38,4 @@ int ordenarJugadoresNombreYApellido(eJugadores*, int, int);
 
 //4-MOSTRAR
 
-int printJugadores(eEquipo*,eJugadores*, int);
+//int printJugadores(eEquipo*,eJugadores*, int);
