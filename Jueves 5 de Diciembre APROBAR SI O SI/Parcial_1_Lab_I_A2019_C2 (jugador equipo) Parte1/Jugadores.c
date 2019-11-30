@@ -84,7 +84,7 @@ int agregarJugadores(eJugadores* jugadores,int len,int codigo)
 
         auxSexo=getChar("\nIngrese el sexo: ");//Pido
         //VALIDACION
-        while(auxSexo!= 'M' || auxSexo!= 'm' || auxSexo!= 'F' || auxSexo!= 'f')
+        while(auxSexo!= 'M' && auxSexo!= 'm' && auxSexo!= 'F' && auxSexo!= 'f')
         {
             auxSexo=getChar("\nERROR, SOLO INGRESE f/m Ingrese el sexo: ");//Valido
         }
