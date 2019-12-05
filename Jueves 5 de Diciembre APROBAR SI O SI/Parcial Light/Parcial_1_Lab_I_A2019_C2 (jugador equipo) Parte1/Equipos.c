@@ -12,9 +12,8 @@ void mostrarMenuE()
     printf("-----Elija una opcion-----\n\n");
     printf("1-Dar de alta\n");
     printf("2-Dar de baja\n");
-    printf("3-Modificar\n");
-    printf("4-Listar ordenado por nombre y localidad\n");
-    printf("5-Salir\n");
+    printf("3-Listar ordenado por nombre y localidad\n");
+    printf("4-Salir\n");
 }
 
 void printModificationMenuE()

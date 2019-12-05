@@ -53,7 +53,6 @@ int main()
                     switch(opcionE)
                     {
                     case 1:
-                        /*
                         codigoE++;
                         if (agregarEquipo(equipos,TAM,codigoE)==0)
                         {
@@ -66,8 +65,7 @@ int main()
                             printf("\nNo hay espacio\n");
                             opcionJ=0;
                         }
-                        */
-                        hardcodeoEquipos(equipos);
+                        //hardcodeoEquipos(equipos);
                         break;
 
                     case 2:
@@ -175,7 +173,6 @@ int main()
                     switch(opcionJ)
                     {
                     case 1:
-                       /*
                        cantidadEquipos=cantidadEquiposOcupados(equipos,TAM);
                         //printf("\n%d",cantidadEquipos);
                             if(cantidadEquipos>0)
@@ -197,8 +194,7 @@ int main()
                         {
                             printf("\nPrimero por favor antes cargue un equipo.");
                         }
-                        */
-                        hardcodeoJugadores(jugadores);
+                        //hardcodeoJugadores(jugadores);
                         break;
 
                     case 2:
@@ -231,6 +227,7 @@ int main()
                         }
                         break;
 
+                    /*
                     case 3:
                         cantidadJugadores=cantidadJugadoresOcupados(jugadores,TAM);
                         if(cantidadEquipos>0)
@@ -264,8 +261,8 @@ int main()
                             printf("\nNo hay ningun jugador dado de alta, por favor primero realice una carga\n");
                         }
                         break;
-
-                    case 4:
+                        */
+                    case 3:
                         cantidadJugadores=cantidadJugadoresOcupados(jugadores,TAM);
                         if(cantidadJugadores>0)
                         {
@@ -288,7 +285,7 @@ int main()
                           printf("\nPrimero cargue a un jugador");
                         }
 
-                    case 5:
+                    case 4:
                         printf("\nSaliendo...");
                         break;
                     /*
@@ -304,7 +301,7 @@ int main()
                     system("pause");
                     system("cls");
                 }
-                while(opcionJ!=5);
+                while(opcionJ!=4);
         }
         else
         {
@@ -322,7 +319,6 @@ int main()
                     switch(opcionR)
                     {
                     case 1:
-                        /*
                         codigoR++;
                         if (agregarReferis(referis,TAM,codigoR)==0)
                         {
@@ -335,10 +331,9 @@ int main()
                             printf("\nNo hay espacio\n");
                             opcionR=2;
                         }
-                        */
-                        hardcodeoReferis(referis);
+                        //hardcodeoReferis(referis);
                         break;
-
+                        /*
                     case 2:
                         cantidadReferis=cantidadReferisOcupados(referis,TAM);
                         if(cantidadReferis>0)
@@ -402,12 +397,12 @@ int main()
                             printf("\nNo hay ningun referi dado de alta, por favor primero realice una carga\n");
                         }
                         break;
-
-                    case 4:
+                    */
+                    case 2:
                         printReferi(referis,TAM);
                         break;
 
-                    case 5:
+                    case 3:
                         printf("\nSaliendo...");
                         break;
 
@@ -420,7 +415,7 @@ int main()
                     system("pause");
                     system("cls");
                 }
-                while(opcionR!=5);
+                while(opcionR!=3);
         }
         else
         {
@@ -438,7 +433,6 @@ int main()
                     switch(opcionP)
                     {
                     case 1:
-                        /*
                         cantidadEquipos=cantidadEquiposOcupados(equipos,TAM);
                         if(cantidadEquipos>0)
                         {
@@ -459,11 +453,11 @@ int main()
                         {
                             printf("\nTienen que haber al menos dos equipos cargados para poder cargar un partido");
                         }
-                        */
-                        hardcodeoPartidos(partidos);
+                        //hardcodeoPartidos(partidos);
                         break;
 
                     case 2:
+                        /*
                         cantidadEquipos=cantidadEquiposOcupados(equipos,TAM);
                         if(cantidadEquipos>=2)
                         {
@@ -526,8 +520,9 @@ int main()
                             printf("\nAntes de realizar algo con un partido tienen que haber al menos dos equipos\n");
                         }
                         break;
+                        */
 
-                    case 4:
+                    case 2:
                         if (ordenarPartidosPorFecha(partidos,TAM,1)==0)
                         {
                             printf("\nSe ordeno correctamente\n");
@@ -542,7 +537,7 @@ int main()
                         }
                         break;
 
-                    case 5:
+                    case 3:
                         printf("\nSaliendo...");
                         break;
 
@@ -554,7 +549,7 @@ int main()
                     system("pause");
                     system("cls");
                 }
-                while(opcionP!=5);
+                while(opcionP!=3);
         }
         else
         {
@@ -562,6 +557,7 @@ int main()
         }
         break;
 
+/*
         case 5:
             do
             {
@@ -656,8 +652,8 @@ int main()
             }
             while(opcionE!=5);
             break;
-
-        case 6:
+*/
+        case :
             printf("Saliendo...");
             break;
 
@@ -669,6 +665,7 @@ int main()
 
     system("pause");
     system("cls");
-} while(opcion!=6);
+} while(opcion!=5);
+
     return 0;
 }

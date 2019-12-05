@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1575130471 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\practica antes del primer parcial\ejercicio 4\agenda.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"agenda.h"
+
+1575130471 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\practica antes del primer parcial\ejercicio 4\agenda.h
+	<stdio.h>
+	<string.h>
+
+1575130471 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\practica antes del primer parcial\ejercicio 4\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1575130471 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\practica antes del primer parcial\ejercicio 4\inputs.h
+
+1575130471 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\practica antes del primer parcial\ejercicio 4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"agenda.h"
+

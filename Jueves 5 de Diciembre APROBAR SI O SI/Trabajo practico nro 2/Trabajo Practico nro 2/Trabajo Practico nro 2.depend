@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1575130471 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\trabajo practico nro 2\trabajo practico nro 2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"inputs.h"
+
+1575130471 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\trabajo practico nro 2\trabajo practico nro 2\arrayemployees.h
+	<stdio.h>
+	<string.h>
+
+1575130471 c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\trabajo practico nro 2\trabajo practico nro 2\inputs.h
+
+1575130471 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\trabajo practico nro 2\trabajo practico nro 2\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1575130471 source:c:\users\mezeq\onedrive\escritorio\programaci-n-y-laboratorio-i\jueves 5 de diciembre aprobar si o si\trabajo practico nro 2\trabajo practico nro 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+
