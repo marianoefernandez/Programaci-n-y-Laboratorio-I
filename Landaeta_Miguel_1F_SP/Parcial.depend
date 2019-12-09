@@ -1,0 +1,232 @@
+# depslib dependency file v1.0
+1574632920 source:c:\c#\parcial2\parcial\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1574710924 source:c:\c#\parcial2\parcial\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1574691898 c:\c#\parcial2\parcial\linkedlist.h
+
+1574706510 source:c:\c#\parcial2\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"input.h"
+	"LinkedList.h"
+	"Controller.h"
+	"dominio.h"
+
+1574690926 c:\c#\parcial2\parcial\input.h
+
+1574694736 c:\c#\parcial2\parcial\controller.h
+
+1574695002 source:c:\c#\parcial2\parcial\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"LinkedList.h"
+	"dominio.h"
+	"parser.h"
+
+1574648071 c:\c#\parcial2\parcial\parser.h
+
+1574693767 c:\c#\parcial2\parcial\dominio.h
+
+1574693767 source:c:\c#\parcial2\parcial\dominio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"LinkedList.h"
+	"parser.h"
+	"dominio.h"
+
+1574695887 source:c:\c#\parcial2\parcial\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"dominio.h"
+	<string.h>
+
+1574729053 source:d:\nueva carpeta\parcial2aaa\parcial\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"LinkedList.h"
+	"Computer.h"
+	"parser.h"
+
+1574690926 d:\nueva carpeta\parcial2aaa\parcial\input.h
+
+1574691898 d:\nueva carpeta\parcial2aaa\parcial\linkedlist.h
+
+1574693767 d:\nueva carpeta\parcial2aaa\parcial\dominio.h
+
+1574721316 d:\nueva carpeta\parcial2aaa\parcial\parser.h
+
+1574693767 source:d:\nueva carpeta\parcial2aaa\parcial\dominio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"LinkedList.h"
+	"parser.h"
+	"dominio.h"
+
+1574728247 source:d:\nueva carpeta\parcial2aaa\parcial\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1574710924 source:d:\nueva carpeta\parcial2aaa\parcial\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1574728985 source:d:\nueva carpeta\parcial2aaa\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"input.h"
+	"LinkedList.h"
+	"Controller.h"
+	"Computer.h"
+
+1574728795 d:\nueva carpeta\parcial2aaa\parcial\controller.h
+
+1574729019 source:d:\nueva carpeta\parcial2aaa\parcial\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Computer.h"
+	<string.h>
+
+1574727878 source:d:\nueva carpeta\parcial2aaa\parcial\computer.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"LinkedList.h"
+	"parser.h"
+	"Computer.h"
+
+1574727945 d:\nueva carpeta\parcial2aaa\parcial\computer.h
+
+1574727878 source:c:\users\alumno\desktop\parcial\computer.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"LinkedList.h"
+	"parser.h"
+	"Computer.h"
+
+1574690926 c:\users\alumno\desktop\parcial\input.h
+
+1574691898 c:\users\alumno\desktop\parcial\linkedlist.h
+
+1574721316 c:\users\alumno\desktop\parcial\parser.h
+
+1574727945 c:\users\alumno\desktop\parcial\computer.h
+
+1574729053 source:c:\users\alumno\desktop\parcial\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"LinkedList.h"
+	"Computer.h"
+	"parser.h"
+
+1574729639 source:c:\users\alumno\desktop\parcial\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1574710924 source:c:\users\alumno\desktop\parcial\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1574728985 source:c:\users\alumno\desktop\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"input.h"
+	"LinkedList.h"
+	"Controller.h"
+	"Computer.h"
+
+1574728795 c:\users\alumno\desktop\parcial\controller.h
+
+1574729019 source:c:\users\alumno\desktop\parcial\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Computer.h"
+	<string.h>
+
+1574730913 source:c:\users\alumno\desktop\landaeta_miguel_1f_sp\computer.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"LinkedList.h"
+	"parser.h"
+	"Computer.h"
+
+1574690926 c:\users\alumno\desktop\landaeta_miguel_1f_sp\input.h
+
+1574691898 c:\users\alumno\desktop\landaeta_miguel_1f_sp\linkedlist.h
+
+1574721316 c:\users\alumno\desktop\landaeta_miguel_1f_sp\parser.h
+
+1574727945 c:\users\alumno\desktop\landaeta_miguel_1f_sp\computer.h
+
+1574730639 source:c:\users\alumno\desktop\landaeta_miguel_1f_sp\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"LinkedList.h"
+	"Computer.h"
+	"parser.h"
+
+1574729639 source:c:\users\alumno\desktop\landaeta_miguel_1f_sp\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1574710924 source:c:\users\alumno\desktop\landaeta_miguel_1f_sp\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1574730108 source:c:\users\alumno\desktop\landaeta_miguel_1f_sp\main.c
+	<stdio.h>
+	<stdlib.h>
+	"input.h"
+	"LinkedList.h"
+	"Controller.h"
+	"Computer.h"
+
+1574728795 c:\users\alumno\desktop\landaeta_miguel_1f_sp\controller.h
+
+1574730291 source:c:\users\alumno\desktop\landaeta_miguel_1f_sp\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Computer.h"
+	<string.h>
+
