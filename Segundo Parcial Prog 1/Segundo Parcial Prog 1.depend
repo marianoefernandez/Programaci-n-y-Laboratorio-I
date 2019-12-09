@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1575897553 source:c:\users\alumno\desktop\segundo parcial prog 1\personas.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"Personas.h"
+
+1575895860 c:\users\alumno\desktop\segundo parcial prog 1\personas.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1575897354 source:c:\users\alumno\desktop\segundo parcial prog 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"Personas.h"
+
