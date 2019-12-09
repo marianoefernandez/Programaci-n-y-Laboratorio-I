@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1575551632 source:c:\users\alumno\desktop\pprecu\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1575547733 c:\users\alumno\desktop\pprecu\utn.h
+
+1575556542 source:c:\users\alumno\desktop\pprecu\entidades.c
+	"entidades.h"
+
+1575554572 c:\users\alumno\desktop\pprecu\entidades.h
+	"utn.h"
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+
+1575553047 source:c:\users\alumno\desktop\pprecu\main.c
+	<stdio.h>
+	<stdlib.h>
+	"entidades.h"
+	"utn.h"
+
