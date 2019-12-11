@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1574373442 source:c:\users\mezeq\onedrive\escritorio\2do parcial\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+
+1574373442 c:\users\mezeq\onedrive\escritorio\2do parcial\inputs.h
+
+1576011363 source:c:\users\mezeq\onedrive\escritorio\2do parcial\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1576011367 c:\users\mezeq\onedrive\escritorio\2do parcial\linkedlist.h
+
