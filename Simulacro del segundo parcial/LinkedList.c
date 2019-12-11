@@ -4,6 +4,7 @@
 #include "LinkedList.h"
 
 
+
 static Node* getNode(LinkedList* this, int nodeIndex);
 static int addNode(LinkedList* this, int nodeIndex,void* pElement);
 
@@ -128,7 +129,7 @@ void* ll_get(LinkedList* this, int index)
     {
         len=ll_len(this);///CALCULAMOS EL LEN
 
-        if(index>=0 && index<len)///SI EL INDICE ES MAYOR O IGUAL A CERO Y MENOR AL LEN
+        if(index>-1 && index<len)///SI EL INDICE ES MAYOR A -1 Y MENOR AL LEN
         {
             pNewNode=getNode(this,index);///OBTENEMOS EL NUEVO NODO EN EL INDICE QUE PUSIMOS PRINCIPALMENTE
             if(pNewNode!=NULL)///SI ESE NODO EXISTE O SEA QUE EL INDICE QUE PUSIMOS CORRESPONDE A UN NODO CARGADO
@@ -151,7 +152,7 @@ int ll_set(LinkedList* this, int index,void* pElement)
     {
         len=ll_len(this);///CALCULAMOS EL LEN
 
-        if(index>=0 && index<len)///SI EL INDICE ES MAYOR O IGUAL A CERO Y MENOR AL LEN
+        if(index>-1 && index<len)///SI EL INDICE ES MAYOR O IGUAL A CERO Y MENOR AL LEN
         {
             pNewNode=getNode(this,index);///OBTENEMOS EL NUEVO NODO EN EL INDICE QUE PUSIMOS PRINCIPALMENTE
             if(pNewNode!=NULL)///SI ESE NODO EXISTE O SEA QUE EL INDICE QUE PUSIMOS CORRESPONDE A UN NODO CARGADO
@@ -173,7 +174,7 @@ int ll_remove(LinkedList* this,int index)
 
     if(this!=NULL)///SI LA LISTA ES DISTINTA DE NULL
     {
-        if (index>=0 && index<this->size)///PREGUNTAMOS SI EL INDEX ES MAYOR O IGUAL A CERO Y SI ES MENOR QUE EL SIZE
+        if (index>-1 && index<this->size)///PREGUNTAMOS SI EL INDEX ES MAYOR O IGUAL A CERO Y SI ES MENOR QUE EL SIZE
         {
             returnAux=0;
 
@@ -465,7 +466,7 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 LinkedList* ll_filter(LinkedList* lista, int(*pFunc)(void*))
 {
     int i;
-    int tam;
+    int len;
     void* pElementAux;
     LinkedList* nuevaSubLista;
 
@@ -474,9 +475,9 @@ LinkedList* ll_filter(LinkedList* lista, int(*pFunc)(void*))
         if(*pFunc != NULL)
         {
             nuevaSubLista= ll_newLinkedList();
-            tam= ll_len(lista);
+            len= ll_len(lista);
 
-            for(i=0; i<tam; i++)
+            for(i=0; i<len; i++)
             {
                 pElementAux= ll_get(lista,i);
                 if(pFunc(pElementAux) == 1);
@@ -487,5 +488,22 @@ LinkedList* ll_filter(LinkedList* lista, int(*pFunc)(void*))
         }
     }
     return nuevaSubLista;
+}
+
+int ll_map(LinkedList* this, void (*pFunc)(void *))
+{
+    int i;
+    int ret=0;
+
+    if(this != NULL && pFunc != NULL)
+    {
+        for(i=0; i< ll_len(this) ; i++)
+        {
+            pFunc(ll_get(this,i));
+        }
+        ret=1;
+    }
+
+    return ret;
 }
 

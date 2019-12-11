@@ -202,5 +202,24 @@ LinkedList* ll_clone(LinkedList* this);
  */
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);
 
+
+/** \brief filtra los elemenots en una linkedlist dependiendo de los parametros a la funcion.
+ *
+ * \param this linked list con elemenos
+ * \param puntero a funcion para comparar parametros
+ * \return una lista filtrada de elementos.
+ *
+ */
+
 LinkedList* ll_filter(LinkedList*, int(*pFunc)(void*));
+
+/** \brief  rellena un elemento vacio de la structura segun parametro de la funcion a puntero
+ *
+ * \param  linked list de elementos
+ * \param puntero a funcion
+ * \return linked 0 de no ser el elemento a rellenar o 1 si lo es.
+ *
+ */
+
+ int ll_map(LinkedList*, void (*pFunc)(void *));
 
