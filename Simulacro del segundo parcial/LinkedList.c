@@ -507,3 +507,21 @@ int ll_map(LinkedList* this, void (*pFunc)(void *))
     return ret;
 }
 
+int ll_count(LinkedList* this, void (*pFunc)(void *))
+{
+    int i;
+    int contador;
+    int acumulador=0;
+
+    if(this != NULL && pFunc != NULL)
+    {
+        for(i=0; i< ll_len(this) ; i++)
+        {
+            contador=pFunc(ll_get(this,i));
+            acumulador=acumulador+contador
+        }
+    }
+
+    return acumulador;
+}
+
