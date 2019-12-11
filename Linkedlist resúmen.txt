@@ -1,0 +1,108 @@
+La linkedlist es una lista dinámica en donde podemos crear nuestra lista a partir de memoria dinámica mucho más fácil y rápido que la memoria estática.
+Es como un tren atado a cada nodo que serian vagones.
+Cada nodo tiene un elemento que puede ser cualquier cosa void*.
+Cada nodo apunta al siguiente, por ende una lista de 3 elementos en su 4to elemento el proximo nodo sera NULL.
+La linkedList apunta a un primer nodo.
+
+1-ll_newLinkedList=Hacemos un malloc de this, seteamos el size en 0 y el primer nodo en NULL.
+
+2-ll_len=Retornamos el size si es distinto de null.
+
+3-getNode=Obtiene el nodo de la lista , setea un puntero a nodo en NULL , calculamos el len , y hacemos que si la lista es distanta de NULL y el nodo es mayor a -1 y menor al len.
+lo obtenemos como si fuera un getter.
+pNode=this->pFirstNode (asi obtenemos el primer nodo)
+Luego iteramos con un for y obtenemos el proximo nodo.
+pNode=pNode->pNextNode
+
+4-addNode=Se hace un malloc a un nuevo Nodo (Puntero) y se setea el nodo actual en NULL.
+Seteamos el valor del elemento que vamos a agregar al pElement del nuevo nodo.
+Si el nodo es distinto de NULL y el nuevo nodo también.
+Calculamos el len y preguntamos si el indice del nodo es mayor a -1 y menor/igual al len.
+Si el indice es igual a cero el nuevo nodo es igual a el primer nodo.
+y entonces seteamos this->firstNode el contenido de newNode
+Si el indice es más de uno obtenemos el nodo actual con el indice -1
+el nodo nuevo apuntando al proximo nodo es igual actual nodo apuntando al proximo nodo
+El proximo nodo del nodo actual es igual al nuevo nodo
+y obvio aumentamos el size++
+
+5-ll_add=Si la lista es distinta de null agregamos el nodo con la lista, el size y el elemento.
+
+6-ll_set=Se hace puntero a Nodo, calculamos el len, si el indice es mayor a -1 y menor al indice 
+Obtenemos el nodo, si el puntero a nodo es distinto de NULL.
+Seteamos el elemento pNewNode->pElement=pElement
+
+7-ll_remove=Elimina un elemento de la lista.
+Hacemos dos punteros al nodo,si el indice es mayor a -1 y menor al size.
+Si el size es 1 apuntamos al proximo nodo en NULL y liberamos el nodo obtenido con free getnode.
+Si el indice es 0 obtenemos el nodo1 el primer nodo de la lista es igual al proximo nodo de la lista.
+Liberamos el nodo1.
+Si el indice es más de uno obtenemos el nodo1 si es distinto de NULL obtenemos el nodo2 con el index-1.
+Covertimos el nodo2 en el nodo1 y liberamos el nodo1.
+Al final reducimos el size.
+
+8-ll_clear=Elimina todos los elementos de la lista.
+Recorremos la lista con un for y hacemos un ll_remove de cada indice.
+
+9-ll_delate_LinkedList=Hacemos un clear y luego un free de la lista.
+
+10-ll_indexOf=Retorna el indice del elemento que deseemos.
+Seteamos un puntero a nodo en NULL, lo recorremos, obtenemos el nodo de cada elemento
+Cuando el elemento del nodo sea igual al elemento ingresado.
+Retornamos el indice de ese elemento.
+Hacemos un break y retornamos el indice si existe el elemento y -1 si no existe.
+
+11-ll_isEmpty=Define si esta o no vacia la lista.
+Calculamos el len, si el len es igual a cero es que está vacia por ende retorna 1, si el len es mayor a cero retorna 0 porque no está vacia.
+
+12-ll_push=Hacemos un puntero a nodo si el indice es mayor a -1 y menor/igual al len agregamos un nodo a ese elemento.
+
+13-ll_pop=Elimina el elemento y lo retorna, si el indice es mayor a -1 y menor/igual al len le seteamos al retorno el elemento obtenido con ll_get y lo removemos con un remove y retornamos ese elemento que acabamos de remover.
+
+14-ll_contains=Usamos la funcion indexOf, si indexOf retorna -1 es que no existe el elemento por ende ll_contains retornara 0 por ende no contendra dicho elemento.
+Si indexOf es distinto de -1 es que existe el elemento en la lista por ende retornara 1 ya que existe.
+
+15-ll_containsAll=Compara si una lista es exactamente igual a la otra, o sea si contiene los mismos elementos.
+Creamos dos len y un contador.
+Creamos un auxiliar del pElement si la lista1 y la lista2 son distintas de NULL.
+Calculamos el len de cada lista, si el len1 es mayor igual al len2 hacemos un for con len2, obtenemos en el auxiliar el elemento de la lista2 
+y dentro del mismo for hacemos un if con un contains que si el elemento de la lista2 contiene al elemento de la lista1 hacemos contador++, o sea cada vez que ese auxiliar en donde guardamos lo que contiene el elemento de la lista2 sea igual al elemento de la lista1 subimos el contador.
+
+Si el contador es igual al len1 significa que todos los elementos son iguales. O sea las dos listas son iguales retornando 1 por el éxito.
+
+16-ll_subList=Clona la lista desde un punto inicial a final que elijamos.
+Creamos un clon de la lista siendo un puntero a la LinkedList y lo seteamos en NULL, hacemos un puntero a Nodo
+Seteamos el indice de la nueva lista en 0
+Si from y to es mayor a -1 y menor/igual al len al clon le hacemos un newLinkedList hacemos un for desde from hasta to y si el nodo es distinto de NULL lo agregamos a la lista clonada y hacemos newindex++ para que no cargue siempre el mismo indice al final retornamos la lista clonada.
+
+17-ll_clone=Clona la lista por completo 
+Tan simple como hacer un sublist y ponerle 0 al from y el size en to con eso la clona completa.
+
+18-ll_sort=Ejecuta el sort que se desee mediante el puntero a una función en la lista.
+Hacemos dos punteros a Elementos A y B y uno auxiliar. 
+Si el len es mayor a 0 o sea si existe al menos un elemento.
+Ponemos el flag en 0, iteramos con un for con len-1 
+Si el puntero a la funcion de elementoA y B es menor a 0 y el order es 0 o es mayor a 0 y el order es 1
+Hacemos un swap
+
+aux=A
+this(i)=B en un set
+this(i+1)=aux
+
+i=A
+i+1=B
+y si se hizo el swap ponemos el flag en 1
+
+Hasta que no se ponga el flag en 1 no se va a dejar de iterar.
+
+
+19-ll_filter=Filtra y verifica si existe un elemento.
+Para eso la funcion que se va a usar tiene que devolver 1 si todo ok.
+Hacemos un puntero a elemento aux
+y creamos una nueva sublista
+Si la lista es !=NULL y el pFunc !=NULL creamos la nueva sublista
+Iteramos y obtenemos el Elemento.
+Si el pFunc con el elemento da 1 o sea que existe o entra 
+Agregamos la sublista con ese elemento y la retornamos.
+
+20-ll_map=Rellena un elemento vacio de la estructura segun parametro de la funcion a puntero.
+Si la lista y el pFunc es distinta de NULL iteramos y en la pFunc hacemos un ll_get
